@@ -1,1 +1,7 @@
 media: images
+
+content:
+  - name: works
+    label: works
+    path: pages/01_works
+    type: collection
