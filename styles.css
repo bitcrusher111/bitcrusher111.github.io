@@ -1,0 +1,81 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+nav ul {
+    list-style-type: none; /* Removes the default bullet points */
+    padding: 0;
+}
+
+nav ul li {
+    display: block; /* not inline */
+    margin-right: 10px;
+}
+
+nav ul li a {
+    /*color: white; /* Sets the link color to white */
+    text-decoration: none; /* Removes the underline */
+}
+
+/*
+nav ul li a:hover {
+    color: violet; /* Changes the link color to violet when hovered over
+} */
+
+.violetlink {
+    color: white; /* Sets the color of the link */
+    text-decoration: none; /* Removes the underline */
+}
+
+.violetlink:hover {
+    color: violet; /* Changes the color when hovered over */
+}
+
+/* styles.css */
+.active {
+    /* Example: Change the color of the active link */
+    color: violet;
+}
+
+To achieve this, you can use the :first-child pseudo-class selector to target the first child of the .thumbnails container and remove its left margin. Here's how you can modify the CSS:
+
+css
+
+/* galleries */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: left;
+  margin-left: 0; /* Reset margin */
+}
+
+.thumbnails a {
+  margin-left: 5px; /* Set margin for all except the first */
+}
+
+.thumbnails a:first-child {
+  margin-left: 0; /* Remove margin for the first child */
+}
+
+.thumbnails img {
+  width: 150px;
+  height: 100px;
+  cursor: pointer;
+  /* Add more styles as needed */
+}
+
+.main-image img {
+  max-width: 100%;
+  max-height: 400px;
+}
+
+.spacer1 {
+    padding-bottom: 20px;
+} /* Adjust the value to set the desired space */
