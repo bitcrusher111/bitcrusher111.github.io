@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
+</head>
+<body>
+    <h1><a class="violetlink" href="/index.html">Candid Rütter</a></h1>
+     <!-- Include the navigation bar -->
+     <div id="navbar"></div>
+
+     <div class="spacer1"></div>
+    
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>CSV to Table</title>
+         <link rel="stylesheet" href="styles.css">  <!-- Link to the external CSS file -->
+     </head>
+     <body>
+     
+     <h1>CSV to Table</h1>
+     
+     <input type="file" id="csvFile" accept=".csv">
+     <br><br>
+     <table id="csvTable">
+         <thead>
+             <tr>
+                 <th>Date</th>
+                 <th>Location</th>
+                 <th>Events</th>
+             </tr>
+         </thead>
+         <tbody>
+         </tbody>
+     </table>
+     
+     <script>
+         document.getElementById("csvFile").addEventListener("change", function(event) {
+             const file = event.target.files[0];
+             if (file && file.name.endsWith(".csv")) {
+                 const reader = new FileReader();
+                 reader.onload = function(e) {
+                     const csvData = e.target.result;
+                     const parsedData = parseCSV(csvData);
+                     generateTable(parsedData);
+                 };
+                 reader.readAsText(file);
+             } else {
+                 alert("Please upload a valid CSV file.");
+             }
+         });
+     
+         // Parse CSV content
+         function parseCSV(csv) {
+             const rows = csv.split("\n").map(row => row.trim()).filter(row => row.length > 0);
+             const data = [];
+             rows.forEach(row => {
+                 // Split the row by commas, but preserve commas inside quotes
+                 const parsedRow = parseCSVRow(row);
+                 data.push(parsedRow);
+             });
+             return data;
+         }
+     
+         // Parse a single CSV row with handling for commas inside quotes
+         function parseCSVRow(row) {
+             const regex = /"([^"]*)"|([^,]+)/g;
+             const result = [];
+             let match;
+             while ((match = regex.exec(row)) !== null) {
+                 // match[1] will contain the quoted value, match[2] will contain unquoted value
+                 result.push(match[1] ? match[1] : match[2]);
+             }
+             return result;
+         }
+     
+         // Generate the HTML table from parsed data
+         function generateTable(data) {
+             const tableBody = document.getElementById("csvTable").getElementsByTagName("tbody")[0];
+             tableBody.innerHTML = ""; // Clear previous table rows
+     
+             data.forEach(row => {
+                 const tr = document.createElement("tr");
+                 row.forEach(cell => {
+                     const td = document.createElement("td");
+                     td.textContent = cell;
+                     tr.appendChild(td);
+                 });
+                 tableBody.appendChild(tr);
+             });
+         }
+     </script>
+     
+     </body>
+     </html>
+     
+
+     </body>
+     </html>
+     
+    
+
+   
+ 
+     <!-- Include the JavaScript file -->
+     <script src="/script.js"></script>
+</body>
+</html>

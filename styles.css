@@ -39,43 +39,63 @@ nav ul li a:hover {
     color: violet;
 }
 
-To achieve this, you can use the :first-child pseudo-class selector to target the first child of the .thumbnails container and remove its left margin. Here's how you can modify the CSS:
 
-css
-
-/* galleries */
+/* Common Gallery Styles */
 .gallery {
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between items */
 }
 
-.thumbnails {
+.gallery a {
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Inherits text color from overlay */
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fits without distortion */
+}
+
+/* Overlay Styling */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  color: white;
   display: flex;
-  justify-content: left;
-  margin-left: 0; /* Reset margin */
+  align-items: center;   /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  text-align: center;
+  font-size: 14px; /* Adjust font size as needed */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.thumbnails a {
-  margin-left: 5px; /* Set margin for all except the first */
+.gallery-item:hover .overlay {
+  opacity: 1;
 }
 
-.thumbnails a:first-child {
-  margin-left: 0; /* Remove margin for the first child */
+
+/* Gallery Works (Original Rectangular Layout) */
+.gallery_works .gallery-item {
+  width: 150px; /* Fixed width */
+  height: 100px; /* Fixed height */
+  flex: 0 0 auto; /* Prevents resizing */
 }
 
-.thumbnails img {
-  width: 150px;
-  height: 100px;
-  cursor: pointer;
-  /* Add more styles as needed */
+/* Gallery Releases (Square Layout) */
+.gallery_releases .gallery-item {
+  width: 150px; /* Fixed width for square */
+  height: 150px; /* Fixed height for square */
+  flex: 0 0 auto; /* Prevents resizing */
 }
-
-.main-image img {
-  max-width: 100%;
-  max-height: 400px;
-}
-
-.spacer1 {
-    padding-bottom: 20px;
-} /* Adjust the value to set the desired space */
