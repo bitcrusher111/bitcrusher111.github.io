@@ -24,89 +24,90 @@
          <link rel="stylesheet" href="styles.css">  <!-- Link to the external CSS file -->
      </head>
      <body>
-     
-     <h1>CSV to Table</h1>
-     
-     <input type="file" id="csvFile" accept=".csv">
-     <br><br>
-     <table id="csvTable">
-         <thead>
-             <tr>
-                 <th>Date</th>
-                 <th>Location</th>
-                 <th>Events</th>
-             </tr>
-         </thead>
-         <tbody>
-         </tbody>
-     </table>
-     
-     <script>
-         document.getElementById("csvFile").addEventListener("change", function(event) {
-             const file = event.target.files[0];
-             if (file && file.name.endsWith(".csv")) {
-                 const reader = new FileReader();
-                 reader.onload = function(e) {
-                     const csvData = e.target.result;
-                     const parsedData = parseCSV(csvData);
-                     generateTable(parsedData);
-                 };
-                 reader.readAsText(file);
-             } else {
-                 alert("Please upload a valid CSV file.");
-             }
-         });
-     
-         // Parse CSV content
-         function parseCSV(csv) {
-             const rows = csv.split("\n").map(row => row.trim()).filter(row => row.length > 0);
-             const data = [];
-             rows.forEach(row => {
-                 // Split the row by commas, but preserve commas inside quotes
-                 const parsedRow = parseCSVRow(row);
-                 data.push(parsedRow);
-             });
-             return data;
-         }
-     
-         // Parse a single CSV row with handling for commas inside quotes
-         function parseCSVRow(row) {
-             const regex = /"([^"]*)"|([^,]+)/g;
-             const result = [];
-             let match;
-             while ((match = regex.exec(row)) !== null) {
-                 // match[1] will contain the quoted value, match[2] will contain unquoted value
-                 result.push(match[1] ? match[1] : match[2]);
-             }
-             return result;
-         }
-     
-         // Generate the HTML table from parsed data
-         function generateTable(data) {
-             const tableBody = document.getElementById("csvTable").getElementsByTagName("tbody")[0];
-             tableBody.innerHTML = ""; // Clear previous table rows
-     
-             data.forEach(row => {
-                 const tr = document.createElement("tr");
-                 row.forEach(cell => {
-                     const td = document.createElement("td");
-                     td.textContent = cell;
-                     tr.appendChild(td);
-                 });
-                 tableBody.appendChild(tr);
-             });
-         }
-     </script>
-     
-     </body>
-     </html>
-     
+        upcoming events  <br><br>
+        29.11-01.12.2024 @ Sprechwerkt Hamburg, 'Mother Octopus', Musik für Theaterperformance <br>
+        09.-11.01.2025 @Postremise Chur, ULTRABLAU, Theatermusik <br>
+        09.-19.01.2025 @Neubad Luzern, 'Knäuel', Sounddesign für Interaktive Lichtinstallation <br>
+        23.02.2025 @Radialsystem Berlin, Alexander Shuberts "Terminal Infinity" für die Berliner Philharmoniker, Video <br>
+        01.03.2025 @MFS HFMT, Present Future<br>
 
-     </body>
-     </html>
-     
-    
 
+        <br>  <br>
+        past events <br><br>
+        08.11.2024 @Forum HFMT, Multimediale Komposition 'Holy Water' <br>
+        11.-13.11.2024 @Zentralwäscherei Zürich, ULTRABLAU, Theatermusik <br>
+        28.09.2024 @MFS HFMT, Multimediale Komposition 'Holy Water WIP' <br>
+        30.08.2024 @Komet Hamburg, DJ-Set <br>
+        09.07.2024 @MFS HFMT Hamburg, CoPeCo Konzert,Lichtdesign <br>
+        01.06.2024 @Blurred Edges Hamburg, "a continuous state of flux" <br>
+        25.06.2024 @Uni Bern, Vernissage Klanginstallation 'Climate Sounds' <br>
+        11.-13.04.2024 @Bühne A Theater der Künste Zürich, "We are Ocean", Theatermusik <br>
+        09.02.2024 @hfmt Hamburg, audiovisualinstallation, delulu is the solulu<br>
+        16.12.2023 @theater st. gallen, st gallen: Theatermusik für das Stück "GOTT", Premiere<br>
+        28.10.2023 @sommercasino, Basel w/ prix garanti<br>
+        27.10.2023 @bad bonn, Düdingen w/ prix garanti<br>
+        30.09.2023 @oho, biel w/RT60<br>
+        29.09.2023 @amr, genf w/RT60<br>
+        28.09.2023 @buffet nord, bern w/ RT60<br>
+        17.09.2023 @nydeggkirche, Bern: Klanginstallation zum Projekt Climate Sounds<br>
+        16.09.2023 @aarau stadtfest, Aarau w/ prix garanti<br>
+        16.09.2023 @trstn radio, Freibourg: DJ set as dataflelx<br>
+        09.09.2023 @Hofwyl Festival, Münchenbuchsee w/ prix garanti<br>
+        02.09.2023 @herzogenfest, Bern w/ prix garanti<br>
+        26.08.2023 @röntgenplatz festival, Zürich w/ prix garanti<br>
+        05.08.2023 @Bonduz Festival @graubünden w/ prix garanti<br>
+        16.06.2023 @stolzer Festivall, Zürich w/ prix garanti<br>
+        10.06.2023 @Mühle Hunziken, Hunziken w/ prix garanti<br>
+        17.05.2023 @gannet, basel w/ prix garanti<br>
+        12.05.2023 @kraftfeld, winterhur w/ prix garanti<br>
+        07.05.2023 time goes by so naturally by CRTTR @dampfzentrale, bern<br>
+        06.05.2023 @lauter festival, Zürich w/ prix garanti<br>
+        05.05.2023 @pornokino, Bern w/ prix garanti<br>
+        07.04.2023 stromstoss @radio 3FACH, luzern/ DJ-Set<br>
+        01.04.2023 secret w/ prix garanti<br>
+        31.03.2023 CRTTR005 showcasse @kaiptel, bern<br>
+        24.03.2023 ‘nüt isch guet und alles isch plastik’ plattentaufe @dachstock w/ prix garanti<br>
+        08.03.2023 CRTTR @ola radio<br>
+        18.02.2023 CRTTR @TRNSTN<br>
+        12.02.2023 radarnight @kapitel/ dj set<br>
+        30.12.2022 @palace, st. gallen w/ prix garanti<br>
+        23.12.2022 @industriestrasse, luzern w/ prix garanti<br>
+        22.12.2022 CRTTR @ablette, freiburg<br>
+        26.11.2022 CRTTR @radiobollwerk, bern<br>
+        19.11.2022 CRTTR @umbo, zürich/ dj set<br>
+        17.11.2022 @Zentralwäscherei, zürich w/ prix garanti<br>
+        10.11.2022 CRTTR @kapitel<br>
+        28.10.2022 radarnight @kapitel, bern/ dj set<br>
+        22.10.2022 CRTTR @TRNSTN<br>
+        12.-13.11.2022 backslashfestival @gessnerallee, zürich/ audio visual installation ‘escapism II’<br>
+        24.09.2022 CRTTR @TRNSTN<br>
+        17.09.2022 breitschfest @breitschplatz, bern w/prix garanti<br>
+        08.09.2022 t(R)anss(E.) by RT60, musifestival bern @dampfzentralle, bern<br>
+        11.08.2022 CRTTR @kapitel<br>
+        31.07.2022 @zaffareia, bern w/ prix garanti<br>
+        30.07.2022 @mokka, thun w/ prix garanti<br>
+        29.07.2022 @out in the green garden, frauenfeld w/ prix garanti<br>
+        23.07.2022 CRTTR @radiobollwerk, bern<br>
+        16.07.2022 gurtenfestival, bern w/ prix garanti<br>
+        31.05-25.06.2022 und jetzt: die welt @konzerttheater st. gallen/ theatermusik<br>
+        20.05.2022 jubiläumstagung akustiker:innenverein schweiz @… luzern/ preisverleiung, bestes binaurales fieldrecording<br>
+        01.05.2022 maisoui festival @kasernenareal, zürich<br>
+        23.-29.04.2022 solo exhibition @garage emma, luzern/ dissolving screens<br>
+        20.04.2022 MFB Award @isc, bern w/ prix garanti: album des jahres<br>
+        07.04.2022 CRTTR004 showcase: i wanne be a superstar vol. 1 @kapitel soso space/ audiovisual perormance terrain @radiobollwerk, bern/ livees<br>
+        01.04.2022 hammerfreitag @progr w/ prix garanti<br>
+        31.03.2022 @schüür, luzern w/ prix garanti<br>
+        22.-23.02.2022 à suivre @hkb bern, bern/ audio visual installation dissolving screens ’escapism I’<br>
+        12.01.2022 @schüür, luzern w/ prix garanti<br>
+        06.11.2021 @bad bonn, düdingen w/ prix garanti<br>
+        05.11.2021 @lakuz, langenthal w/ prix garanti<br>
+        04.11.2021 @rouin, basel w/prix garanti<br>
+        17.-18.09.2021 alexander schubert’s asterism festivaal @maillon, strassbourg/ as spatial sound designer<br>
+        01.09.2021 beethovenfestival @…, zürich/ akusmatische komposition<br>
+        09.08.2021 @biel lakeside festival, biel w/ prix garanti<br>
+        09.07.2021 ‘nüt isch guet und alles isch scheisse’ plattentaufe @gaskessel, bern w/ prix garanti<br>
+        
+        </body>
    
  
      <!-- Include the JavaScript file -->

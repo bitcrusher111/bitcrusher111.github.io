@@ -99,3 +99,93 @@ nav ul li a:hover {
   height: 150px; /* Fixed height for square */
   flex: 0 0 auto; /* Prevents resizing */
 }
+
+
+/* style.css */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.vertical-gallery {
+  display: block;
+  max-width: 800px; /* Maximum width of the gallery */
+  padding-top: 20px;
+}
+
+.vertical-gallery img {
+  width: 100%; /* Full width of the container */
+  max-height: 500px; /* Maximum height for each image */
+  margin-bottom: 20px; /* Space between images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+/* Container for the text */
+.text-container {
+  max-width: 800px; /* Maximum width of the text container */
+  max-height: 600px; /* Optional: Set a max height */
+  padding: 0px; /* Add padding around the text */
+  margin: 0; /* Ensure no automatic centering or margin */
+  text-align: left; /* Align text to the left */
+}
+
+/* Style for the title */
+.text-container h2 {
+  font-size: 2em;
+  margin-bottom: 0px;
+}
+
+/* Style for the paragraph */
+.text-container p {
+  font-size: 1em;
+  line-height: 1; /* Optional: adjust line height for readability */
+}
+
+/* General styling for the list container */
+.list-container {
+  font-family: 'Courier New', Courier, monospace; /* Use a monospaced font */
+  margin: 0px;
+}
+
+/* Styling for each list item */
+.list-item {
+  margin-bottom: 0px; /* Space between the items */
+  white-space: nowrap; /* Prevent wrapping of text */
+}
+
+/* Styling for the job titles */
+.job {
+  font-weight: bold;
+  display: inline-block;
+  width: 200px; /* Adjust this width to fit the longest job title */
+}
+
+/* Styling for the names */
+.name {
+  display: inline-block;
+  padding-left: 0px; /* Add space between job title and name */
+}
+
+
+/* Default link color */
+.my-link {
+  color: #f181ea; /* Blue color */
+  text-decoration: none; /* Optional: Removes underline */
+}
+
+/* Link color when hovered over */
+.my-link:hover {
+  color: #3dff33; /* Red color when hovered */
+  text-decoration: underline; /* Optional: Underline on hover */
+}
+
