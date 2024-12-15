@@ -1,46 +1,41 @@
+/* GENERAL BODY STYLING */
 body {
-    background-color: black;
-    color: white;
-    font-family: 'Anonymous Pro', monospace;
+  background-color: black;
+  color: white;
+  font-family: 'Anonymous Pro', monospace;
 }
 
+/* NAVIGATION STYLES */
 nav ul {
-    list-style-type: none; /* Removes the default bullet points */
-    padding: 0;
+  list-style-type: none; /* Removes the default bullet points */
+  padding: 0;
 }
 
 nav ul li {
-    display: block; /* not inline */
-    margin-right: 10px;
+  display: block; /* Stack list items vertically */
+  margin-right: 10px;
 }
 
 nav ul li a {
-    /*color: white; /* Sets the link color to white */
-    text-decoration: none; /* Removes the underline */
+  text-decoration: none; /* Removes the underline */
 }
 
-/*
-nav ul li a:hover {
-    color: violet; /* Changes the link color to violet when hovered over
-} */
-
+/* VIOLET LINK STYLING */
 .violetlink {
-    color: white; /* Sets the color of the link */
-    text-decoration: none; /* Removes the underline */
+  color: white;
+  text-decoration: none;
 }
 
 .violetlink:hover {
-    color: violet; /* Changes the color when hovered over */
+  color: violet; /* Changes the color when hovered over */
 }
 
-/* styles.css */
+/* ACTIVE LINK STYLING */
 .active {
-    /* Example: Change the color of the active link */
-    color: violet;
+  color: violet; /* Example: Highlight the active link */
 }
 
-
-/* Common Gallery Styles */
+/* COMMON GALLERY STYLES */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -49,7 +44,7 @@ nav ul li a:hover {
 
 .gallery a {
   text-decoration: none; /* Removes underline from links */
-  color: inherit; /* Inherits text color from overlay */
+  color: inherit; /* Inherit text color */
 }
 
 .gallery-item {
@@ -63,7 +58,7 @@ nav ul li a:hover {
   object-fit: cover; /* Ensures the image fits without distortion */
 }
 
-/* Overlay Styling */
+/* OVERLAY STYLING */
 .overlay {
   position: absolute;
   top: 0;
@@ -73,7 +68,7 @@ nav ul li a:hover {
   background: rgba(0, 0, 0, 0.6); /* Dark overlay */
   color: white;
   display: flex;
-  align-items: center;   /* Center vertically */
+  align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
   text-align: center;
   font-size: 14px; /* Adjust font size as needed */
@@ -85,23 +80,34 @@ nav ul li a:hover {
   opacity: 1;
 }
 
-
-/* Gallery Works (Original Rectangular Layout) */
+/* GALLERY WORKS (RECTANGULAR LAYOUT) */
 .gallery_works .gallery-item {
   width: 150px; /* Fixed width */
   height: 100px; /* Fixed height */
-  flex: 0 0 auto; /* Prevents resizing */
+  flex: 0 0 auto; /* Prevent resizing */
 }
 
-/* Gallery Releases (Square Layout) */
+/* GALLERY RELEASES (SQUARE LAYOUT) */
 .gallery_releases .gallery-item {
-  width: 150px; /* Fixed width for square */
-  height: 150px; /* Fixed height for square */
-  flex: 0 0 auto; /* Prevents resizing */
+  width: 150px; /* Fixed width */
+  height: 150px; /* Fixed height */
+  flex: 0 0 auto; /* Prevent resizing */
 }
 
+/* RESPONSIVE STYLES FOR MOBILE */
+@media (max-width: 768px) {
+  .gallery-item {
+      width: 100%; /* Make gallery items full width */
+      height: auto; /* Adjust height to maintain aspect ratio */
+  }
 
-/* style.css */
+  .gallery img {
+      width: 100%; /* Ensure images fill the container width */
+      height: auto; /* Maintain aspect ratio */
+  }
+}
+
+/* TABLE STYLING */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -117,6 +123,7 @@ th {
   background-color: #f2f2f2;
 }
 
+/* VERTICAL GALLERY */
 .vertical-gallery {
   display: block;
   max-width: 800px; /* Maximum width of the gallery */
@@ -130,62 +137,54 @@ th {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
 }
 
-/* Container for the text */
+/* TEXT CONTAINER */
 .text-container {
-  max-width: 800px; /* Maximum width of the text container */
+  max-width: 800px; /* Maximum width */
   max-height: 600px; /* Optional: Set a max height */
-  padding: 0px; /* Add padding around the text */
-  margin: 0; /* Ensure no automatic centering or margin */
-  text-align: left; /* Align text to the left */
+  padding: 0;
+  margin: 0;
+  text-align: left;
 }
 
-/* Style for the title */
 .text-container h2 {
   font-size: 2em;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
-/* Style for the paragraph */
 .text-container p {
   font-size: 1em;
-  line-height: 1; /* Optional: adjust line height for readability */
+  line-height: 1; /* Adjust line height */
 }
 
-/* General styling for the list container */
+/* LIST CONTAINER */
 .list-container {
-  font-family: 'Courier New', Courier, monospace; /* Use a monospaced font */
-  margin: 0px;
+  font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+  margin: 0;
 }
 
-/* Styling for each list item */
 .list-item {
-  margin-bottom: 0px; /* Space between the items */
-  white-space: nowrap; /* Prevent wrapping of text */
+  margin-bottom: 0;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
-/* Styling for the job titles */
 .job {
   font-weight: bold;
   display: inline-block;
-  width: 200px; /* Adjust this width to fit the longest job title */
+  width: 200px; /* Adjust width for longest job title */
 }
 
-/* Styling for the names */
 .name {
   display: inline-block;
-  padding-left: 0px; /* Add space between job title and name */
+  padding-left: 0; /* Space between job and name */
 }
 
-
-/* Default link color */
+/* LINK STYLES */
 .my-link {
-  color: #f181ea; /* Blue color */
-  text-decoration: none; /* Optional: Removes underline */
+  color: #f181ea; /* Default link color */
+  text-decoration: none;
 }
 
-/* Link color when hovered over */
 .my-link:hover {
-  color: #3dff33; /* Red color when hovered */
-  text-decoration: underline; /* Optional: Underline on hover */
+  color: #3dff33; /* Color on hover */
+  text-decoration: underline;
 }
-
