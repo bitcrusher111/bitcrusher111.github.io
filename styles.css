@@ -188,3 +188,11 @@ th {
   color: #3dff33; /* Color on hover */
   text-decoration: underline;
 }
+
+.navbar {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Removes padding */
+  margin: 0; /* Removes margin */
+  position: relative; /* Keeps it in the normal page flow */
+  top: 10px; /* Adds some space between the title and the navbar */
+}
