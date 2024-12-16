@@ -197,3 +197,49 @@ th {
   position: relative; /* Keeps it in the normal page flow */
   top: 10px; /* Adds some space between the title and the navbar */
 }
+
+iframe {
+  width: 100%; /* Make YouTube embeds match the width of other containers */
+  max-width: 800px; /* Match the max-width of the text container */
+  height: calc(800px * 9 / 16); /* Maintain the 16:9 aspect ratio based on max width */
+  margin: 0 auto; /* Center the iframe if necessary */
+  display: block; /* Ensure proper block layout */
+}
+
+/* RESPONSIVE STYLES FOR MOBILE */
+@media (max-width: 768px) {
+  /* Scale all gallery items and containers to fit the viewport width */
+  .gallery-item {
+      width: 100vw; /* Make gallery items fill the viewport width */
+      height: calc(100vw * 2 / 3); /* Maintain the 3:2 aspect ratio */
+  }
+
+  .gallery img {
+      width: 100%; /* Ensure images fill the container width */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  iframe {
+      width: 100vw; /* Make YouTube embeds fill the viewport width */
+      height: calc(100vw * 9 / 16); /* Maintain the 16:9 aspect ratio */
+      margin: 0 auto; /* Center the iframe if necessary */
+      display: block; /* Ensure proper block layout */
+  }
+
+  .text-container {
+      width: 100vw; /* Scale text containers to the viewport width */
+      padding: 10px; /* Add some padding for readability */
+  }
+
+  .vertical-gallery {
+      width: 100vw; /* Make vertical galleries scale to viewport */
+      max-width: 100%; /* Ensure they don’t exceed the screen width */
+      padding: 10px; /* Add padding for a clean look */
+  }
+
+  .vertical-gallery img {
+      width: 100%; /* Images in the vertical gallery scale to full width */
+      height: auto; /* Maintain aspect ratio */
+      max-height: 500px; /* Optional: Cap image height for better viewing */
+  }
+}
