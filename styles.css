@@ -82,8 +82,8 @@ nav ul li a {
 
 /* GALLERY WORKS (RECTANGULAR LAYOUT) */
 .gallery_works .gallery-item {
-  width: 300px; /* Fixed width */
-  height: 200px; /* Fixed height */
+  width: 150px; /* Fixed width */
+  height: 100px; /* Fixed height */
   flex: 0 0 auto; /* Prevent resizing */
 }
 
@@ -97,8 +97,8 @@ nav ul li a {
 /* RESPONSIVE STYLES FOR MOBILE */
 @media (max-width: 768px) {
   .gallery-item {
-      width: 100%; /* Make gallery items full width */
-      height: auto; /* Adjust height to maintain aspect ratio */
+      width: 100vw; /* Make gallery items fill the viewport width */
+      height: calc(100vw * 2 / 3); /* Maintain the 3:2 aspect ratio */
   }
 
   .gallery img {
@@ -106,6 +106,7 @@ nav ul li a {
       height: auto; /* Maintain aspect ratio */
   }
 }
+
 
 /* TABLE STYLING */
 table {
