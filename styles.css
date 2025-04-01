@@ -82,8 +82,8 @@ nav ul li a {
 
 /* GALLERY WORKS (RECTANGULAR LAYOUT) */
 .gallery_works .gallery-item {
-  width: 150px; /* Fixed width */
-  height: 100px; /* Fixed height */
+  width: 450px; /* Fixed width */
+  height: 300px; /* Fixed height */
   flex: 0 0 auto; /* Prevent resizing */
 }
 
