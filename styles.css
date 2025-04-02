@@ -1,61 +1,100 @@
-/* GENERAL BODY STYLING */
+/* GENERAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY STYLING */
 body {
   background-color: black;
   color: white;
   font-family: 'Anonymous Pro', monospace;
+  display: flex;
+
+  align-items: center; /* Centers content vertically */
+  flex-direction: column; /* Stacks content vertically */
+  height: 100vh; /* Takes full viewport height */
+  margin: 0; /* Remove any default margin */
+  padding-top: 120px; /* Space at the top to prevent navbar overlap */
 }
 
-/* NAVIGATION STYLES */
-nav ul {
-  list-style-type: none; /* Removes the default bullet points */
-  padding: 0;
+/* NAVBAR STYLING */
+.navbar {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Transparent black */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 30px;
 }
 
-nav ul li {
-  display: block; /* Stack list items vertically */
-  margin-right: 10px;
+.logo {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
-nav ul li a {
-  text-decoration: none; /* Removes the underline */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-/* VIOLET LINK STYLING */
-.violetlink {
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
   color: white;
   text-decoration: none;
+  font-size: 16px;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
 }
 
-.violetlink:hover {
-  color: violet; /* Changes the color when hovered over */
+.nav-links a:hover {
+  color: violet; /* Hover effect */
 }
 
 /* ACTIVE LINK STYLING */
-.active {
-  color: violet; /* Example: Highlight the active link */
+.nav-links a.active {
+  color: violet;
 }
 
 /* COMMON GALLERY STYLES */
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Space between items */
+  gap: 10px;
+  justify-content: center; /* Centers the gallery items horizontally */
+  align-items: center; /* Centers the gallery items vertically if needed */
 }
 
 .gallery a {
-  text-decoration: none; /* Removes underline from links */
-  color: inherit; /* Inherit text color */
+  text-decoration: none;
+  color: inherit;
 }
 
 .gallery-item {
   position: relative;
   overflow: hidden;
+  flex: 0 0 auto; /* Ensure items stay the same size */
 }
 
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image fits without distortion */
+  object-fit: cover;
 }
 
 /* OVERLAY STYLING */
@@ -68,10 +107,10 @@ nav ul li a {
   background: rgba(0, 0, 0, 0.6); /* Dark overlay */
   color: white;
   display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-size: 14px; /* Adjust font size as needed */
+  font-size: 14px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -80,32 +119,30 @@ nav ul li a {
   opacity: 1;
 }
 
-/* GALLERY WORKS (RECTANGULAR LAYOUT) */
+/* GALLERY LAYOUTS */
 .gallery_works .gallery-item {
-  width: 450px; /* Fixed width */
-  height: 300px; /* Fixed height */
-  flex: 0 0 auto; /* Prevent resizing */
+  width: 450px;
+  height: 300px;
 }
 
-/* GALLERY RELEASES (SQUARE LAYOUT) */
 .gallery_releases .gallery-item {
-  width: 150px; /* Fixed width */
-  height: 150px; /* Fixed height */
-  flex: 0 0 auto; /* Prevent resizing */
+  width: 150px;
+  height: 150px;
 }
 
 /* RESPONSIVE STYLES FOR MOBILE */
 @media (max-width: 768px) {
   .gallery-item {
-      width: 100vw; /* Make gallery items fill the viewport width */
-      height: calc(100vw * 2 / 3); /* Maintain the 3:2 aspect ratio */
+    width: 100vw;
+    height: calc(100vw * 2 / 3);
   }
 
   .gallery img {
-      width: 100%; /* Ensure images fill the container width */
-      height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: auto;
   }
 }
+
 
 
 /* TABLE STYLING */
@@ -124,122 +161,69 @@ th {
   background-color: #f2f2f2;
 }
 
-/* VERTICAL GALLERY */
-.vertical-gallery {
-  display: block;
-  max-width: 800px; /* Maximum width of the gallery */
-  padding-top: 20px;
-}
-
-.vertical-gallery img {
-  width: 100%; /* Full width of the container */
-  max-height: 500px; /* Maximum height for each image */
-  margin-bottom: 20px; /* Space between images */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
-}
-
 /* TEXT CONTAINER */
 .text-container {
-  max-width: 800px; /* Maximum width */
-  max-height: 600px; /* Optional: Set a max height */
+  max-width: 700px; /* Adjusted max width to 500px */
+  max-height: 600px;
   padding: 0;
   margin: 0;
   text-align: left;
 }
 
+/* TEXT CONTAINER HEADER AND PARAGRAPH STYLING */
 .text-container h2 {
   font-size: 2em;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
+
+.title_gallery {
+  font-size: 0.em; /* Double the default font size */
+  margin-bottom: 20px; /* Add 20px space below the title */
+  text-align: center; /* Center the text */
+}
+
+h2 {
+  color: violet; /* Set text color to violet */
+  font-size: 2em; /* Double the default font size */
+  margin-bottom: 0px; /* Add 20px space below the heading */
+}
+
+
 
 .text-container p {
   font-size: 1em;
-  line-height: 1; /* Adjust line height */
+  line-height: 1;
 }
 
 /* LIST CONTAINER */
 .list-container {
-  font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+  font-family: 'Courier New', Courier, monospace;
   margin: 0;
 }
 
 .list-item {
   margin-bottom: 0;
-  white-space: nowrap; /* Prevent text wrapping */
+  white-space: nowrap;
 }
 
 .job {
   font-weight: bold;
   display: inline-block;
-  width: 200px; /* Adjust width for longest job title */
+  width: 200px;
 }
 
 .name {
   display: inline-block;
-  padding-left: 0; /* Space between job and name */
+  padding-left: 0;
 }
 
 /* LINK STYLES */
 .my-link {
-  color: #f181ea; /* Default link color */
+  color: #f181ea;
   text-decoration: none;
 }
 
 .my-link:hover {
-  color: #3dff33; /* Color on hover */
+  color: #3dff33;
   text-decoration: underline;
-}
-
-.navbar {
-  list-style-type: none; /* Removes bullet points */
-  padding: 0; /* Removes padding */
-  margin: 0; /* Removes margin */
-  position: relative; /* Keeps it in the normal page flow */
-  top: 10px; /* Adds some space between the title and the navbar */
-}
-
-iframe {
-  width: 100%; /* Make YouTube embeds match the width of other containers */
-  max-width: 800px; /* Match the max-width of the text container */
-  height: calc(800px * 9 / 16); /* Maintain the 16:9 aspect ratio based on max width */
-  margin: 0 auto; /* Center the iframe if necessary */
-  display: block; /* Ensure proper block layout */
-}
-
-/* RESPONSIVE STYLES FOR MOBILE */
-@media (max-width: 768px) {
-  /* Scale all gallery items and containers to fit the viewport width */
-  .gallery-item {
-      width: 100vw; /* Make gallery items fill the viewport width */
-      height: calc(100vw * 2 / 3); /* Maintain the 3:2 aspect ratio */
-  }
-
-  .gallery img {
-      width: 100%; /* Ensure images fill the container width */
-      height: auto; /* Maintain aspect ratio */
-  }
-
-  iframe {
-      width: 100vw; /* Make YouTube embeds fill the viewport width */
-      height: calc(100vw * 9 / 16); /* Maintain the 16:9 aspect ratio */
-      margin: 0 auto; /* Center the iframe if necessary */
-      display: block; /* Ensure proper block layout */
-  }
-
-  .text-container {
-      width: 100vw; /* Scale text containers to the viewport width */
-      padding: 10px; /* Add some padding for readability */
-  }
-
-  .vertical-gallery {
-      width: 100vw; /* Make vertical galleries scale to viewport */
-      max-width: 100%; /* Ensure they don’t exceed the screen width */
-      padding: 10px; /* Add padding for a clean look */
-  }
-
-  .vertical-gallery img {
-      width: 100%; /* Images in the vertical gallery scale to full width */
-      height: auto; /* Maintain aspect ratio */
-      max-height: 500px; /* Optional: Cap image height for better viewing */
-  }
 }
