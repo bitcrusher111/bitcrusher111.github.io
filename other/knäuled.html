@@ -1,39 +1,33 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
-</head>
-<body>
-    <h1><a class="violetlink" href="/works.html">Candid Rütter</a></h1>
-    <ul class="navbar">
-        <li><a class="violetlink" href="/about.html"><span style="color:#f181ea;">about</span></a></li>
-        <li><a class="violetlink" href="/works.html">works</a></li>
-        <li><a class="violetlink" href="/releases.html">releases</a></li>
-        <!--<li><a class="violetlink" href="/collabs.html">collaborative works</a></li>-->
-        <li><a class="violetlink" href="/freelancing.html">freelancing</a></li>
-        <!-- <li><a class="violetlink" href="/pages/04_maxmsp/maxmsp.html">max/MSP</a></li> -->
-        <li><a class="violetlink" href="/dates.html">dates</a></li>
-     </ul> <br>
-     <h2 style="text-align: left;">delulu is the solulu (2024)</h2>
-     
-     <div class="text-container">
-        
-            be wathevere you want to be! - Emma Watson <br><br>
-            <br>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/5zF9yXSykO8?si=FsmTIIiwQ4xNmTay" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
-        
-    </div>
-    
-     
-</div>
+    <script>
+        fetch("/header.html")
+          .then(response => response.text())
+          .then(data => {
+            document.body.insertAdjacentHTML("afterbegin", data);
+      
+            // After inserting the header, highlight the active link
+            const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+            document.querySelectorAll("#nav a").forEach(link => {
+              if (link.dataset.page === currentPage) {
+                link.style.color = "violet"; // Change color for active link
+              }
+            });
+          });
+      </script>
 
-     <script src="https://player.vimeo.com/api/player.js"></script>
+<body>
+    <h1></h1>
     
-     <!-- Include the JavaScript file -->
-     <script src="/script.js"></script>
+     <h2 style="text-align: left;">Knäuled (2025)</h2>
+    
+     <div class="text-container">
+        <p>
+            page in progress...
+        </p>
+    </div>
+  
 </body>
+
 </html>

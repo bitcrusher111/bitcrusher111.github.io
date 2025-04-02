@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>About Us</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
 </head>
-<body>
-    <h1><a class="violetlink" href="/works.html">Candid Rütter</a></h1>
-     <!-- Include the navigation bar -->
-     <ul class="navbar">
-      <li><a class="violetlink" href="/about.html">about</a></li>
-      <li><a class="violetlink" href="/works.html"><span style="color:#f181ea;">works</span></a></li>
-      <li><a class="violetlink" href="/releases.html">releases</a></li>
-      <!--<li><a class="violetlink" href="/collabs.html">collaborative works</a></li>-->
-      <li><a class="violetlink" href="/freelancing.html">freelancing</a></li>
-      <!-- <li><a class="violetlink" href="/pages/04_maxmsp/maxmsp.html">max/MSP</a></li> -->
-      <li><a class="violetlink" href="/dates.html">dates</a></li>
-   </ul> <br>
-  
 
-     <br>
-     solo works
-     <br><br>
-  <div class="gallery gallery_works">
+<script>
+  fetch("/header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.body.insertAdjacentHTML("afterbegin", data);
+
+      // After inserting the header, highlight the active link
+      const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+      document.querySelectorAll("#nav a").forEach(link => {
+        if (link.dataset.page === currentPage) {
+          link.style.color = "violet"; // Change color for active link
+        }
+      });
+    });
+</script>
+
+
+
+<body>
+  <h1>
+     <div class="title_gallery">SOLO WORKS</div>
+    <div class="gallery gallery_works">
     <a href="works/holywater.html" class="gallery-item">
       <img src="images/works/Galleryicons/soloworks/holywater.jpg" alt="Image 1">
       <div class="overlay">HOLY WATER (2024)</div>
@@ -54,9 +58,10 @@
       <img src="/images/works/Galleryicons/soloworks/lonefluke.webp" alt="Image 3">
       <div class="overlay">lone fluke</div> -->
     </a>
+ 
   </div>
   <br><br>
-  music for theater and performance 
+  MUSIC FOR THEATER, DANCE AND PERFORMANCE 
   <br><br>
   <div class="gallery gallery_works">
     <!--<a href="link2.html" class="gallery-item">
@@ -92,7 +97,7 @@
     </a>
   </div>
   <br> <br>
-ongoing projects
+ONGOING PROJECTS
 <br> <br>
      <div class="gallery gallery_works">
        <a href="https://linktr.ee/prixgaranti" class="gallery-item">
@@ -111,7 +116,7 @@ ongoing projects
         </a></div>
   
   <br><br>
-  other
+  OTHER
   <br><br>
   <div class="gallery gallery_works">
     <a href="https://www.radialsystem.de/de/veranstaltungen/terminal-infinity/" class="gallery-item">

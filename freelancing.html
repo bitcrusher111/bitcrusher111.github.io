@@ -7,18 +7,25 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
 </head>
+<script>
+   fetch("/header.html")
+     .then(response => response.text())
+     .then(data => {
+       document.body.insertAdjacentHTML("afterbegin", data);
+ 
+       // After inserting the header, highlight the active link
+       const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+       document.querySelectorAll("#nav a").forEach(link => {
+         if (link.dataset.page === currentPage) {
+           link.style.color = "violet"; // Change color for active link
+         }
+       });
+     });
+ </script>
 <body>
-    <h1><a class="violetlink" href="/works.html">Candid Rütter</a></h1>
+    <h1></h1>
      <!-- Include the navigation bar -->
-     <ul class="navbar">
-        <li><a class="violetlink" href="/about.html">about</li>
-        <li><a class="violetlink" href="/works.html">works</a></li>
-        <li><a class="violetlink" href="/releases.html">releases</a></li>
-        <!--<li><a class="violetlink" href="/collabs.html">collaborative works</a></li>-->
-        <li><a class="violetlink" href="/freelancing.html"><span style="color:#f181ea;">freelancing</span></a></li>
-        <!-- <li><a class="violetlink" href="/pages/04_maxmsp/maxmsp.html">max/MSP</a></li> -->
-        <li><a class="violetlink" href="/dates.html">dates</a></li>
-     </ul> <br>
+   
     
      <div class="spacer1"></div>
      

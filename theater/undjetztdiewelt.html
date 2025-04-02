@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
-</head>
+
+<script>
+    fetch("/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML("afterbegin", data);
+  
+        // After inserting the header, highlight the active link
+        const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+        document.querySelectorAll("#nav a").forEach(link => {
+          if (link.dataset.page === currentPage) {
+            link.style.color = "violet"; // Change color for active link
+          }
+        });
+      });
+  </script>
+  
 <body>
-    <h1><a class="violetlink" href="/works.html">Candid Rütter</a></h1>
-     <!-- Include the navigation bar -->
-     <ul class="navbar">
-        <li><a class="violetlink" href="/about.html"><span style="color:#f181ea;">about</span></a></li>
-        <li><a class="violetlink" href="/works.html">works</a></li>
-        <li><a class="violetlink" href="/releases.html">releases</a></li>
-        <!--<li><a class="violetlink" href="/collabs.html">collaborative works</a></li>-->
-        <li><a class="violetlink" href="/freelancing.html">freelancing</a></li>
-        <!-- <li><a class="violetlink" href="/pages/04_maxmsp/maxmsp.html">max/MSP</a></li> -->
-        <li><a class="violetlink" href="/dates.html">dates</a></li>
-     </ul> <br>
-     <h2 style="text-align: left;">und jetzt: die welt (2022)</h2>
+     <h2>und jetzt: die welt (2022)</h2>
     
      <div class="text-container">
         <p>
@@ -38,29 +37,28 @@
             scrolling through an Instagram feed or other social media platform, 
             where content is presented in a seemingly random and disconnected way.
         </p>
-    </div>
     
-    <div class="list-container">
-        <div class="list-item">
-            <span class="job">performance</span>
-            <span class="names">Tabea Buser</span>
-        </div>
-        <div class="list-item">
-            <span class="job">direction</span>
-            <span class="names">Jonas Bernetta</span>
-        </div>
-        <div class="list-item">
-            <span class="job">dramaturgy</span>
-            <span class="names">Jonas Bernetta</span>
-        </div>
-        <div class="list-item">
-            <span class="job">music</span>
-            <span class="names">Candid Rütter</span>
-        </div>
+            <div class="list-container">
+                <div class="list-item">
+                    <span class="job">performance</span>
+                    <span class="names">Tabea Buser</span>
+                </div>
+                <div class="list-item">
+                    <span class="job">direction</span>
+                    <span class="names">Jonas Bernetta</span>
+                </div>
+                <div class="list-item">
+                    <span class="job">dramaturgy</span>
+                    <span class="names">Jonas Bernetta</span>
+                </div>
+                <div class="list-item">
+                    <span class="job">music</span>
+                    <span class="names">Candid Rütter</span>
+                </div>
         
-    </div>
+            </div>
      
-</div>
+    </div>
 
      <script src="https://player.vimeo.com/api/player.js"></script>
     
