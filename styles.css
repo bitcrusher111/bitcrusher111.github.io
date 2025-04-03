@@ -126,8 +126,8 @@ body {
 }
 
 .gallery_releases .gallery-item {
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
 }
 
 /* RESPONSIVE STYLES FOR MOBILE */
@@ -168,6 +168,16 @@ th {
   padding: 0;
   margin: 0;
   text-align: left;
+}
+
+/* TEXT CONTAINER */
+.dates {
+  max-width: 700px; /* Adjusted max width to 500px */
+  max-height: 600px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 0.5em;
 }
 
 /* TEXT CONTAINER HEADER AND PARAGRAPH STYLING */
