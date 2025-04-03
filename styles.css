@@ -195,7 +195,7 @@ th {
 h2 {
   color: violet; /* Set text color to violet */
   font-size: 2em; /* Double the default font size */
-  margin-bottom: 0px; /* Add 20px space below the heading */
+  margin-bottom: 40px; /* Add 20px space below the heading */
 }
 
 
