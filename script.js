@@ -37,3 +37,4 @@ thumbnails.forEach(thumbnail => {
     });
 });
 });
+
