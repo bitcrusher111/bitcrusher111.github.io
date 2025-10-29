@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<script>
+    fetch("/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML("afterbegin", data);
+  
+        // After inserting the header, highlight the active link
+        const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+        document.querySelectorAll("#nav a").forEach(link => {
+          if (link.dataset.page === currentPage) {
+            link.style.color = "violet"; // Change color for active link
+          }
+        });
+      });
+  </script>
+  
+<body>
+    
+     
+     <h2 style="text-align: left;">folds of silk (2025)</h2>
+     <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/rcfLqninbxQ?si=YoJfQDlFdDGcq78G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  -->
+     <div class="text-container">
+       
+       
+        <div class="list-container">
+            <br>
+            <div class="list-item">
+                <span class="job">percussion</span>
+                <span class="names">Lin Chen</span>
+            </div>
+            <div class="list-item">
+                <span class="job">tenor saxophon</span>
+                <span class="names">Asya Fatayeva</span>
+            </div>
+            <div class="list-item">
+                <span class="job">composition</span>
+                <span class="names">Candid Rütter</span>
+            </div>
+            <div class="list-item">
+                <span class="job">video/ lights</span>
+                <span class="names">Candid Rütter</span>
+            </div>
+          
+        
+            <br>
+            
+        </div>
+        in progress...
+
+    </div>
+    
+     
+</div>
+
+     <script src="https://player.vimeo.com/api/player.js"></script>
+    
+     <!-- Include the JavaScript file -->
+     <script src="/script.js"></script>
+</body>
+</html>
