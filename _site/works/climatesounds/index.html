@@ -79,8 +79,57 @@
 </div>
 
 
+    
+
+    
+
   </main>
 
   <script src="/script.js"></script>
+  <script>
+    // Work gallery navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainImg = document.getElementById('mainGalleryImg');
+      if (!mainImg) return;
+      
+      const gallery = null;
+      let currentIndex = 0;
+      const leftArrow = document.querySelector('.gallery-arrow-left');
+      const rightArrow = document.querySelector('.gallery-arrow-right');
+
+      function showImage(index) {
+        if (index >= 0 && index < gallery.length) {
+          currentIndex = index;
+          mainImg.src = gallery[currentIndex];
+          updateArrows();
+        }
+      }
+
+      function updateArrows() {
+        if (leftArrow) leftArrow.style.opacity = currentIndex > 0 ? '1' : '0.3';
+        if (rightArrow) rightArrow.style.opacity = currentIndex < gallery.length - 1 ? '1' : '0.3';
+      }
+
+      // Arrow button clicks
+      if (leftArrow) {
+        leftArrow.addEventListener('click', () => showImage(currentIndex - 1));
+      }
+      if (rightArrow) {
+        rightArrow.addEventListener('click', () => showImage(currentIndex + 1));
+      }
+
+      // Arrow key navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          showImage(currentIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          showImage(currentIndex + 1);
+        }
+      });
+
+      // Initialize
+      updateArrows();
+    });
+  </script>
 </body>
 </html>

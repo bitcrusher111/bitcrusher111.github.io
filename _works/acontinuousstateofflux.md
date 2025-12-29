@@ -5,11 +5,10 @@ permalink: /works/acontinuousstateofflux/
 category: soloworks
 image: /assets/images/works/galleryicons/soloworks/csof.jpg
 date: 2024-06-01
+youtube: "https://www.youtube.com/embed/ZR9sG5MfQyQ?si=hVeBtMb40zQFN1CT"
+gallery:
+  - "/assets/images/works/soloworks/acontinuousstateofflux/acsof_still1.png"
 ---
-
-<div class="video-wrapper">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ZR9sG5MfQyQ?si=hVeBtMb40zQFN1CT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
 
 <div class="text-container">
   <p>
@@ -21,7 +20,4 @@ date: 2024-06-01
 </div>
 <div class="video-wrapper">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/O-qU7rQNUzA?si=ti8cvFtZbhhnLZrH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-<div class="text-container">
-  <img src="/assets/images/works/soloworks/acontinuousstateofflux/acsof_still1.png" alt="Still 1" loading="lazy">
 </div>

@@ -5,23 +5,16 @@ permalink: /works/fullcircle/
 category: soloworks
 image: /assets/images/works/galleryicons/soloworks/fullcircle.jpg
 date: 2025-01-01
+youtube: "https://www.youtube.com/embed/cQ_D9PLOfgs?si=uXTxtpxn0x2HRRx8"
+credits:
+  - "performance, Liza Kereselidze"
+  - "composition, Candid Rütter"
+  - "co-direction, Niyousha Azzari"
+  - "video/ lights, Candid Rütter"
+  - "costume, Liza Kereselidze, Candid Rütter"
 ---
 
-<br>
-<div class="video-wrapper">
-  <iframe src="https://www.youtube.com/embed/cQ_D9PLOfgs?si=uXTxtpxn0x2HRRx8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
 <div class="text-container">
-  <div class="list-container">
-    <div class="list-item"><span class="job">performance</span><span class="names">Liza Kereselidze</span></div>
-    <div class="list-item"><span class="job">composition</span><span class="names">Candid Rütter</span></div>
-    <div class="list-item"><span class="job">co-direction</span><span class="names">Niyousha Azzari</span></div>
-    <div class="list-item"><span class="job">video/ lights</span><span class="names">Candid Rütter</span></div>
-    <div class="list-item"><span class="job">costume</span><span class="names">Liza Kereselidze, Candid Rütter</span></div>
-
-  </div>
-  <br>
   <p>Where do we feel at home? What do we feel connected to? In a world where the fabric of our reality is permeated by virtual components, these questions appear in an entirely new light.
   FULL CIRCLE weaves together disparate materials, emotional cues, and symbolic references, reflecting the moods that often shape our encounters with digital technologies: longing, dislocation, and transcendence. These states are no longer grounded in physical places, but in mental terrains manufactured through interfaces—simulacra of a reality we yearn for yet cannot reach. FULL CIRCLE is a meditation on these fragile, constructed spaces and on our ongoing search for new forms of connection in a world where permanence and stability are constantly slipping away. <br><br>
 

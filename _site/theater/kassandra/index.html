@@ -78,30 +78,36 @@
 
   <script src="/script.js"></script>
   <script>
-    // Theater gallery navigation with arrow keys
+    // Theater gallery navigation
     document.addEventListener('DOMContentLoaded', function() {
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      const thumbs = document.querySelectorAll('.gallery-thumb');
+      const gallery = null;
       let currentIndex = 0;
+      const leftArrow = document.querySelector('.gallery-arrow-left');
+      const rightArrow = document.querySelector('.gallery-arrow-right');
 
       function showImage(index) {
-        if (index >= 0 && index < thumbs.length) {
+        if (index >= 0 && index < gallery.length) {
           currentIndex = index;
-          mainImg.src = thumbs[currentIndex].src;
-          
-          // Update active thumbnail
-          thumbs.forEach((thumb, i) => {
-            thumb.classList.toggle('active', i === currentIndex);
-          });
+          mainImg.src = gallery[currentIndex];
+          updateArrows();
         }
       }
 
-      // Thumbnail clicks
-      thumbs.forEach((thumb, index) => {
-        thumb.addEventListener('click', () => showImage(index));
-      });
+      function updateArrows() {
+        if (leftArrow) leftArrow.style.opacity = currentIndex > 0 ? '1' : '0.3';
+        if (rightArrow) rightArrow.style.opacity = currentIndex < gallery.length - 1 ? '1' : '0.3';
+      }
+
+      // Arrow button clicks
+      if (leftArrow) {
+        leftArrow.addEventListener('click', () => showImage(currentIndex - 1));
+      }
+      if (rightArrow) {
+        rightArrow.addEventListener('click', () => showImage(currentIndex + 1));
+      }
 
       // Arrow key navigation
       document.addEventListener('keydown', (e) => {
@@ -112,8 +118,8 @@
         }
       });
 
-      // Initialize first thumbnail as active
-      showImage(0);
+      // Initialize
+      updateArrows();
     });
   </script>
 </body>

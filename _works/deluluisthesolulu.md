@@ -5,12 +5,8 @@ permalink: /works/deluluisthesolulu/
 category: soloworks
 image: /assets/images/works/galleryicons/soloworks/deluluisthesolulu.jpg
 date: 2024-02-09
+youtube: "https://www.youtube.com/embed/5zF9yXSykO8?si=FsmTIIiwQ4xNmTay"
 ---
-
-
-<div class="video-wrapper">
-  <iframe src="https://www.youtube.com/embed/5zF9yXSykO8?si=FsmTIIiwQ4xNmTay" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
 
 <div class="text-container">
 The world seems more spiritual than ever. Scrolling through social media feeds, we are bombarded with thousands of suggestions on how to “find ourselves” and grow spiritually. Where once we prayed to God for salvation in the afterlife, today we perform rituals of self-optimization, hoping that, at some magical moment, we will become the best version of ourselves. The good news is that we no longer need to follow the dictates of dusty old scriptures. We are free to patch together our own private spiritual paths, drawing from whatever we find useful—ancient texts, self-help wisdom, movie quotes, or everyday experiences—all serving as raw material for constructing our personal rituals.

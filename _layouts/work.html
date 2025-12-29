@@ -42,13 +42,88 @@
       </div>
     </div>
     {% if page.youtube %}
-      <div class="video-wrapper">{{ page.youtube }}</div>
+      <div class="video-wrapper">
+        <iframe src="{{ page.youtube }}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     {% endif %}
 
     {{ content }}
 
+    {% if page.credits %}
+    <div class="text-container">
+      <div class="list-container">
+        {% for credit in page.credits %}
+          {% assign parts = credit | split: ', ' %}
+          {% assign job = parts[0] %}
+          {% assign names = parts | shift %}
+          {% for name in names %}
+            <div class="list-item">
+              <span class="job">{% if forloop.first %}{{ job }}{% endif %}</span>
+              <span class="names">{{ name }}</span>
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if page.gallery %}
+    <div class="theater-gallery">
+      <div class="main-image-container">
+        <img id="mainGalleryImg" src="{{ page.gallery[0] }}" alt="Gallery image">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
+      </div>
+    </div>
+    {% endif %}
+
   </main>
 
   <script src="/script.js"></script>
+  <script>
+    // Work gallery navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainImg = document.getElementById('mainGalleryImg');
+      if (!mainImg) return;
+      
+      const gallery = {{ page.gallery | jsonify }};
+      let currentIndex = 0;
+      const leftArrow = document.querySelector('.gallery-arrow-left');
+      const rightArrow = document.querySelector('.gallery-arrow-right');
+
+      function showImage(index) {
+        if (index >= 0 && index < gallery.length) {
+          currentIndex = index;
+          mainImg.src = gallery[currentIndex];
+          updateArrows();
+        }
+      }
+
+      function updateArrows() {
+        if (leftArrow) leftArrow.style.opacity = currentIndex > 0 ? '1' : '0.3';
+        if (rightArrow) rightArrow.style.opacity = currentIndex < gallery.length - 1 ? '1' : '0.3';
+      }
+
+      // Arrow button clicks
+      if (leftArrow) {
+        leftArrow.addEventListener('click', () => showImage(currentIndex - 1));
+      }
+      if (rightArrow) {
+        rightArrow.addEventListener('click', () => showImage(currentIndex + 1));
+      }
+
+      // Arrow key navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          showImage(currentIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          showImage(currentIndex + 1);
+        }
+      });
+
+      // Initialize
+      updateArrows();
+    });
+  </script>
 </body>
 </html>

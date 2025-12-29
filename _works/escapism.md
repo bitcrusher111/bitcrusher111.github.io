@@ -5,10 +5,8 @@ permalink: /works/escapism/
 category: soloworks
 image: /assets/images/works/galleryicons/soloworks/escapism.webp
 date: 2022-11-12
+youtube: "https://www.youtube.com/embed/Tb4AwUfCiDs?si=1pBxY0l3rujGFImk"
 ---
-<div class="video-wrapper">
-  <iframe src="https://www.youtube.com/embed/Tb4AwUfCiDs?si=1pBxY0l3rujGFImk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
 
 <div class="text-container">
   <p>

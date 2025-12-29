@@ -59,12 +59,12 @@
       </div>
     </div>
     
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/5zF9yXSykO8?si=FsmTIIiwQ4xNmTay" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    
 
-    <div class="video-wrapper">
-  <iframe src="https://www.youtube.com/embed/5zF9yXSykO8?si=FsmTIIiwQ4xNmTay" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-</div>
-
-<div class="text-container">
+    <div class="text-container">
 The world seems more spiritual than ever. Scrolling through social media feeds, we are bombarded with thousands of suggestions on how to “find ourselves” and grow spiritually. Where once we prayed to God for salvation in the afterlife, today we perform rituals of self-optimization, hoping that, at some magical moment, we will become the best version of ourselves. The good news is that we no longer need to follow the dictates of dusty old scriptures. We are free to patch together our own private spiritual paths, drawing from whatever we find useful—ancient texts, self-help wisdom, movie quotes, or everyday experiences—all serving as raw material for constructing our personal rituals.
 <br /><br />
 delululu is the solulu is a multiscreen video installation that investigates recurring tropes across the landscape of online self-help and self-optimization. The work is built from hours of Instagram footage, which, in its original feed, appeared in arbitrary order. In this piece, the footage is reorganized and collaged togheter to reveal underlying archetypical patterns. By doing so, delululu is the solulu explores how these “truth-world” theories provide a sense of stability and meaning in our lives, and how superstition evolves into hyperstition—ideas that shape reality simply by being believed.
@@ -73,8 +73,57 @@ delululu is the solulu is a multiscreen video installation that investigates rec
 </div>
 
 
+    
+
+    
+
   </main>
 
   <script src="/script.js"></script>
+  <script>
+    // Work gallery navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainImg = document.getElementById('mainGalleryImg');
+      if (!mainImg) return;
+      
+      const gallery = null;
+      let currentIndex = 0;
+      const leftArrow = document.querySelector('.gallery-arrow-left');
+      const rightArrow = document.querySelector('.gallery-arrow-right');
+
+      function showImage(index) {
+        if (index >= 0 && index < gallery.length) {
+          currentIndex = index;
+          mainImg.src = gallery[currentIndex];
+          updateArrows();
+        }
+      }
+
+      function updateArrows() {
+        if (leftArrow) leftArrow.style.opacity = currentIndex > 0 ? '1' : '0.3';
+        if (rightArrow) rightArrow.style.opacity = currentIndex < gallery.length - 1 ? '1' : '0.3';
+      }
+
+      // Arrow button clicks
+      if (leftArrow) {
+        leftArrow.addEventListener('click', () => showImage(currentIndex - 1));
+      }
+      if (rightArrow) {
+        rightArrow.addEventListener('click', () => showImage(currentIndex + 1));
+      }
+
+      // Arrow key navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          showImage(currentIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          showImage(currentIndex + 1);
+        }
+      });
+
+      // Initialize
+      updateArrows();
+    });
+  </script>
 </body>
 </html>
