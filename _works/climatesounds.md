@@ -3,7 +3,7 @@ title: "climate sounds (2024)"
 layout: work
 permalink: /works/climatesounds/
 category: soloworks
-image: /assets/images/works/galleryicons/soloworks/climatesounds.jpg
+image: /assets/images/works/galleryicons/soloworks/climatesounds.webp
 date: 2024-06-25
 ---
 
