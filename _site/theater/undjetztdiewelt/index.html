@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>und jetzt: die welt (2022)</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
+</head>
+
+<header class="navbar">
+  <h1 class="logo">CANDID RÜTTER</h1>
+  <nav id="nav">
+    <ul class="nav-links">
+      <li><a href="/about.html" data-page="about">about</a></li> 
+      <li><a href="/portfolio.html" data-page="portfolio">portfolio</a></li> 
+      <li><a href="/releases.html" data-page="releases">releases</a></li> 
+      <li><a href="/freelancing.html" data-page="freelancing">freelancing</a></li> 
+      <li><a href="/dates.html" data-page="dates">dates</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main class="theater-page">
+    
+    
+      
+    
+      
+        
+        
+    
+    
+    
+    
+    
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+      <div style="flex: 1; text-align: left;">
+        
+          <a href="/theater/gott/" class="work-nav-link">← GOTT (2023)</a>
+        
+      </div>
+      <h2 style="text-align: center; flex: 2; margin: 0;">und jetzt: die welt (2022)</h2>
+      <div style="flex: 1; text-align: right;">
+        
+          <a href="/theater/kassandra/" class="work-nav-link">kassandra (2018) →</a>
+        
+      </div>
+    </div>
+
+      <section class="theater-content">
+        <div class="text-container">
+  <p>
+        For play und jetzt: die welt a production by Theater St. Gallen 
+        I compose the music. The different pieces of music ranged 
+        from auto-tune pop to deconstructed soundscapes. <br /><br />
+        With the form of my composition I aimed to capture the essence 
+        of the postmodern reality of the protagonist (played by Tabea Buser). 
+        I deliberately avoided creating a traditional narrative structure 
+        within my composition and radically renounced any forms of 
+        leitmotifs and repetitions. Instead, I created a series of 
+        impulsive, radically different pieces that draw heavily on popular culture. <br /><br />
+        Each piece reflects the different emotion or aspect of the 
+        protagonist's monologue and was partly interpreted directly by her. 
+        By using this approach, I tried to draw an analogy to the experience of
+        scrolling through an Instagram feed or other social media platform, 
+        where content is presented in a seemingly random and disconnected way.
+    </p>
+</div>
+
+      </section>
+
+      
+      <div class="text-container">
+        <div class="list-container">
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">performance</span>
+                <span class="names">Tabea Buser</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">direction</span>
+                <span class="names">Jonas Bernetta</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">music</span>
+                <span class="names">Candid Rütter</span>
+              </div>
+            
+          
+        </div>
+      </div>
+      
+
+      
+ 
+  </main>
+  
+
+  <script src="/script.js"></script>
+  <script>
+    // Theater gallery navigation with arrow keys
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainImg = document.getElementById('mainGalleryImg');
+      if (!mainImg) return;
+      
+      const thumbs = document.querySelectorAll('.gallery-thumb');
+      let currentIndex = 0;
+
+      function showImage(index) {
+        if (index >= 0 && index < thumbs.length) {
+          currentIndex = index;
+          mainImg.src = thumbs[currentIndex].src;
+          
+          // Update active thumbnail
+          thumbs.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === currentIndex);
+          });
+        }
+      }
+
+      // Thumbnail clicks
+      thumbs.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => showImage(index));
+      });
+
+      // Arrow key navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          showImage(currentIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          showImage(currentIndex + 1);
+        }
+      });
+
+      // Initialize first thumbnail as active
+      showImage(0);
+    });
+  </script>
+</body>
+</html>

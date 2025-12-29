@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  {% include header.html %}
+
+  <main class="work-page">
+    {% assign sorted_works = site.works | sort: 'date' %}
+    {% for work in sorted_works %}
+      {% if work.url == page.url %}
+        {% assign current_index = forloop.index0 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if current_index > 0 %}
+      {% assign prev_index = current_index | minus: 1 %}
+      {% assign prev_work = sorted_works[prev_index] %}
+    {% endif %}
+    
+    {% assign next_index = current_index | plus: 1 %}
+    {% if next_index < sorted_works.size %}
+      {% assign next_work = sorted_works[next_index] %}
+    {% endif %}
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+      <div style="flex: 1; text-align: left;">
+        {% if next_work %}
+          <a href="{{ next_work.url }}" class="work-nav-link">← {{ next_work.title }}</a>
+        {% endif %}
+      </div>
+      <h2 style="text-align: center; flex: 2; margin: 0;">{{ page.title }}</h2>
+      <div style="flex: 1; text-align: right;">
+        {% if prev_work %}
+          <a href="{{ prev_work.url }}" class="work-nav-link">{{ prev_work.title }} →</a>
+        {% endif %}
+      </div>
+    </div>
+    {% if page.youtube %}
+      <div class="video-wrapper">{{ page.youtube }}</div>
+    {% endif %}
+
+    {{ content }}
+
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>

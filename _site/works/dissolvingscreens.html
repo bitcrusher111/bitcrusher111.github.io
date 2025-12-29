@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<script>
+    fetch("/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML("afterbegin", data);
+  
+        // After inserting the header, highlight the active link
+        const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+        document.querySelectorAll("#nav a").forEach(link => {
+          if (link.dataset.page === currentPage) {
+            link.style.color = "violet"; // Change color for active link
+          }
+        });
+      });
+  </script>
+  
+      
+<body>
+
+     
+     <h2 style="text-align: left;">dissolving screens (2022)</h2>
+     
+     <div class="text-container">
+        <iframe src="https://www.youtube.com/embed/EFZrKr5UpLs?si=tFQuh8haRe_j3Z5G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    </div>
+     <br><br><br>    
+     
+     <div class="vertical-gallery">
+        <img src="/images/works/soloworks/dissolvingscreens/ds1.webp" alt="Description of image">
+        <img src="/images/works/soloworks/dissolvingscreens/ds2.webp" alt="Description of image">
+        <img src="/images/works/soloworks/dissolvingscreens/ds3.avif" alt="Description of image">
+        <img src="/images/works/soloworks/dissolvingscreens/ds4.webp" alt="Description of image">
+        <img src="/images/works/soloworks/dissolvingscreens/ds5.webp" alt="Description of image">
+        <img src="/images/works/soloworks/dissolvingscreens/ds6.webp" alt="Description of image">
+        <img src="/images/works/soloworks/dissolvingscreens/ds7.webp" alt="Description of image">
+    <!-- Add more images as needed -->
+
+
+     
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+
+<script>
+    fetch("/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML("afterbegin", data);
+  
+        // After inserting the header, highlight the active link
+        const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+        document.querySelectorAll("#nav a").forEach(link => {
+          if (link.dataset.page === currentPage) {
+            link.style.color = "violet"; // Change color for active link
+          }
+        });
+      });
+  </script>
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1></h1>
+
+  <h2 style="text-align: left;">a continuous state of flux (2024)</h2>
+ <div class="text-container">
+    <p>
+      audio-visual composition, 7min
+    </p>
+  </div>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ZR9sG5MfQyQ?si=eWarnWkSQmUCSuyb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  <div class="text-container">
+    <p>
+      Being online means being connected to a greater circuit. Through our daily rituals of consumption and production, we engage in a reciprocal exchange with forces of a mystical and nebulous unknown. 
+    </p>
+  </div>
+
+  <div class="text-container">
+    <img src="/images/works/soloworks/acontinuousstateofflux/acsof_still1.png" alt="Still 1">
+  </div>
+
+  <div class="text-container">
+    <p>
+      Between a defined past and an uncertain future we´re trapped in a scape of endless possibilities. 
+    </p>
+  </div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O-qU7rQNUzA?si=JEuHh-dZWUDeyFoU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<div class="text-container">
+    <p>
+      What happens when the symbolic order that structures our reality begins to erode? What happens when we fall out of the circuit and drown in a sea of noise?
+    </p>
+  </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</body>
+<p class="end-text">this page ends here</p>
+<br>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ULTRABLAU (2024)</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
+</head>
+
+<header class="navbar">
+  <h1 class="logo">CANDID RÜTTER</h1>
+  <nav id="nav">
+    <ul class="nav-links">
+      <li><a href="/about.html" data-page="about">about</a></li> 
+      <li><a href="/portfolio.html" data-page="portfolio">portfolio</a></li> 
+      <li><a href="/releases.html" data-page="releases">releases</a></li> 
+      <li><a href="/freelancing.html" data-page="freelancing">freelancing</a></li> 
+      <li><a href="/dates.html" data-page="dates">dates</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main class="theater-page">
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+        
+    
+    
+    
+    
+    
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+      <div style="flex: 1; text-align: left;">
+        
+          <a href="/theater/motheroctopus/" class="work-nav-link">← mother octopus (2024)</a>
+        
+      </div>
+      <h2 style="text-align: center; flex: 2; margin: 0;">ULTRABLAU (2024)</h2>
+      <div style="flex: 1; text-align: right;">
+        
+          <a href="/theater/iwanttobeocean/" class="work-nav-link">i want to be ocean (2024) →</a>
+        
+      </div>
+    </div>
+
+      <section class="theater-content">
+        <div class="text-container">
+  <p>Between overly long summer afternoons, increasingly loud crickets and shimmering heat, we become witnesses of a changing environment. While the heat robs us of sleep, the world itself seems to be in turmoil. How do we navigate these changing conditions? In an atmospheric evening of theatre, ultrablau explores the feeling when the ground beneath our feet begins to shake. <br /><br />
+        The theatre piece Ultrablau is the first joint work by Kaija Knauer, Selina Pfeiffer and Jonas Bernetta. From their starting point, their interest in strategies for staging and making the climate crisis tangible, they are working with performative, documentary and multimedia approaches in search of a form that could perhaps be described as a theatre essay.</p>
+</div>
+
+      </section>
+
+      
+      <div class="text-container">
+        <div class="list-container">
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">performance</span>
+                <span class="names">Fiona Rae Brunner</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">performance</span>
+                <span class="names">Marie Nest</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">direction</span>
+                <span class="names">Jonas Bernetta</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">dramaturgy</span>
+                <span class="names">Kajia Knauer</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">set-/ lightdesign</span>
+                <span class="names">Ivalina Yapova</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">video</span>
+                <span class="names">Selina Pfeiffer</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">music</span>
+                <span class="names">Candid Rütter</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">costume</span>
+                <span class="names">Luca Tarelli</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">office</span>
+                <span class="names">Adrian Fähndrich</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">production</span>
+                <span class="names">Ramun Bernetta</span>
+              </div>
+            
+          
+        </div>
+      </div>
+      
+
+      
+ 
+  </main>
+  
+
+  <script src="/script.js"></script>
+  <script>
+    // Theater gallery navigation with arrow keys
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainImg = document.getElementById('mainGalleryImg');
+      if (!mainImg) return;
+      
+      const thumbs = document.querySelectorAll('.gallery-thumb');
+      let currentIndex = 0;
+
+      function showImage(index) {
+        if (index >= 0 && index < thumbs.length) {
+          currentIndex = index;
+          mainImg.src = thumbs[currentIndex].src;
+          
+          // Update active thumbnail
+          thumbs.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === currentIndex);
+          });
+        }
+      }
+
+      // Thumbnail clicks
+      thumbs.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => showImage(index));
+      });
+
+      // Arrow key navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          showImage(currentIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          showImage(currentIndex + 1);
+        }
+      });
+
+      // Initialize first thumbnail as active
+      showImage(0);
+    });
+  </script>
+</body>
+</html>

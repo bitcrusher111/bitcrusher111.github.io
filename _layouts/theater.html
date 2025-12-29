@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  {% include header.html %}
+
+  <main class="theater-page">
+    {% assign sorted_theater = site.theater | sort: 'date' %}
+    {% for item in sorted_theater %}
+      {% if item.url == page.url %}
+        {% assign current_index = forloop.index0 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if current_index > 0 %}
+      {% assign prev_index = current_index | minus: 1 %}
+      {% assign prev_item = sorted_theater[prev_index] %}
+    {% endif %}
+    
+    {% assign next_index = current_index | plus: 1 %}
+    {% if next_index < sorted_theater.size %}
+      {% assign next_item = sorted_theater[next_index] %}
+    {% endif %}
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+      <div style="flex: 1; text-align: left;">
+        {% if next_item %}
+          <a href="{{ next_item.url }}" class="work-nav-link">← {{ next_item.title }}</a>
+        {% endif %}
+      </div>
+      <h2 style="text-align: center; flex: 2; margin: 0;">{{ page.title }}</h2>
+      <div style="flex: 1; text-align: right;">
+        {% if prev_item %}
+          <a href="{{ prev_item.url }}" class="work-nav-link">{{ prev_item.title }} →</a>
+        {% endif %}
+      </div>
+    </div>
+
+      <section class="theater-content">
+        {{ content }}
+      </section>
+
+      {% if page.credits %}
+      <div class="text-container">
+        <div class="list-container">
+          {% for credit in page.credits %}
+            {% assign parts = credit | split: ', ' %}
+            {% assign job = parts[0] %}
+            {% assign names = parts | shift %}
+            {% for name in names %}
+              <div class="list-item">
+                <span class="job">{% if forloop.first %}{{ job }}{% endif %}</span>
+                <span class="names">{{ name }}</span>
+              </div>
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if page.gallery %}
+      <div class="theater-gallery">
+        <div class="main-image-container">
+          <img id="mainGalleryImg" src="{{ page.gallery[0] }}" alt="Gallery image">
+        </div>
+        <div class="gallery-thumbnails">
+          {% for image in page.gallery %}
+            <img src="{{ image }}" alt="Thumbnail {{ forloop.index }}" class="gallery-thumb">
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+ 
+  </main>
+  
+
+  <script src="/script.js"></script>
+  <script>
+    // Theater gallery navigation with arrow keys
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainImg = document.getElementById('mainGalleryImg');
+      if (!mainImg) return;
+      
+      const thumbs = document.querySelectorAll('.gallery-thumb');
+      let currentIndex = 0;
+
+      function showImage(index) {
+        if (index >= 0 && index < thumbs.length) {
+          currentIndex = index;
+          mainImg.src = thumbs[currentIndex].src;
+          
+          // Update active thumbnail
+          thumbs.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === currentIndex);
+          });
+        }
+      }
+
+      // Thumbnail clicks
+      thumbs.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => showImage(index));
+      });
+
+      // Arrow key navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          showImage(currentIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          showImage(currentIndex + 1);
+        }
+      });
+
+      // Initialize first thumbnail as active
+      showImage(0);
+    });
+  </script>
+</body>
+</html>

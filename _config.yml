@@ -1,0 +1,42 @@
+collections:
+  works:
+    output: true
+    permalink: /works/:name/
+  theater:
+    output: true
+    permalink: /theater/:name/
+  ongoing:
+    output: true
+    permalink: /ongoing/:name/
+  other:
+    output: true
+    permalink: /other/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "works"
+    values:
+      layout: "work"
+  - scope:
+      path: ""
+      type: "theater"
+    values:
+      layout: "theater"
+  - scope:
+      path: ""
+      type: "ongoing"
+    values:
+      layout: "work"
+  - scope:
+      path: ""
+      type: "other"
+    values:
+      layout: "work"
+
+exclude:
+  - vendor
+  - .bundle
+  - Gemfile
+  - Gemfile.lock
+  - node_modules

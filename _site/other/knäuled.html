@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        fetch("/header.html")
+          .then(response => response.text())
+          .then(data => {
+            document.body.insertAdjacentHTML("afterbegin", data);
+      
+            // After inserting the header, highlight the active link
+            const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+            document.querySelectorAll("#nav a").forEach(link => {
+              if (link.dataset.page === currentPage) {
+                link.style.color = "violet"; // Change color for active link
+              }
+            });
+          });
+      </script>
+
+<body>
+    <h1></h1>
+   <br>
+     <h2 style="text-align: left;">Knäuled (2025)</h2> <br>
+    
+    
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/MKy2f5uV9F4?si=7yG4HtgWZ-BE6sC6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="text-container">
+   
+    </div>
+  
+</body>
+
+</html>

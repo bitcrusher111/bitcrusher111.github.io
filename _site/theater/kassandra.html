@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<script>
+    fetch("/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML("afterbegin", data);
+  
+        // After inserting the header, highlight the active link
+        const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+        document.querySelectorAll("#nav a").forEach(link => {
+          if (link.dataset.page === currentPage) {
+            link.style.color = "violet"; // Change color for active link
+          }
+        });
+      });
+  </script>
+  
+<body>
+   
+     <h2 style="text-align: left;">kassandra (2018)</h2>
+    
+     <div class="text-container">
+        <p>
+            Cassandra, the most beautiful daughter of the king of Troy and priestess of the sun god Apollo. 
+            She is doomed to foresee the downfall of her people and her city, 
+            but no one believes her prophecies. 
+            For three thousand years, her tragic fate has moved our minds. 
+            ‘ΕΓΩ ΚΑΣΣΑΝΔΡΑ...’ sets out in search of the essence of a 
+            complex and torn character.
+        </p>
+    </div>
+    
+     
+</div>
+
+     <script src="https://player.vimeo.com/api/player.js"></script>
+    
+     <!-- Include the JavaScript file -->
+     <script src="/script.js"></script>
+</body>
+</html>

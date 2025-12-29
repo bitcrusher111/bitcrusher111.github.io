@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>make me happy (2025)</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
+</head>
+
+<header class="navbar">
+  <h1 class="logo">CANDID RÜTTER</h1>
+  <nav id="nav">
+    <ul class="nav-links">
+      <li><a href="/about.html" data-page="about">about</a></li> 
+      <li><a href="/portfolio.html" data-page="portfolio">portfolio</a></li> 
+      <li><a href="/releases.html" data-page="releases">releases</a></li> 
+      <li><a href="/freelancing.html" data-page="freelancing">freelancing</a></li> 
+      <li><a href="/dates.html" data-page="dates">dates</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main class="theater-page">
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+        
+    
+    
+    
+    
+    
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+      <div style="flex: 1; text-align: left;">
+        
+          <a href="/theater/hardbreak/" class="work-nav-link">← hard_break <3 (2025)</a>
+        
+      </div>
+      <h2 style="text-align: center; flex: 2; margin: 0;">make me happy (2025)</h2>
+      <div style="flex: 1; text-align: right;">
+        
+          <a href="/theater/motheroctopus/" class="work-nav-link">mother octopus (2024) →</a>
+        
+      </div>
+    </div>
+
+      <section class="theater-content">
+        <div class="text-container">
+  <p>
+    Wer bist Du, was bin Ich darin, und wo beginnt das Wir? 
+    Make Me Happy erkundet mit skizzenhaften Schlagerzitaten das Hochgefühl der Begegnung, das manchmal eher einem flüchtigen Dopaminrausch ähnelt als einer romantischen Erleuchtung. Und wagt sich dabei an die tiefe Kluft, die entsteht, wenn die Sprache nicht in der Lage ist, unsere gelebten Erfahrungen in Worte zu fassen.
+  </p>
+</div>
+
+      </section>
+
+      
+      <div class="text-container">
+        <div class="list-container">
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">choreography/concept</span>
+                <span class="names">Paul Behren</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">dance</span>
+                <span class="names">Sindy Tscherrig</span>
+              </div>
+            
+              <div class="list-item">
+                <span class="job"></span>
+                <span class="names">Nina Richard</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">video</span>
+                <span class="names">Anna Armann</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">light design</span>
+                <span class="names">Eigenmann Lichtgestaltung/Adriana Carlotta Berwert</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">sound design</span>
+                <span class="names">Candid Rütter</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">dramaturgical consulting</span>
+                <span class="names">Lilly Kur</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">text</span>
+                <span class="names">Lilly Kur</span>
+              </div>
+            
+              <div class="list-item">
+                <span class="job"></span>
+                <span class="names">Paul Behren</span>
+              </div>
+            
+          
+            
+            
+            
+            
+              <div class="list-item">
+                <span class="job">technical</span>
+                <span class="names">BTW ZHdK</span>
+              </div>
+            
+          
+        </div>
+      </div>
+      
+
+      
+ 
+  </main>
+  
+
+  <script src="/script.js"></script>
+  <script>
+    // Theater gallery navigation with arrow keys
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainImg = document.getElementById('mainGalleryImg');
+      if (!mainImg) return;
+      
+      const thumbs = document.querySelectorAll('.gallery-thumb');
+      let currentIndex = 0;
+
+      function showImage(index) {
+        if (index >= 0 && index < thumbs.length) {
+          currentIndex = index;
+          mainImg.src = thumbs[currentIndex].src;
+          
+          // Update active thumbnail
+          thumbs.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === currentIndex);
+          });
+        }
+      }
+
+      // Thumbnail clicks
+      thumbs.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => showImage(index));
+      });
+
+      // Arrow key navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          showImage(currentIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          showImage(currentIndex + 1);
+        }
+      });
+
+      // Initialize first thumbnail as active
+      showImage(0);
+    });
+  </script>
+</body>
+</html>

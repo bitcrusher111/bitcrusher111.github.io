@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<script>
+    fetch("/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML("afterbegin", data);
+  
+        // After inserting the header, highlight the active link
+        const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+        document.querySelectorAll("#nav a").forEach(link => {
+          if (link.dataset.page === currentPage) {
+            link.style.color = "violet"; // Change color for active link
+          }
+        });
+      });
+  </script>
+  
+<body>
+    
+     
+     <h2 style="text-align: left;">holy water (2024)</h2>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/rcfLqninbxQ?si=YoJfQDlFdDGcq78G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+     <div class="text-container">
+       
+       
+        <div class="list-container">
+            <br>
+            <div class="list-item">
+                <span class="job">performance</span>
+                <span class="names">Liza Kereselidze</span>
+            </div>
+            <div class="list-item">
+                <span class="job">composition</span>
+                <span class="names">Candid Rütter</span>
+            </div>
+            <div class="list-item">
+                <span class="job">video/ lights</span>
+                <span class="names">Candid Rütter</span>
+            </div>
+            <div class="list-item">
+                <span class="job">costume</span>
+                <span class="names">Liza Kereselidze, Candid Rütter</span>
+            </div>
+            <div class="list-item">
+                <span class="job">make-up</span>
+                <span class="names">Liza Kereselidze, Marco Merenda</span>
+            </div>
+        
+            <br>
+            
+        </div>
+        Water is the foundation of all life, but also a force capable of immense destruction. It sustains and extinguishes life, shaping the living and the inert alike. It permeates matter and spirit, flowing with a quiet persistence, carving its way bit by bit. It is both a whisper and a roar, absorbing the noise around it while creating its own.
+        Its existence and effects are beyond the capacity of the human mind, beyond our ability to fully grasp or contain it within any single perspective. We can perceive only fragments of its totality as its influence spreads across the globe and into every facet of life, often in ways that are subtle, imperceptible, or delayed. It is a medium through which the world is continually shaped and reformed. 
+        HOLY WATER is a multimedia ritual that attempts to capture this vast and transcendent nature of water. A nature that defies the limits of our scientific, anthropocentric and rationalized understanding.
+
+    </div>
+    
+     
+</div>
+
+     <script src="https://player.vimeo.com/api/player.js"></script>
+    
+     <!-- Include the JavaScript file -->
+     <script src="/script.js"></script>
+</body>
+</html>

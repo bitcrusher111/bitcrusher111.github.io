@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<script>
+    fetch("/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML("afterbegin", data);
+  
+        // After inserting the header, highlight the active link
+        const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+        document.querySelectorAll("#nav a").forEach(link => {
+          if (link.dataset.page === currentPage) {
+            link.style.color = "violet"; // Change color for active link
+          }
+        });
+      });
+  </script>
+  
+
+<body>
+    
+     <h2 style="text-align: left;">ULTRABLAU (2024)</h2>
+    
+     <div class="text-container">
+        <p>Between overly long summer afternoons, increasingly loud crickets and shimmering heat, we become witnesses of a changing environment. While the heat robs us of sleep, the world itself seems to be in turmoil. How do we navigate these changing conditions? In an atmospheric evening of theatre, ultrablau explores the feeling when the ground beneath our feet begins to shake. <br><br>
+        The theatre piece Ultrablau is the first joint work by Kaija Knauer, Selina Pfeiffer and Jonas Bernetta. From their starting point, their interest in strategies for staging and making the climate crisis tangible, they are working with performative, documentary and multimedia approaches in search of a form that could perhaps be described as a theatre essay.
+        
+        <div class="list-container">
+            <div class="list-item">
+                <span class="job">with</span>
+                <span class="names">Fiona Rae Brunnder, Marie Nest</span>
+            </div>
+            <div class="list-item">
+                <span class="job">direction</span>
+                <span class="names">Jonas Bernetta</span>
+            </div>
+            <div class="list-item">
+                <span class="job">dramaturgy</span>
+                <span class="names">Kajia Knauer</span>
+            </div>
+            <div class="list-item">
+                <span class="job">set-/ lightdesign</span>
+                <span class="names">Ivalina Yapova</span>
+            </div>
+            <div class="list-item">
+                <span class="job">video</span>
+                <span class="names">Selina Pfeiffer</span>
+            </div>
+            <div class="list-item">
+                <span class="job">music</span>
+                <span class="names">Candid Rütter</span>
+            </div>
+            <div class="list-item">
+                <span class="job">costume</span>
+                <span class="names">Luca Tarelli</span>
+            </div>
+            <div class="list-item">
+                <span class="job">office</span>
+                <span class="names">Adrian Fähndrich</span>
+            </div>
+            <div class="list-item">
+                <span class="job">production</span>
+                <span class="names">Ramun Bernetta</span>
+            </div>
+        </div>
+        
+
+</body>
+</html>

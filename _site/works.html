@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
+</head>
+
+<script>
+  fetch("/header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.body.insertAdjacentHTML("afterbegin", data);
+
+      // After inserting the header, highlight the active link
+      const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+      document.querySelectorAll("#nav a").forEach(link => {
+        if (link.dataset.page === currentPage) {
+          link.style.color = "violet"; // Change color for active link
+        }
+      });
+    });
+</script>
+
+
+
+<body>
+  <h1>
+     <div class="title_gallery">SOLO WORKS</div>
+     <div class="gallery gallery_works">
+    <a href="works/foldsofsilk.html" class="gallery-item">
+    <img src="/images/works/galleryicons/soloworks/foldsofsilk.jpg" alt="Image 1">
+    <div class="overlay">folds of silk (2025)</div>
+    </a>
+    <a href="works/fullcircle.html" class="gallery-item">
+      <img src="images/works/galleryicons/soloworks/fullcircle.jpg" alt="Image 1">
+      <div class="overlay">FULL CIRCLE (2025)</div>
+    </a>
+    <a href="works/holywater.html" class="gallery-item">
+      <img src="images/works/galleryicons/soloworks/holywater.jpg" alt="Image 1">
+      <div class="overlay">HOLY WATER (2024)</div>
+    </a>
+    <a href="works/acontinuousstateofflux.html" class="gallery-item">
+      <img src="images/works/galleryicons/soloworks/csof.jpg" alt="Image 2">
+      <div class="overlay">a continuous state of flux (2024)</div>
+    </a>
+    <a href="https://motile.ch/projekte/climate-sounds/" class="gallery-item">
+      <img src="images/works/galleryicons/soloworks/climatesounds.webp" alt="Image 3">
+      <div class="overlay">climate sounds (2024)</div>
+    </a>    
+    <a href="works/deluluisthesolulu.html" class="gallery-item">
+      <img src="images/works/galleryicons/soloworks/dits.jpg" alt="Image 3">
+      <div class="overlay">delulu is the solulu (2024)</div>
+    </a>
+    <a href="works/escapism.html" class="gallery-item">
+      <img src="images/works/galleryicons/soloworks/escapism.webp" alt="Image 3">
+      <div class="overlay">escapism (2022)</div>
+    </a>
+    <a href="works/dissolvingscreens.html" class="gallery-item">
+      <img src="images/works/galleryicons/soloworks/dissolvingscreens.webp" alt="Image 3">
+      <div class="overlay">dissolving screens (2022)</div>
+    </a>
+    <!--<a href="link3.html" class="gallery-item">
+      <img src="/images/works/Galleryicons/soloworks/lonefluke.webp" alt="Image 3">
+      <div class="overlay">lone fluke</div> -->
+    </a>
+ 
+  </div>
+  <br><br>
+  <div class="title_gallery">MUSIC FOR THEATER, DANCE AND PERFORMANCE</div>
+
+  <div class="gallery gallery_works">
+    <!--<a href="link2.html" class="gallery-item">
+      <img src="/images/works/dummy1.png" alt="Image 2">
+      <div class="overlay">mother octopus</div> -->
+    </a>
+    <a href="theater/makemehappy.html" class="gallery-item">
+      <img src="images/works/galleryicons/theatermusic/mmh.jpeg" alt="Image 3">
+      <div class="overlay">make me happy (2025)</div>
+    </a>
+    <a href="theater/motheroctopus.html" class="gallery-item">
+      <img src="images/works/galleryicons/theatermusic/motheroctopus.jpeg" alt="Image 3">
+      <div class="overlay">mother octopus (2024)</div>
+    </a>
+    <a href="theater/ultrablau.html" class="gallery-item">
+      <img src="images/works/galleryicons/theatermusic/ultrablau.jpg" alt="Image 3">
+      <div class="overlay">ULTRABLAU (2024)</div>
+    </a>
+    <a href="theater/iwanttobeocean.html" class="gallery-item">
+      <img src="images/works/galleryicons/theatermusic/iwtbo.jpg" alt="Image 3">
+      <div class="overlay">i want to be ocean (2024)</div>
+    </a>
+    <a href="theater/gott.html" class="gallery-item">
+      <img src="images/works/galleryicons/theatermusic/gott.webp" alt="Image 3">
+      <div class="overlay">GOTT (2023)</div>
+    <a href="theater/undjetztdiewelt.html" class="gallery-item">
+      <img src="images/works/galleryicons/theatermusic/ujdw.webp" alt="Image 3">
+      <div class="overlay">und jetzt: die welt (2022)</div>
+    </a>
+    <a href="theater/kassandra.html" class="gallery-item">
+      <img src="images/works/galleryicons/theatermusic/kassandra.webp" alt="Image 3">
+      <div class="overlay">kassandra (2018)</div>
+    </a>
+  </div>
+  <br> <br>
+<div class="title_gallery">ONGOING PROJECTS</div>
+
+
+     <div class="gallery gallery_works">
+       <a href="https://linktr.ee/prixgaranti" class="gallery-item">
+         <img src="images/works/galleryicons/ongoingprojects/prixgaranti.webp" alt="Image 1">
+         <div class="overlay">PRIX GARANTI</div>
+       </a>
+       <a href="ongoing/RT60.html" class="gallery-item">
+         <img src="images/works/galleryicons/ongoingprojects/rt60.webp" alt="Image 2">
+         <div class="overlay">RT60</div>
+        </a> <a href="https://crttr.ch/" class="gallery-item">
+          <img src="images/works/galleryicons/ongoingprojects/crttr.jpg" alt="Image 1">
+          <div class="overlay">CRTTR</div>
+        </a> <a href="https://soundcloud.com/radar-radio-793120527" class="gallery-item">
+          <img src="images/works/galleryicons/ongoingprojects/radar.webp" alt="Image 2">
+          <div class="overlay">RADAR</div>
+        </a></div>
+  
+  <br><br>
+<div class="title_gallery">  OTHER</div>
+  
+  <div class="gallery gallery_works">
+    <a href="https://www.radialsystem.de/de/veranstaltungen/terminal-infinity/" class="gallery-item">
+      <img src="images/works/galleryicons/other/terminalinfinity.jpg" alt="Image 1">
+      <div class="overlay">terminal infinity (2025)</div>
+    </a>
+    <a href="other/knäuled.html" class="gallery-item">
+      <img src="images/works/galleryicons/other/knäuled.jpg" alt="Image 1">
+      <div class="overlay">knäuled (2025)</div>
+    </a>
+    <a href="http://alexanderschubert.net/works/Asterism.php" class="gallery-item">
+      <img src="images/works/galleryicons/other/asterism.jpg" alt="Image 1">
+      <div class="overlay">asterism (2022)</div>
+    </a>
+    
+  </div>
+     <!-- Include the JavaScript file -->
+     <script src="/script.js" defer></script>
+</body>
+<br>
+<br>
+<br>
+<br>
+
+<p class="end-text">this page ends here</p>
+<br>
+</html>

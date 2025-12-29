@@ -1,60 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+title: Dates
+layout: default
+title: Dates
+permalink: /dates.html
+
+---
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>Dates</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
 </head>
-
-<script>
-    fetch("/header.html")
-      .then(response => response.text())
-      .then(data => {
-        document.body.insertAdjacentHTML("afterbegin", data);
-  
-        // After inserting the header, highlight the active link
-        const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
-        document.querySelectorAll("#nav a").forEach(link => {
-          if (link.dataset.page === currentPage) {
-            link.style.color = "violet"; // Change color for active link
-          }
-        });
-      });
-  </script>
-  
 <body>
-    <h1></h1>
-     <!-- Include the navigation bar -->
-   <br>
-    
+  {% include header.html %}
+  <br>
+  <br>
 
      <div class="spacer1"></div>
     
-     <!DOCTYPE html>
-     <html lang="en">
-     <head>
-         <meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <title>CSV to Table</title>
-         <link rel="stylesheet" href="styles.css">  <!-- Link to the external CSS file -->
-     </head>
-     <body>
-      <div class="dates">
+     <div class="dates">
         upcoming events  <br><br>
-        16.10.2025 @Ligeti Zentrum Hamburg, Holy Water, Multimediale Komposition <br>
-        25.10.2025 @Resonanzraum Hamburg, Silkroad Festival, Faltenwurf, Komposition für Ensemble <br>
-        21.11.2025 @Kampnagel Hamburg, Heartbreak by Marco Merenda, Theatermusik<br>
-        22.11.2025 @Kampnagel Hamburg, Heartbreak by Marco Merenda, Theatermusik<br>
-        --.12.2025 @Theater Wiesendam Hamburg, TBA by Niyousha Azaari, Theatermusik<br>
-        28.04.2026 @Theater Chur, Engel der Vernichtung (Premiere) by Jonas Bernetta, Theatermusik<br>
+        23.01.2026 @Kampnagel Hamburg, DJ Set <br>
+        28.04.2026 @Theater Chur, Engel der Vernichtung (Premiere) by Jonas Bernetta, Theatermusik <br>
         --.06.2026 Premiere TROJA by Theaterleute Küssnacht @Küssnacht, Luzern <br>
+        16.07.2026 @FORUM HFMT, Master Abschlusskonzert <br>
 
-        <br>
+        
         <br>  <br>
         past events <br><br>
+         --.12.2025 @Theater Wiesendam Hamburg, TBA by Niyousha Azaari, Theatermusik<br>
+        22.11.2025 @Kampnagel Hamburg, Heartbreak by Marco Merenda, Theatermusik<br>
+        21.11.2025 @Kampnagel Hamburg, Heartbreak by Marco Merenda, Theatermusik<br>
+        25.10.2025 @Resonanzraum Hamburg, Silkroad Festival, Faltenwurf, Komposition für Ensemble <br>
+        16.10.2025 @Ligeti Zentrum Hamburg, Holy Water, Multimediale Komposition <br>
         05.09.2025 Vernissage DJ set @Fotomuseum Deichtorhallen <br>
         18.07.2025 semesterconcert @MFS, HFMT Hamburg <br>
         08.06.2025 Fringify, Videomapping für 'a peculiar state' by Christopher Ramm @Tonali Saal, HFMT Hamburg <br>
@@ -159,12 +138,7 @@
         <br>
     
       </div>
-        </body>
-   
-        
 
- 
-     <!-- Include the JavaScript file -->
      <script src="/script.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<script>
+    fetch("/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML("afterbegin", data);
+  
+        // After inserting the header, highlight the active link
+        const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+        document.querySelectorAll("#nav a").forEach(link => {
+          if (link.dataset.page === currentPage) {
+            link.style.color = "violet"; // Change color for active link
+          }
+        });
+      });
+  </script>
+  
+<body>
+    
+     
+     <h2 style="text-align: left;">escapism (2022)</h2>
+     
+   
+     
+     
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/Tb4AwUfCiDs?si=1pBxY0l3rujGFImk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <br><br>
+     <div class="text-container">
+    
+            Escapism is a series of audiovisual works that explore the visual and acoustic phenomena created by the use of strobe lights and loud sound. A voice instructs the recipients to close their eyes and look inside their eyelids. This controlled environment allows for a journey through different hallucinatory states. The recipients are invited to explore the properties of their visual and auditory senses under extreme conditions. escapism pt. I was premiered at SOSO Space Bern. Escapism II was exhibited at the backslash festival in Zurich.  
+            <br><br><br>Warning!!! The following video contains fast flashing lights. It may cause discomfort and trigger seizures for people with photosensitive Epilepsy
+            <br><br>
+            
+            <iframe width="100%" height="40%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1480582150%3Fsecret_token%3Ds-OMltETBF4U2&color=%23040404&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dataflegs" title="dataflex" target="_blank" style="color: #cccccc; text-decoration: none;">dataflex</a> · <a href="https://soundcloud.com/dataflegs/escapism/s-OMltETBF4U2" title="Escapism" target="_blank" style="color: #cccccc; text-decoration: none;">Escapism</a>
+        <br><br><br>    
+   
+   
+    
+     
+</body>
+</html>

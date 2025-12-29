@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<script>
+    fetch("/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML("afterbegin", data);
+  
+        // After inserting the header, highlight the active link
+        const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+        document.querySelectorAll("#nav a").forEach(link => {
+          if (link.dataset.page === currentPage) {
+            link.style.color = "violet"; // Change color for active link
+          }
+        });
+      });
+  </script>
+  
+<body>
+    
+     <h2 style="text-align: left;">GOTT (2023)</h2>
+    
+     <div class="text-container">
+        <p>
+            Elisabeth Gärtner no longer wants to live after the death of her husband. The 78-year-old requests a prescription for a lethal medication from her medical officer, Dr Brandt. But the doctor does not want to assist a suicide. She does not think it is right to help a healthy person commit suicide - Mrs Gärtner is not ill and is not suffering from severe pain. In an ethics council, legal, medical and theological experts discuss the case as an example and offer a variety of positions and perspectives on the socially controversial topic of euthanasia. Do people have a right to a self-determined death? Who decides on our death? Who does our life belong to - a god, society, our family or just ourselves?
+            <br><br>The lawyer and successful author Ferdinand von Schirach shows the complexity of the topic and forces the audience to rethink their personal stance on the subject through the multi-layered arguments. As with the global success Terror, the audience has the last word in Gott.
+            Graubünden director Jonas Bernetta brings the highly topical debate play to the stage in a text version adapted to Swiss circumstances and regulations. Eighty-year-old actress Heidi Maria Glössner can be seen in the role of Elisabeth Gärtner.
+        </p>
+    </div>
+    
+     
+</div>
+
+</body>
+</html>

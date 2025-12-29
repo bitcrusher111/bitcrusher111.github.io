@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kassandra (2018)</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
+</head>
+
+<header class="navbar">
+  <h1 class="logo">CANDID RÜTTER</h1>
+  <nav id="nav">
+    <ul class="nav-links">
+      <li><a href="/about.html" data-page="about">about</a></li> 
+      <li><a href="/portfolio.html" data-page="portfolio">portfolio</a></li> 
+      <li><a href="/releases.html" data-page="releases">releases</a></li> 
+      <li><a href="/freelancing.html" data-page="freelancing">freelancing</a></li> 
+      <li><a href="/dates.html" data-page="dates">dates</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main class="theater-page">
+    
+    
+      
+        
+        
+    
+    
+    
+    
+    
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+      <div style="flex: 1; text-align: left;">
+        
+          <a href="/theater/undjetztdiewelt/" class="work-nav-link">← und jetzt: die welt (2022)</a>
+        
+      </div>
+      <h2 style="text-align: center; flex: 2; margin: 0;">kassandra (2018)</h2>
+      <div style="flex: 1; text-align: right;">
+        
+      </div>
+    </div>
+
+      <section class="theater-content">
+        <div class="text-container">
+  <p>
+            Cassandra, the most beautiful daughter of the king of Troy and priestess of the sun god Apollo. 
+            She is doomed to foresee the downfall of her people and her city, 
+            but no one believes her prophecies. 
+            For three thousand years, her tragic fate has moved our minds. 
+            ‘ΕΓΩ ΚΑΣΣΑΝΔΡΑ...’ sets out in search of the essence of a 
+            complex and torn character.
+        </p>
+    </div>
+
+<p>&lt;/div&gt;</p>
+
+      </section>
+
+      
+
+      
+ 
+  </main>
+  
+
+  <script src="/script.js"></script>
+  <script>
+    // Theater gallery navigation with arrow keys
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainImg = document.getElementById('mainGalleryImg');
+      if (!mainImg) return;
+      
+      const thumbs = document.querySelectorAll('.gallery-thumb');
+      let currentIndex = 0;
+
+      function showImage(index) {
+        if (index >= 0 && index < thumbs.length) {
+          currentIndex = index;
+          mainImg.src = thumbs[currentIndex].src;
+          
+          // Update active thumbnail
+          thumbs.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === currentIndex);
+          });
+        }
+      }
+
+      // Thumbnail clicks
+      thumbs.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => showImage(index));
+      });
+
+      // Arrow key navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          showImage(currentIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          showImage(currentIndex + 1);
+        }
+      });
+
+      // Initialize first thumbnail as active
+      showImage(0);
+    });
+  </script>
+</body>
+</html>
