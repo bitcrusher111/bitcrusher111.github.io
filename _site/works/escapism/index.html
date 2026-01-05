@@ -84,11 +84,9 @@ At first, the machine presents itself as a system designed to update the audienc
   </main>
 
   <script type="application/json" id="gallery-data">
-    {
-      "images": [
-        
-      ]
-    }
+    [
+      
+    ]
   </script>
 
   <script src="/script.js"></script>
@@ -98,8 +96,7 @@ At first, the machine presents itself as a system designed to update the audienc
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      const galleryData = JSON.parse(document.getElementById('gallery-data').textContent);
-      const gallery = galleryData.images;
+      const gallery = JSON.parse(document.getElementById('gallery-data').textContent);
       
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');

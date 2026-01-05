@@ -106,16 +106,19 @@
   </main>
 
   <script type="application/json" id="gallery-data">
-    {
-      "images": [
-        {% if page.gallery_folder %}
-          {% assign image_files = site.static_files | where_exp: "file", "file.path contains page.gallery_folder" | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.gif'" | sort: "path" %}
-          {% for image in image_files %}"{{ image.path }}"{% unless forloop.last %},{% endunless %}{% endfor %}
-        {% elsif page.gallery %}
-          {{ page.gallery | jsonify }}
-        {% endif %}
-      ]
-    }
+    [
+      {% if page.gallery_folder %}
+        {% assign image_files = site.static_files | where_exp: "file", "file.path contains page.gallery_folder" %}
+        {% assign jpg_files = image_files | where_exp: "file", "file.extname == '.jpg'" %}
+        {% assign jpeg_files = image_files | where_exp: "file", "file.extname == '.jpeg'" %}
+        {% assign png_files = image_files | where_exp: "file", "file.extname == '.png'" %}
+        {% assign gif_files = image_files | where_exp: "file", "file.extname == '.gif'" %}
+        {% assign all_images = jpg_files | concat: jpeg_files | concat: png_files | concat: gif_files | sort: "path" %}
+        {% for image in all_images %}"{{ image.path }}"{% unless forloop.last %},{% endunless %}{% endfor %}
+      {% elsif page.gallery %}
+        {% for image in page.gallery %}"{{ image }}"{% unless forloop.last %},{% endunless %}{% endfor %}
+      {% endif %}
+    ]
   </script>
 
   <script src="/script.js"></script>
@@ -125,8 +128,7 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      const galleryData = JSON.parse(document.getElementById('gallery-data').textContent);
-      const gallery = galleryData.images;
+      const gallery = JSON.parse(document.getElementById('gallery-data').textContent);
       
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');

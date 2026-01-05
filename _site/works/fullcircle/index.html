@@ -150,11 +150,9 @@
   </main>
 
   <script type="application/json" id="gallery-data">
-    {
-      "images": [
-        
-      ]
-    }
+    [
+      
+    ]
   </script>
 
   <script src="/script.js"></script>
@@ -164,8 +162,7 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      const galleryData = JSON.parse(document.getElementById('gallery-data').textContent);
-      const gallery = galleryData.images;
+      const gallery = JSON.parse(document.getElementById('gallery-data').textContent);
       
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');

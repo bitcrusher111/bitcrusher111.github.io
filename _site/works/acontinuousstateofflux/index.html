@@ -95,13 +95,11 @@
   </main>
 
   <script type="application/json" id="gallery-data">
-    {
-      "images": [
-        
-          ["/assets/images/works/soloworks/acontinuousstateofflux/acsof_still1.png"]
-        
-      ]
-    }
+    [
+      
+        "/assets/images/works/soloworks/acontinuousstateofflux/acsof_still1.png"
+      
+    ]
   </script>
 
   <script src="/script.js"></script>
@@ -111,8 +109,7 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      const galleryData = JSON.parse(document.getElementById('gallery-data').textContent);
-      const gallery = galleryData.images;
+      const gallery = JSON.parse(document.getElementById('gallery-data').textContent);
       
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');
