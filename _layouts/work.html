@@ -67,13 +67,39 @@
     </div>
     {% endif %}
 
-    {% if page.gallery %}
+    {% if page.gallery_folder %}
+      {% assign gallery_images = "" | split: "" %}
+      {% assign image_files = site.static_files | where_exp: "file", "file.path contains page.gallery_folder" | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.gif'" | sort: "path" %}
+      {% for image in image_files %}
+        {% assign gallery_images = gallery_images | push: image.path %}
+      {% endfor %}
+      
+      {% if gallery_images.size > 0 %}
+      <div class="theater-gallery">
+        <div class="main-image-container">
+          <img id="mainGalleryImg" src="{{ gallery_images[0] }}" alt="Gallery image">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
+        </div>
+        {% if page.photo_credits %}
+        <div class="photo-credits" style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: #333;">
+          {{ page.photo_credits }}
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+    {% elsif page.gallery %}
     <div class="theater-gallery">
       <div class="main-image-container">
         <img id="mainGalleryImg" src="{{ page.gallery[0] }}" alt="Gallery image">
         <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
       </div>
+      {% if page.photo_credits %}
+      <div class="photo-credits" style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: #333;">
+        {{ page.photo_credits }}
+      </div>
+      {% endif %}
     </div>
     {% endif %}
 
@@ -86,7 +112,14 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      const gallery = {{ page.gallery | jsonify }};
+      let gallery = [];
+      {% if page.gallery_folder %}
+        {% assign image_files = site.static_files | where_exp: "file", "file.path contains page.gallery_folder" | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.gif'" | sort: "path" %}
+        gallery = [{% for image in image_files %}"{{ image.path }}"{% unless forloop.last %},{% endunless %}{% endfor %}];
+      {% elsif page.gallery %}
+        gallery = {{ page.gallery | jsonify }};
+      {% endif %}
+      
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');
       const rightArrow = document.querySelector('.gallery-arrow-right');

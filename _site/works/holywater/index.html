@@ -148,6 +148,25 @@
     
 
     
+      
+      
+      
+      
+      
+      <div class="theater-gallery">
+        <div class="main-image-container">
+          <img id="mainGalleryImg" src="/images/works/soloworks/holywater/hw_1.jpg" alt="Gallery image">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
+        </div>
+        
+        <div class="photo-credits" style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: #333;">
+          Photos by Swen Wied
+        </div>
+        
+      </div>
+      
+    
 
   </main>
 
@@ -158,7 +177,12 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      const gallery = null;
+      let gallery = [];
+      
+        
+        gallery = ["/images/works/soloworks/holywater/hw_1.jpg","/images/works/soloworks/holywater/hw_2.jpg","/images/works/soloworks/holywater/hw_3.jpg","/images/works/soloworks/holywater/hw_4.jpg","/images/works/soloworks/holywater/hw_5.jpg","/images/works/soloworks/holywater/hw_6.png"];
+      
+      
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');
       const rightArrow = document.querySelector('.gallery-arrow-right');

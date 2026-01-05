@@ -132,6 +132,25 @@
     
 
     
+      
+      
+      
+      
+      
+      <div class="theater-gallery">
+        <div class="main-image-container">
+          <img id="mainGalleryImg" src="/assets/images/works/soloworks/foldsofsilk/fos_1.jpg" alt="Gallery image">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
+        </div>
+        
+        <div class="photo-credits" style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: #333;">
+          Photos by Jörg Modrow
+        </div>
+        
+      </div>
+      
+    
 
   </main>
 
@@ -142,7 +161,12 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      const gallery = null;
+      let gallery = [];
+      
+        
+        gallery = ["/assets/images/works/soloworks/foldsofsilk/fos_1.jpg","/assets/images/works/soloworks/foldsofsilk/fos_2.jpg","/assets/images/works/soloworks/foldsofsilk/fos_3.jpg","/assets/images/works/soloworks/foldsofsilk/fos_4.jpg","/images/works/soloworks/foldsofsilk/fos_1.jpg","/images/works/soloworks/foldsofsilk/fos_2.jpg","/images/works/soloworks/foldsofsilk/fos_3.jpg","/images/works/soloworks/foldsofsilk/fos_4.jpg"];
+      
+      
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');
       const rightArrow = document.querySelector('.gallery-arrow-right');

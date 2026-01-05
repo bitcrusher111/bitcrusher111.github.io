@@ -88,6 +88,7 @@
         <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
       </div>
+      
     </div>
     
 
@@ -100,7 +101,11 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      const gallery = ["/assets/images/works/soloworks/acontinuousstateofflux/acsof_still1.png"];
+      let gallery = [];
+      
+        gallery = ["/assets/images/works/soloworks/acontinuousstateofflux/acsof_still1.png"];
+      
+      
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');
       const rightArrow = document.querySelector('.gallery-arrow-right');

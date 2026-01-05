@@ -12,6 +12,8 @@ credits:
   - "video/ lights, Candid Rütter"
   - "costume, Liza Kereselidze, Candid Rütter"
   - "make-up, Liza Kereselidze, Marco Merenda"
+gallery_folder: /images/works/soloworks/holywater
+photo_credits: Photos by Swen Wied
 ---
 
 <div class="text-container">

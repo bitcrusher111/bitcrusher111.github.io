@@ -74,10 +74,11 @@
     
     <div class="theater-gallery">
       <div class="main-image-container">
-        <img id="mainGalleryImg" src="/assets/images/works/soloworks/dissolvingscreens/ds1.webp" alt="Gallery image">
+        <img id="mainGalleryImg" src="/assets/images/works/soloworks/dissolvingscreens/ds1.jpeg" alt="Gallery image">
         <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
       </div>
+      
     </div>
     
 
@@ -90,7 +91,11 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      const gallery = ["/assets/images/works/soloworks/dissolvingscreens/ds1.webp","/assets/images/works/soloworks/dissolvingscreens/ds2.webp","/assets/images/works/soloworks/dissolvingscreens/ds3.avif","/assets/images/works/soloworks/dissolvingscreens/ds4.webp","/assets/images/works/soloworks/dissolvingscreens/ds5.webp","/assets/images/works/soloworks/dissolvingscreens/ds6.webp","/assets/images/works/soloworks/dissolvingscreens/ds7.webp"];
+      let gallery = [];
+      
+        gallery = ["/assets/images/works/soloworks/dissolvingscreens/ds1.jpeg","/assets/images/works/soloworks/dissolvingscreens/ds2.jpeg","/assets/images/works/soloworks/dissolvingscreens/ds3.jpeg","/assets/images/works/soloworks/dissolvingscreens/ds4.jpeg","/assets/images/works/soloworks/dissolvingscreens/ds5.jpeg","/assets/images/works/soloworks/dissolvingscreens/ds6.jpeg","/assets/images/works/soloworks/dissolvingscreens/ds7.jpeg"];
+      
+      
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');
       const rightArrow = document.querySelector('.gallery-arrow-right');
