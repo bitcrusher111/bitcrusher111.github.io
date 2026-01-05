@@ -154,6 +154,17 @@
 
   </main>
 
+  <script type="application/json" id="gallery-data">
+    {
+      "images": [
+        
+          
+          "/assets/images/works/soloworks/foldsofsilk/fos_1.jpg","/assets/images/works/soloworks/foldsofsilk/fos_2.jpg","/assets/images/works/soloworks/foldsofsilk/fos_3.jpg","/assets/images/works/soloworks/foldsofsilk/fos_4.jpg","/images/works/soloworks/foldsofsilk/fos_1.jpg","/images/works/soloworks/foldsofsilk/fos_2.jpg","/images/works/soloworks/foldsofsilk/fos_3.jpg","/images/works/soloworks/foldsofsilk/fos_4.jpg"
+        
+      ]
+    }
+  </script>
+
   <script src="/script.js"></script>
   <script>
     // Work gallery navigation
@@ -161,11 +172,8 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      let gallery = [];
-      
-        
-        gallery = ["/assets/images/works/soloworks/foldsofsilk/fos_1.jpg","/assets/images/works/soloworks/foldsofsilk/fos_2.jpg","/assets/images/works/soloworks/foldsofsilk/fos_3.jpg","/assets/images/works/soloworks/foldsofsilk/fos_4.jpg","/images/works/soloworks/foldsofsilk/fos_1.jpg","/images/works/soloworks/foldsofsilk/fos_2.jpg","/images/works/soloworks/foldsofsilk/fos_3.jpg","/images/works/soloworks/foldsofsilk/fos_4.jpg"];
-      
+      const galleryData = JSON.parse(document.getElementById('gallery-data').textContent);
+      const gallery = galleryData.images;
       
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');

@@ -170,6 +170,17 @@
 
   </main>
 
+  <script type="application/json" id="gallery-data">
+    {
+      "images": [
+        
+          
+          "/images/works/soloworks/holywater/hw_1.jpg","/images/works/soloworks/holywater/hw_2.jpg","/images/works/soloworks/holywater/hw_3.jpg","/images/works/soloworks/holywater/hw_4.jpg","/images/works/soloworks/holywater/hw_5.jpg","/images/works/soloworks/holywater/hw_6.png"
+        
+      ]
+    }
+  </script>
+
   <script src="/script.js"></script>
   <script>
     // Work gallery navigation
@@ -177,11 +188,8 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      let gallery = [];
-      
-        
-        gallery = ["/images/works/soloworks/holywater/hw_1.jpg","/images/works/soloworks/holywater/hw_2.jpg","/images/works/soloworks/holywater/hw_3.jpg","/images/works/soloworks/holywater/hw_4.jpg","/images/works/soloworks/holywater/hw_5.jpg","/images/works/soloworks/holywater/hw_6.png"];
-      
+      const galleryData = JSON.parse(document.getElementById('gallery-data').textContent);
+      const gallery = galleryData.images;
       
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');

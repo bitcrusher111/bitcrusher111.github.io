@@ -105,6 +105,19 @@
 
   </main>
 
+  <script type="application/json" id="gallery-data">
+    {
+      "images": [
+        {% if page.gallery_folder %}
+          {% assign image_files = site.static_files | where_exp: "file", "file.path contains page.gallery_folder" | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.gif'" | sort: "path" %}
+          {% for image in image_files %}"{{ image.path }}"{% unless forloop.last %},{% endunless %}{% endfor %}
+        {% elsif page.gallery %}
+          {{ page.gallery | jsonify }}
+        {% endif %}
+      ]
+    }
+  </script>
+
   <script src="/script.js"></script>
   <script>
     // Work gallery navigation
@@ -112,13 +125,8 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      let gallery = [];
-      {% if page.gallery_folder %}
-        {% assign image_files = site.static_files | where_exp: "file", "file.path contains page.gallery_folder" | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.gif'" | sort: "path" %}
-        gallery = [{% for image in image_files %}"{{ image.path }}"{% unless forloop.last %},{% endunless %}{% endfor %}];
-      {% elsif page.gallery %}
-        gallery = {{ page.gallery | jsonify }};
-      {% endif %}
+      const galleryData = JSON.parse(document.getElementById('gallery-data').textContent);
+      const gallery = galleryData.images;
       
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');
