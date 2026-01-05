@@ -9,7 +9,7 @@ youtube: "https://www.youtube.com/embed/rcfLqninbxQ?si=YoJfQDlFdDGcq78G"
 credits:
   - "performance, Liza Kereselidze"
   - "composition, Candid Rütter"
-  - "video/ lights, Candid Rütter"
+  - "video/lights, Candid Rütter"
   - "costume, Liza Kereselidze, Candid Rütter"
   - "make-up, Liza Kereselidze, Marco Merenda"
 gallery_folder: /images/works/soloworks/holywater
