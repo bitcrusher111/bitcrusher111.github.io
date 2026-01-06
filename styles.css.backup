@@ -1,0 +1,358 @@
+/*
+  ==============================
+  Base variables & reset
+  ==============================
+*/
+:root {
+  --bg: #000000;
+  --fg: #fff;
+  --accent: violet;
+  --font-body: 'Arial', monospace;
+  --container-width: 1000px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+  ==============================
+  Base layout & typography
+  ==============================
+*/
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding-top: 120px; /* prevent navbar overlap */
+}
+
+h2 {
+  color: var(--accent);
+  font-size: 1.5em;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.title_gallery {
+  font-size: 2em; /* section title */
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  margin-left: 0;
+}
+
+.end-text {
+  text-align: center;
+  color: grey;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/*
+  ==============================
+  Navbar
+  ==============================
+*/
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 30px;
+}
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: black;
+  pointer-events: none;
+}
+
+.logo {
+  color: var(--fg);
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav-links li { margin: 0 15px; }
+
+.nav-links a {
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 20px;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--accent); }
+
+/*
+  ==============================
+  Galleries
+  ==============================
+*/
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery a { text-decoration: none; color: inherit; }
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* sizes per gallery */
+.gallery_works .gallery-item { width: 450px; height: 300px; }
+.gallery_releases .gallery-item { width: 300px; height: 300px; }
+
+/* overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay { opacity: 1; }
+
+/*
+  ==============================
+  Responsive
+  ==============================
+*/
+@media (max-width: 768px) {
+  .gallery-item {
+    width: 100vw;
+    height: calc(100vw * 2 / 3);
+  }
+  .gallery img { width: 100%; height: auto; }
+}
+
+/*
+  ==============================
+  Tables
+  ==============================
+*/
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+th { background-color: #f2f2f2; }
+
+/*
+  ==============================
+  Content containers
+  ==============================
+*/
+.text-container {
+  max-width: var(--container-width);
+  margin: 20px auto;
+  padding: 10px;
+  text-align: left;
+}
+
+.text-container h2 { font-size: 2em; margin-bottom: 1px; }
+.text-container p { font-size: 1em; line-height: 1.4; }
+
+.text-container img { width: 100%; height: auto; display: block; }
+
+.text-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.dates {
+  max-width: 700px;
+  max-height: 600px;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1em;
+}
+
+/*
+  ==============================
+  Lists
+  ==============================
+*/
+.list-container { font-family: var(--font-body); max-width: var(--container-width); margin: 0 auto; text-align: left; }
+.list-item { margin-bottom: 4px; white-space: normal; }
+.job { font-weight: bold; display: inline-block; width: 200px; }
+.name, .names { display: inline-block; padding-left: 0; }
+
+/*
+  ==============================
+  Links
+  ==============================
+*/
+.my-link { color: #f181ea; text-decoration: none; }
+.my-link:hover { color: #3dff33; text-decoration: underline; }
+
+
+/*
+  ==============================
+  Work pages
+  ==============================
+*/
+.work-page {
+  max-width: var(--container-width);
+  width: 100%;
+  margin: 20px auto;
+}
+
+.theater-page {
+  max-width: var(--container-width);
+  width: 100%;
+  margin: 20px auto;
+}
+
+.work-nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.work-nav-link:visited {
+  color: white;
+}
+
+.work-nav-link:hover {
+  color: var(--accent);
+}
+
+.work-nav-link:active {
+  color: var(--accent);
+}
+
+.work-page img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 10px auto;
+  padding-top: 56.25%; /* 16:9 */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/*
+  ==============================
+  Theater Gallery
+  ==============================
+*/
+.theater-gallery {
+  max-width: var(--container-width);
+  margin: 40px auto;
+  padding: 20px 0;
+}
+
+.main-image-container {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  position: relative;
+}
+
+.main-image-container img {
+  max-width: 100%;
+  max-height: 600px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 60px;
+  cursor: pointer;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  padding: 0;
+  line-height: 1;
+  font-weight: 200;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-arrow:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.gallery-arrow-left {
+  left: 10px;
+}
+
+.gallery-arrow-right {
+  right: 10px;
+}
