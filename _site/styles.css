@@ -250,29 +250,49 @@ h2 {
 
 @media (max-width: 768px) {
   .logo {
-    font-size: 24px;
+    font-size: 20px;
     padding: 8px 16px;
+    letter-spacing: 1px;
   }
   
   .nav-links a {
-    font-size: 14px;
-    padding: 5px 10px;
-    width: 90px;
+    font-size: 13px;
+    padding: 6px 8px;
+    width: 70px;
   }
   
   .nav-links li {
-    margin: 0 5px;
+    margin: 0 3px;
   }
   
   body {
     padding-top: 130px;
   }
   
-  .gallery-item {
-    width: 100vw;
-    height: calc(100vw * 2 / 3);
+  .gallery {
+    padding: 0 15px;
   }
+  
+  .gallery-item {
+    width: calc(100vw - 30px);
+    height: calc((100vw - 30px) * 2 / 3);
+  }
+  
+  .gallery_releases .gallery-item {
+    width: calc(100vw - 30px);
+    height: calc(100vw - 30px);
+  }
+  
   .gallery img { width: 100%; height: auto; }
+  
+  .video-wrapper {
+    margin: 10px 15px;
+    width: calc(100% - 30px);
+  }
+  
+  .work-page {
+    padding: 0 15px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -281,27 +301,22 @@ h2 {
   }
   
   .logo {
-    font-size: 20px;
+    font-size: 18px;
     padding: 6px 12px;
   }
   
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  
   .nav-links a {
-    font-size: 12px;
-    padding: 4px 8px;
-    width: 80px;
+    font-size: 11px;
+    padding: 5px 6px;
+    width: 60px;
   }
   
   .nav-links li {
-    margin: 0 3px;
+    margin: 0 2px;
   }
   
   body {
-    padding-top: 160px;
+    padding-top: 120px;
   }
 }
 
