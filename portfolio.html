@@ -4,7 +4,7 @@ title: Portfolio
 permalink: /portfolio.html
 ---
 
-     <div class="title_gallery">SOLO WORKS</div>
+     <div class="title_gallery">WORKS</div>
     <div class="gallery gallery_works">
   {% assign sorted_solo = site.works | where: "category", "soloworks" | sort: "date" | reverse %}
   {% for work in sorted_solo %}
@@ -31,17 +31,17 @@ permalink: /portfolio.html
 
 
      <div class="gallery gallery_works">
-       <a href="https://linktr.ee/prixgaranti" class="gallery-item">
+       <a href="/collectives/prixgaranti/" class="gallery-item">
          <img src="/assets/images/works/galleryicons/ongoingprojects/prixgaranti.webp" alt="Image 1" loading="lazy">
          <div class="overlay">PRIX GARANTI</div>
        </a>
-       <a href="/ongoing/RT60/" class="gallery-item">
-         <img src="/assets/images/works/galleryicons/ongoingprojects/rt60.jpg" alt="Image 2" loading="lazy">
-         <div class="overlay">RT60</div>
-        </a> 
-      <a href="https://crttr.ch/" class="gallery-item">
+      <a href="/collectives/crttr/" class="gallery-item">
           <img src="/assets/images/works/galleryicons/ongoingprojects/crttr.jpg" alt="Image 1" loading="lazy">
           <div class="overlay">CRTTR</div> 
+        </a> 
+       <a href="/collectives/rt60/" class="gallery-item">
+         <img src="/assets/images/works/galleryicons/ongoingprojects/rt60.jpg" alt="Image 2" loading="lazy">
+         <div class="overlay">RT60</div>
         </a> 
         <!-- </a> <a href="https://soundcloud.com/radar-radio-793120527" class="gallery-item">
           <img src="/assets/images/works/galleryicons/ongoingprojects/radar.webp" alt="Image 2" loading="lazy">

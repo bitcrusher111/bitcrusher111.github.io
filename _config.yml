@@ -11,6 +11,9 @@ collections:
   other:
     output: true
     permalink: /other/:name/
+  collectives:
+    output: true
+    permalink: /collectives/:name/
 
 defaults:
   - scope:
@@ -33,6 +36,11 @@ defaults:
       type: "other"
     values:
       layout: "work"
+  - scope:
+      path: ""
+      type: "collectives"
+    values:
+      layout: "collective"
 
 exclude:
   - vendor

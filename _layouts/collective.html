@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  {% include header.html %}
+
+  <main class="collective-page">
+    {% assign sorted_collectives = site.collectives | sort: 'date' %}
+    {% for item in sorted_collectives %}
+      {% if item.url == page.url %}
+        {% assign current_index = forloop.index0 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if current_index > 0 %}
+      {% assign prev_index = current_index | minus: 1 %}
+      {% assign prev_item = sorted_collectives[prev_index] %}
+    {% endif %}
+    
+    {% assign next_index = current_index | plus: 1 %}
+    {% if next_index < sorted_collectives.size %}
+      {% assign next_item = sorted_collectives[next_index] %}
+    {% endif %}
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+      <div style="flex: 1; text-align: left;">
+        {% if prev_item %}
+          <a href="{{ prev_item.url }}" class="work-nav-link">← {{ prev_item.title }}</a>
+        {% endif %}
+      </div>
+      <h2 style="text-align: center; flex: 2; margin: 0;">{{ page.title }}</h2>
+      <div style="flex: 1; text-align: right;">
+        {% if next_item %}
+          <a href="{{ next_item.url }}" class="work-nav-link">{{ next_item.title }} →</a>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if page.youtube %}
+      <div class="video-wrapper">
+        <iframe src="{{ page.youtube }}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    {% endif %}
+
+    {{ content }}
+
+    {% if page.credits %}
+    <div class="text-container">
+      <div class="list-container">
+        {% for credit in page.credits %}
+          {% assign parts = credit | split: ', ' %}
+          {% assign job = parts[0] %}
+          {% assign names = parts | shift %}
+          {% for name in names %}
+            <div class="list-item">
+              <span class="job">{% if forloop.first %}{{ job }}{% endif %}</span>
+              <span class="names">{{ name }}</span>
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if page.link %}
+    <div class="text-container">
+      <p>
+        <a href="{{ page.link }}" target="_blank" rel="noopener noreferrer">{{ page.link_text | default: "Visit Website" }}</a>
+      </p>
+    </div>
+    {% endif %}
+
+    {% if page.images %}
+    <div class="image-gallery">
+      {% for image in page.images %}
+        <img src="{{ image }}" alt="{{ page.title }}" loading="lazy">
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </main>
+
+  {% include footer.html %}
+  <script src="/script.js"></script>
+</body>
+</html>
