@@ -6,14 +6,7 @@ category: soloworks
 image: /assets/images/works/galleryicons/soloworks/dissolvingscreens.webp
 date: 2022-04-23
 youtube: "https://www.youtube.com/embed/EFZrKr5UpLs?si=q45vYW3e7dUEQ3S-"
-gallery:
-  - "/assets/images/works/soloworks/dissolvingscreens/ds1.jpeg"
-  - "/assets/images/works/soloworks/dissolvingscreens/ds2.jpeg"
-  - "/assets/images/works/soloworks/dissolvingscreens/ds3.jpeg"
-  - "/assets/images/works/soloworks/dissolvingscreens/ds4.jpeg"
-  - "/assets/images/works/soloworks/dissolvingscreens/ds5.jpeg"
-  - "/assets/images/works/soloworks/dissolvingscreens/ds6.jpeg"
-  - "/assets/images/works/soloworks/dissolvingscreens/ds7.jpeg"
+gallery_folder: /images/works/soloworks/dissolvingscreens
 ---
 
 <div class="text-container">

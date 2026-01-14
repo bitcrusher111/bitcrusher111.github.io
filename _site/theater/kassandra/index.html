@@ -63,14 +63,32 @@
             ‘ΕΓΩ ΚΑΣΣΑΝΔΡΑ...’ sets out in search of the essence of a 
             complex and torn character.
         </p>
-    </div>
-
-<p>&lt;/div&gt;</p>
+</div>
 
       </section>
 
       
 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="theater-gallery">
+        <div class="main-image-container">
+          <img id="mainGalleryImg" src="/images/works/theater/18-07_kassandra/Kassandra_1-2.jpg" alt="Gallery image">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
+        </div>
+        
+      </div>
+      
       
  
   </main>
@@ -83,7 +101,9 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      const gallery = null;
+      
+      const gallery = ["/images/works/theater/18-07_kassandra/Kassandra_1-2.jpg","/images/works/theater/18-07_kassandra/Kassandra_17.jpg","/images/works/theater/18-07_kassandra/Kassandra_7.jpg"];
+      
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');
       const rightArrow = document.querySelector('.gallery-arrow-right');

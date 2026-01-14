@@ -220,6 +220,30 @@
       
 
       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="theater-gallery">
+        <div class="main-image-container">
+          <img id="mainGalleryImg" src="/images/works/theater/25-12_postharam/Niyousha-0415.jpg" alt="Gallery image">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
+        </div>
+        
+        <div class="photo-credits" style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: #333;">
+          Photos by Richard Stöhr
+        </div>
+        
+      </div>
+      
+      
  
   </main>
   
@@ -231,7 +255,9 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
-      const gallery = null;
+      
+      const gallery = ["/images/works/theater/25-12_postharam/Niyousha-0415.jpg","/images/works/theater/25-12_postharam/Niyousha-0450.jpg","/images/works/theater/25-12_postharam/Niyousha-0550.jpg","/images/works/theater/25-12_postharam/Niyousha-0579.jpg","/images/works/theater/25-12_postharam/Niyousha-0710.jpg","/images/works/theater/25-12_postharam/Niyousha-0946.jpg"];
+      
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');
       const rightArrow = document.querySelector('.gallery-arrow-right');

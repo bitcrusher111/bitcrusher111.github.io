@@ -64,7 +64,33 @@
       </div>
       {% endif %}
 
-      {% if page.gallery %}
+      {% if page.gallery_folder %}
+      {% assign gallery_images = "" | split: "" %}
+      {% assign image_files = site.static_files | where_exp: "file", "file.path contains page.gallery_folder" %}
+      {% assign jpg_files = image_files | where_exp: "file", "file.extname == '.jpg'" %}
+      {% assign jpeg_files = image_files | where_exp: "file", "file.extname == '.jpeg'" %}
+      {% assign png_files = image_files | where_exp: "file", "file.extname == '.png'" %}
+      {% assign gif_files = image_files | where_exp: "file", "file.extname == '.gif'" %}
+      {% assign all_images = jpg_files | concat: jpeg_files | concat: png_files | concat: gif_files | sort: "path" %}
+      {% for image in all_images %}
+        {% assign gallery_images = gallery_images | push: image.path %}
+      {% endfor %}
+      
+      {% if gallery_images.size > 0 %}
+      <div class="theater-gallery">
+        <div class="main-image-container">
+          <img id="mainGalleryImg" src="{{ gallery_images[0] }}" alt="Gallery image">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
+        </div>
+        {% if page.photo_credits %}
+        <div class="photo-credits" style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: #333;">
+          {{ page.photo_credits }}
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+      {% elsif page.gallery %}
       <div class="theater-gallery">
         <div class="main-image-container">
           <img id="mainGalleryImg" src="{{ page.gallery[0] }}" alt="Gallery image">
@@ -84,7 +110,11 @@
       const mainImg = document.getElementById('mainGalleryImg');
       if (!mainImg) return;
       
+      {% if page.gallery_folder %}
+      const gallery = {{ gallery_images | jsonify }};
+      {% else %}
       const gallery = {{ page.gallery | jsonify }};
+      {% endif %}
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');
       const rightArrow = document.querySelector('.gallery-arrow-right');

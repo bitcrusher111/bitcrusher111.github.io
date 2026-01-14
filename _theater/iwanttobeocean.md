@@ -12,6 +12,7 @@ credits:
   - stage-/ lightdesign, Jana Meyer, Lukas Müllner
   - music, Candid Rütter
   - harp, Marina Mello
+gallery_folder: images/works/theater/24-04_iwtbo
 ---
 
 <div class="text-container">

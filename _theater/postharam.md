@@ -14,6 +14,8 @@ credits:
   - music/video, Candid Rütter
   - light, Elisabeth Dimigen
   - adaptation, Niyousha Azari, Malak Jayeola Aderounmu, Lilli Oeverink
+gallery_folder: images/works/theater/25-12_postharam
+photo_credits: Photos by Richard Stöhr
 ---
 
 <div class="text-container">

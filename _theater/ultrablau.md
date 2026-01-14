@@ -15,6 +15,7 @@ credits:
   - costume, Luca Tarelli
   - office, Adrian Fähndrich
   - production, Ramun Bernetta
+gallery_folder: images/works/theater/24-10_ultrablau
 ---
 
 <div class="text-container">
