@@ -401,6 +401,12 @@ th { background-color: #f2f2f2; }
   margin: 20px auto;
 }
 
+.other-page {
+  max-width: var(--container-width);
+  width: 100%;
+  margin: 20px auto;
+}
+
 .work-nav-link {
   text-decoration: none;
   color: white;
