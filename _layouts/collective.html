@@ -21,26 +21,49 @@
     {% if current_index > 0 %}
       {% assign prev_index = current_index | minus: 1 %}
       {% assign prev_item = sorted_collectives[prev_index] %}
+    {% else %}
+      {% assign sorted_theater = site.theater | sort: 'date' | reverse %}
+      {% if sorted_theater.size > 0 %}
+        {% assign prev_item = sorted_theater | last %}
+        {% assign prev_item_label = "music for theater" %}
+      {% endif %}
     {% endif %}
     
     {% assign next_index = current_index | plus: 1 %}
     {% if next_index < sorted_collectives.size %}
       {% assign next_item = sorted_collectives[next_index] %}
+    {% else %}
+      {% assign sorted_other = site.other | sort: 'date' | reverse %}
+      {% if sorted_other.size > 0 %}
+        {% assign next_item = sorted_other | first %}
+        {% assign next_item_label = "other" %}
+      {% endif %}
     {% endif %}
     
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
       <div style="flex: 1; text-align: left;">
         {% if prev_item %}
-          <a href="{{ prev_item.url }}" class="work-nav-link">← {{ prev_item.title }}</a>
+          {% if prev_item_label %}
+            <a href="{{ prev_item.url }}" class="category-nav-link">← {{ prev_item_label }}</a>
+          {% else %}
+            <a href="{{ prev_item.url }}" class="work-nav-link">← {{ prev_item.title }}</a>
+          {% endif %}
         {% endif %}
       </div>
-      <h2 style="text-align: center; flex: 2; margin: 0;">{{ page.title }}</h2>
+      <div style="flex: 0 0 auto; text-align: center; color: #4D4D4D; font-size: 0.9em;">
+        collectives
+      </div>
       <div style="flex: 1; text-align: right;">
         {% if next_item %}
-          <a href="{{ next_item.url }}" class="work-nav-link">{{ next_item.title }} →</a>
+          {% if next_item_label %}
+            <a href="{{ next_item.url }}" class="category-nav-link">{{ next_item_label }} →</a>
+          {% else %}
+            <a href="{{ next_item.url }}" class="work-nav-link">{{ next_item.title }} →</a>
+          {% endif %}
         {% endif %}
       </div>
     </div>
+    <h2 style="text-align: center; margin-bottom: 2rem;">{{ page.title }}</h2>
 
     {% if page.youtube %}
       <div class="video-wrapper">

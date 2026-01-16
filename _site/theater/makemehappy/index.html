@@ -53,19 +53,28 @@
     
     
     
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+    
+    
+    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
       <div style="flex: 1; text-align: left;">
         
-          <a href="/theater/hardbreak/" class="work-nav-link">← hard_break <3 (2025)</a>
+          
+            <a href="/theater/hardbreak/" class="work-nav-link">← hard_break <3 (2025)</a>
+          
         
       </div>
-      <h2 style="text-align: center; flex: 2; margin: 0;">make me happy (2025)</h2>
+      <div style="flex: 0 0 auto; text-align: center; color: #4D4D4D; font-size: 0.9em;">
+        music for theater
+      </div>
       <div style="flex: 1; text-align: right;">
         
-          <a href="/theater/motheroctopus/" class="work-nav-link">mother octopus (2024) →</a>
+          
+            <a href="/theater/motheroctopus/" class="work-nav-link">mother octopus (2024) →</a>
+          
         
       </div>
     </div>
+    <h2 style="text-align: center; margin-bottom: 2rem;">make me happy (2025)</h2>
 
       <section class="theater-content">
         <div class="text-container">
@@ -176,6 +185,31 @@
       
 
       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="theater-gallery">
+        <div class="main-image-container">
+          <img id="mainGalleryImg" src="/images/works/theater/25-03_makemehappy/atanz_performance_zhdk_0161.webp" alt="Gallery image">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
+        </div>
+        
+        <div class="photo-credits" style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: #333;">
+          Marcel Rickli
+        </div>
+        
+      </div>
+      
+      
  
   </main>
   
@@ -188,7 +222,7 @@
       if (!mainImg) return;
       
       
-      const gallery = null;
+      const gallery = ["/images/works/theater/25-03_makemehappy/atanz_performance_zhdk_0161.webp","/images/works/theater/25-03_makemehappy/tanz_performance_zhdk_0040.webp","/images/works/theater/25-03_makemehappy/tanz_performance_zhdk_0079.webp","/images/works/theater/25-03_makemehappy/tanz_performance_zhdk_0169.webp","/images/works/theater/25-03_makemehappy/tanz_performance_zhdk_0171.webp"];
       
       let currentIndex = 0;
       const leftArrow = document.querySelector('.gallery-arrow-left');

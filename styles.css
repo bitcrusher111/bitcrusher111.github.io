@@ -401,6 +401,12 @@ th { background-color: #f2f2f2; }
   margin: 20px auto;
 }
 
+.collective-page {
+  max-width: var(--container-width);
+  width: 100%;
+  margin: 20px auto;
+}
+
 .other-page {
   max-width: var(--container-width);
   width: 100%;
@@ -422,6 +428,23 @@ th { background-color: #f2f2f2; }
 
 .work-nav-link:active {
   color: var(--accent);
+}
+
+.category-nav-link {
+  text-decoration: none;
+  color: #4D4D4D;
+}
+
+.category-nav-link:visited {
+  color: #4D4D4D;
+}
+
+.category-nav-link:hover {
+  color: #808080;
+}
+
+.category-nav-link:active {
+  color: #808080;
 }
 
 .work-page img {

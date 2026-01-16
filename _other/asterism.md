@@ -7,7 +7,9 @@ permalink: /other/asterism/
 gallery_folder: images/works/other/22-10_asterism
 photo_credits: "Christophe Urbain"
 ---
-
+<div class="video-wrapper">
+  <iframe src="https://www.youtube.com/embed/2ueMUMxI_yk?si=PqaZw-sR6-IkVFp0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 <div class="text-container">
   <p>

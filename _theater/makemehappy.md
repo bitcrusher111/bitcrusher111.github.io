@@ -4,6 +4,8 @@ title: "make me happy (2025)"
 image: /assets/images/works/galleryicons/theatermusic/mmh.jpeg
 permalink: /theater/makemehappy/
 date: 2025-03-27
+gallery_folder: /images/works/theater/25-03_makemehappy
+photo_credits: Marcel Rickli
 credits:
   - choreography/concept, Paul Behren
   - dance, Sindy Tscherrig, Nina Richard

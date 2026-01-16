@@ -21,6 +21,12 @@
     {% if current_index > 0 %}
       {% assign prev_index = current_index | minus: 1 %}
       {% assign prev_work = sorted_works[prev_index] %}
+    {% else %}
+      {% assign sorted_theater = site.theater | sort: 'date' | reverse %}
+      {% if sorted_theater.size > 0 %}
+        {% assign prev_work = sorted_theater | first %}
+        {% assign prev_work_label = "music for theater" %}
+      {% endif %}
     {% endif %}
     
     {% assign next_index = current_index | plus: 1 %}
@@ -28,19 +34,28 @@
       {% assign next_work = sorted_works[next_index] %}
     {% endif %}
     
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
       <div style="flex: 1; text-align: left;">
         {% if next_work %}
-          <a href="{{ next_work.url }}" class="work-nav-link">← {{ next_work.title }}</a>
+          {% if next_work_label %}
+            <a href="{{ next_work.url }}" class="work-nav-link">← {{ next_work_label }}</a>
+          {% else %}
+            <a href="{{ next_work.url }}" class="work-nav-link">← {{ next_work.title }}</a>
+          {% endif %}
         {% endif %}
-      </div>
-      <h2 style="text-align: center; flex: 2; margin: 0;">{{ page.title }}</h2>
-      <div style="flex: 1; text-align: right;">
+      </div>      <div style="flex: 0 0 auto; text-align: center; color: #4D4D4D; font-size: 0.9em;">
+        works
+      </div>      <div style="flex: 1; text-align: right;">
         {% if prev_work %}
-          <a href="{{ prev_work.url }}" class="work-nav-link">{{ prev_work.title }} →</a>
+          {% if prev_work_label %}
+            <a href="{{ prev_work.url }}" class="category-nav-link">{{ prev_work_label }} →</a>
+          {% else %}
+            <a href="{{ prev_work.url }}" class="work-nav-link">{{ prev_work.title }} →</a>
+          {% endif %}
         {% endif %}
       </div>
     </div>
+    <h2 style="text-align: center; margin-bottom: 2rem;">{{ page.title }}</h2>
     {% if page.youtube %}
       <div class="video-wrapper">
         <iframe src="{{ page.youtube }}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -74,7 +89,8 @@
       {% assign jpeg_files = image_files | where_exp: "file", "file.extname == '.jpeg'" %}
       {% assign png_files = image_files | where_exp: "file", "file.extname == '.png'" %}
       {% assign gif_files = image_files | where_exp: "file", "file.extname == '.gif'" %}
-      {% assign all_images = jpg_files | concat: jpeg_files | concat: png_files | concat: gif_files | sort: "path" %}
+      {% assign webp_files = image_files | where_exp: "file", "file.extname == '.webp'" %}
+      {% assign all_images = jpg_files | concat: jpeg_files | concat: png_files | concat: gif_files | concat: webp_files | sort: "path" %}
       {% for image in all_images %}
         {% assign gallery_images = gallery_images | push: image.path %}
       {% endfor %}

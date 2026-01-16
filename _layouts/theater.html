@@ -18,29 +18,54 @@
       {% endif %}
     {% endfor %}
     
+    {% assign last_index = sorted_theater.size | minus: 1 %}
+    
     {% if current_index > 0 %}
       {% assign prev_index = current_index | minus: 1 %}
       {% assign prev_item = sorted_theater[prev_index] %}
+    {% else %}
+      {% assign sorted_collectives = site.collectives | sort: 'date' %}
+      {% if sorted_collectives.size > 0 %}
+        {% assign prev_item = sorted_collectives | first %}
+        {% assign prev_item_label = "collectives" %}
+      {% endif %}
     {% endif %}
     
     {% assign next_index = current_index | plus: 1 %}
     {% if next_index < sorted_theater.size %}
       {% assign next_item = sorted_theater[next_index] %}
+    {% else %}
+      {% assign sorted_works = site.works | sort: 'date' %}
+      {% if sorted_works.size > 0 %}
+        {% assign next_item = sorted_works | first %}
+        {% assign next_item_label = "works" %}
+      {% endif %}
     {% endif %}
     
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
       <div style="flex: 1; text-align: left;">
         {% if next_item %}
-          <a href="{{ next_item.url }}" class="work-nav-link">← {{ next_item.title }}</a>
+          {% if next_item_label %}
+            <a href="{{ next_item.url }}" class="category-nav-link">← {{ next_item_label }}</a>
+          {% else %}
+            <a href="{{ next_item.url }}" class="work-nav-link">← {{ next_item.title }}</a>
+          {% endif %}
         {% endif %}
       </div>
-      <h2 style="text-align: center; flex: 2; margin: 0;">{{ page.title }}</h2>
+      <div style="flex: 0 0 auto; text-align: center; color: #4D4D4D; font-size: 0.9em;">
+        music for theater
+      </div>
       <div style="flex: 1; text-align: right;">
         {% if prev_item %}
-          <a href="{{ prev_item.url }}" class="work-nav-link">{{ prev_item.title }} →</a>
+          {% if prev_item_label %}
+            <a href="{{ prev_item.url }}" class="category-nav-link">{{ prev_item_label }} →</a>
+          {% else %}
+            <a href="{{ prev_item.url }}" class="work-nav-link">{{ prev_item.title }} →</a>
+          {% endif %}
         {% endif %}
       </div>
     </div>
+    <h2 style="text-align: center; margin-bottom: 2rem;">{{ page.title }}</h2>
 
       <section class="theater-content">
         {{ content }}
@@ -71,7 +96,8 @@
       {% assign jpeg_files = image_files | where_exp: "file", "file.extname == '.jpeg'" %}
       {% assign png_files = image_files | where_exp: "file", "file.extname == '.png'" %}
       {% assign gif_files = image_files | where_exp: "file", "file.extname == '.gif'" %}
-      {% assign all_images = jpg_files | concat: jpeg_files | concat: png_files | concat: gif_files | sort: "path" %}
+      {% assign webp_files = image_files | where_exp: "file", "file.extname == '.webp'" %}
+      {% assign all_images = jpg_files | concat: jpeg_files | concat: png_files | concat: gif_files | concat: webp_files | sort: "path" %}
       {% for image in all_images %}
         {% assign gallery_images = gallery_images | push: image.path %}
       {% endfor %}

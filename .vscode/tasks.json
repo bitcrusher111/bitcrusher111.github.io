@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+        "label": "Start Jekyll Server",
+        "type": "shell",
+        "command": "./serve.sh",
+        "isBackground": true,
+        "problemMatcher": [],
+        "presentation": {
+            "reveal": "always",
+            "panel": "dedicated"
+        },
+        "group": "build"
+    },
+    {
+        "label": "Refresh Jekyll Server",
+        "type": "shell",
+        "command": "./refresh.sh",
+        "isBackground": true,
+        "problemMatcher": [],
+        "presentation": {
+            "reveal": "always",
+            "panel": "dedicated"
+        },
+        "group": "build"
+    }
+]
+}
