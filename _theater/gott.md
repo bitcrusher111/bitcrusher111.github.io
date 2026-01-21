@@ -24,7 +24,9 @@ credits:
 gallery_folder: images/works/theater/23-11_gott
 photo_credits: 
 ---
-
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0;">
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/w3Edb-5C0WQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <div class="text-container">
   <p>
     Elisabeth Gärtner no longer wants to live after the death of her husband. The 78-year-old requests a prescription for a lethal medication from her medical officer, Dr Brandt. But the doctor does not want to assist a suicide. She does not think it is right to help a healthy person commit suicide - Mrs Gärtner is not ill and is not suffering from severe pain. In an ethics council, legal, medical and theological experts discuss the case as an example and offer a variety of positions and perspectives on the socially controversial topic of euthanasia. Do people have a right to a self-determined death? Who decides on our death? Who does our life belong to - a god, society, our family or just ourselves?
@@ -32,3 +34,4 @@ photo_credits:
     Graubünden director Jonas Bernetta brings the highly topical debate play to the stage in a text version adapted to Swiss circumstances and regulations. Eighty-year-old actress Heidi Maria Glössner can be seen in the role of Elisabeth Gärtner.
   </p>
 </div>
+
