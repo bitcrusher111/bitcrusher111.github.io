@@ -31,7 +31,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  padding-top: 180px; /* prevent navbar overlap */
+  padding-top: 128px; /* prevent navbar overlap */
 }
 
 h2 {
@@ -103,33 +103,31 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: transparent;
+  background-color: #000;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  padding: 20px 30px;
+  padding: 14px 24px 10px;
+  border-bottom: 1px solid #222;
 }
 
 .logo {
   color: var(--fg);
-  font-size: 36px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-  padding: 12px 24px;
-  border: 2px solid white;
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  padding: 0;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 6px 18px;
   width: 100%;
 }
 
@@ -138,39 +136,28 @@ h2 {
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 20px;
-  padding: 8px 16px;
-  transition: filter 0.3s ease, transform 0.3s ease;
-  border: 2px solid white;
-  border-radius: 4px;
+  font-size: 18px;
+  padding: 4px 2px;
+  transition: opacity 0.2s ease;
   display: inline-block;
-  width: 140px;
+  width: auto;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  border-bottom: 1px solid transparent;
 }
 
 .nav-links a::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0);
-  border-radius: 2px;
-  transition: background-color 0.3s ease;
-  pointer-events: none;
+  content: none;
 }
 
 .nav-links a:hover::after,
 .nav-links a.active::after { 
-  background-color: rgba(255, 255, 255, 0);
+  background-color: transparent;
 }
 
 .nav-links a:hover,
 .nav-links a.active { 
-  background-color: rgba(255, 255, 255, 0.2);
-  filter: none;
-  transform: scale(1.05);
+  opacity: 0.75;
+  border-bottom-color: transparent;
 }
 
 /*
@@ -228,15 +215,15 @@ h2 {
 */
 @media (max-width: 900px) {
   .logo {
-    font-size: 28px;
-    padding: 10px 20px;
+    font-size: 24px;
+    padding: 0;
     letter-spacing: 1px;
   }
   
   .nav-links a {
-    font-size: 16px;
-    padding: 6px 12px;
-    width: 110px;
+    font-size: 15px;
+    padding: 4px 2px;
+    width: auto;
   }
   
   .nav-links li {
@@ -244,21 +231,21 @@ h2 {
   }
   
   body {
-    padding-top: 140px;
+    padding-top: 120px;
   }
 }
 
 @media (max-width: 768px) {
   .logo {
-    font-size: 20px;
-    padding: 8px 16px;
+    font-size: 18px;
+    padding: 0;
     letter-spacing: 1px;
   }
   
   .nav-links a {
-    font-size: 13px;
-    padding: 6px 8px;
-    width: 70px;
+    font-size: 12px;
+    padding: 3px 1px;
+    width: auto;
   }
   
   .nav-links li {
@@ -266,7 +253,7 @@ h2 {
   }
   
   body {
-    padding-top: 130px;
+    padding-top: 110px;
   }
   
   .gallery {
@@ -297,18 +284,18 @@ h2 {
 
 @media (max-width: 600px) {
   .navbar {
-    padding: 15px 10px;
+    padding: 12px 8px 8px;
   }
   
   .logo {
-    font-size: 18px;
-    padding: 6px 12px;
+    font-size: 17px;
+    padding: 0;
   }
   
   .nav-links a {
     font-size: 11px;
-    padding: 5px 6px;
-    width: 60px;
+    padding: 2px 1px;
+    width: auto;
   }
   
   .nav-links li {
@@ -316,7 +303,7 @@ h2 {
   }
   
   body {
-    padding-top: 120px;
+    padding-top: 104px;
   }
 }
 
