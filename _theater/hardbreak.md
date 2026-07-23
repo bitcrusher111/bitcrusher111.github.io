@@ -12,7 +12,7 @@ credits:
   - light design, Doria Worden
   - costume, Steve Oelmann
   - stage design, Florin Iki
-gallery_folder: images/works/galleryicons/theatermusic/25-11_heartbreak
+gallery_folder: /assets/images/works/galleryicons/theatermusic/25-11_heartbreak
 ---
 
 <div class="video-wrapper">

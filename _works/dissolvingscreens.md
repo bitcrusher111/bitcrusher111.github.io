@@ -6,7 +6,7 @@ category: soloworks
 image: /assets/images/works/galleryicons/soloworks/dissolvingscreens.webp
 date: 2022-04-23
 youtube: "https://www.youtube.com/embed/EFZrKr5UpLs?si=q45vYW3e7dUEQ3S-"
-gallery_folder: /images/works/soloworks/dissolvingscreens
+gallery_folder: /assets/images/works/soloworks/dissolvingscreens
 ---
 
 <div class="text-container">

@@ -4,7 +4,7 @@ title: "terminal infinity (2025) by Alexander Schubert"
 date: 2025-03-01
 image: /assets/images/works/galleryicons/other/terminalinfinity.jpg
 permalink: /other/terminalinfinity/
-gallery_folder: images/works/other/25-02_terminalinfinity
+gallery_folder: /assets/images/works/other/25-02_terminalinfinity
 photo_credits: "Stephan Rabold"
 ---
 <div class="video-wrapper">

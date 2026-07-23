@@ -1,7 +1,7 @@
 ---
 layout: theater
 title: "Engel der Vernichtung (2026)"
-image: assets/images/works/galleryicons/theatermusic/engeldervernichtung.jpeg
+image: /assets/images/works/galleryicons/theatermusic/engeldervernichtung.jpeg
 permalink: /theater/engeldervernichtung/
 date: 2026-04-30
 credits:

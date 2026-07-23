@@ -11,7 +11,7 @@ credits:
   - "percussion, Lin Chen"
   - "composition, Candid Rütter"
   - "video/ lights, Candid Rütter"
-gallery_folder: /images/works/soloworks/foldsofsilk
+gallery_folder: /assets/images/works/soloworks/foldsofsilk
 photo_credits: Photos by Jörg Modrow
 ---
 

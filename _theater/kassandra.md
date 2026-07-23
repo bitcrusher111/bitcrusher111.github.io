@@ -4,7 +4,7 @@ title: "kassandra (2018)"
 image: /assets/images/works/galleryicons/theatermusic/kassandra.webp
 permalink: /theater/kassandra/
 date: 2018-01-01
-gallery_folder: images/works/theater/18-07_kassandra
+gallery_folder: /assets/images/works/theater/18-07_kassandra
 ---
 
 <div class="text-container">

@@ -4,7 +4,7 @@ title: "asterism (2022) by Alexander Schubert"
 date: 2022-01-01
 image: /assets/images/works/galleryicons/other/asterism.jpg
 permalink: /other/asterism/
-gallery_folder: images/works/other/22-10_asterism
+gallery_folder: /assets/images/works/other/22-10_asterism
 photo_credits: "Christophe Urbain"
 ---
 <div class="video-wrapper">

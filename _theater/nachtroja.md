@@ -1,7 +1,7 @@
 ---
 layout: theater
 title: "Nach Troja (2026)"
-image: /assets/images/works/galleryicons/theatermusic/nachtroja.svg
+image: /assets/images/works/galleryicons/theatermusic/nachtroja.jpg
 permalink: /theater/nach-troja/
 date: 2026-12-31
 credits:

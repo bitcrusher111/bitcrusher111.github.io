@@ -21,7 +21,7 @@ credits:
   - Frau Gärtner, Heidi Maria Glössner
   - Dr. Litten, Vera Bommer/Tobias Graupner
   - Bigler, Manuel Herwig
-gallery_folder: images/works/theater/23-11_gott
+gallery_folder: /assets/images/works/theater/23-11_gott
 photo_credits: 
 ---
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0;">
