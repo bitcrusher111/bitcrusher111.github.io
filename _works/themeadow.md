@@ -6,6 +6,19 @@ category: soloworks
 image: /assets/images/works/galleryicons/soloworks/themeadow.jpg
 date: 2026-02-01
 youtube: "https://www.youtube.com/embed/PwmzqlevHaY?feature=share"
+credits:
+  - "singer, Liza Kereselidze"
+  - "cello, Carmen Kleykens Vidal"
+  - "percussion, Oscar Tudge"
+  - "stage/ costume, Saba Emadabadi"
+  - "make-up, Marco Merenda"
+  - "text, Kaija Knauer, Felix Ebert"
+  - "light, Elisabeth Dimingen"
+  - "music, Candid Rütter"
+  - "video, Candid Rütter"
+  - "artistic direction, Candid Rütter"
+  - "mentoring, Alexander Schubert"
+  - "outside eye, Louis d'Heudiers, Niyousha Azaari"
 gallery_folder: /assets/images/works/soloworks/themeadow
 photo_credits: Photos by Patrick Sobottka
 ---
