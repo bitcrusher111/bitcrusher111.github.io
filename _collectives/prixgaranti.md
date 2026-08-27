@@ -1,6 +1,7 @@
 ---
 title: "PRIX GARANTI"
 date: 2024-01-01
+image: /assets/images/works/galleryicons/ongoingprojects/prixgaranti.webp
 ---
 
 <div class="text-container">

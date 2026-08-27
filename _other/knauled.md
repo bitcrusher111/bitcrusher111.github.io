@@ -2,7 +2,7 @@
 layout: other
 title: "knäuled (2025)"
 date: 2025-02-01
-image: /assets/images/works/galleryicons/other/knäuled.jpg
+image: /assets/images/works/galleryicons/other/knauled.jpg
 permalink: /other/knauled/
 gallery_folder: /assets/images/works/other/25-01_knaeuled
 photo_credits: "Christian Felber"

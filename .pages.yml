@@ -1,7 +1,188 @@
-media: images
+media:
+  - name: work_images
+    label: Images
+    input: assets/images/works
+    output: /assets/images/works
+    extensions: [jpg, jpeg, png, webp, gif]
+    rename: false
 
 content:
   - name: works
-    label: works
-    path: pages/01_works
+    label: "Solo Works"
     type: collection
+    path: _works
+    format: yaml-frontmatter
+    filename: "{fields.title}.md"
+    view:
+      fields: [title, date, image]
+      sort: date
+      sortDirection: desc
+    fields:
+      - name: title
+        type: string
+        required: true
+        description: "Shown as the gallery caption, e.g. \"holy water (2024)\""
+      - name: date
+        type: date
+        required: true
+      - name: image
+        type: image
+        media: work_images
+        required: true
+        description: "Thumbnail shown in the portfolio gallery"
+      - name: category
+        type: select
+        options:
+          values: [soloworks]
+        default: soloworks
+        hidden: true
+      - name: permalink
+        type: string
+        description: "Only set this if you want a custom URL. Leave blank to auto-generate from the filename, e.g. /works/holy-water/"
+      - name: youtube
+        type: string
+        description: "Full embed URL, e.g. https://www.youtube.com/embed/XXXXXXXXXXX"
+      - name: gallery_folder
+        type: string
+        description: "Path to a folder of extra photos for the image gallery on this project's page, e.g. /assets/images/works/soloworks/holywater"
+      - name: photo_credits
+        type: string
+      - name: credits
+        type: string
+        list: true
+        description: "One line per credit, formatted as \"role, name\""
+      - name: body
+        label: Content
+        type: code
+        options:
+          format: html
+        description: "Raw HTML for the project page body (text, extra embeds, etc.)"
+
+  - name: theater
+    label: "Theater, Dance & Performance"
+    type: collection
+    path: _theater
+    format: yaml-frontmatter
+    filename: "{fields.title}.md"
+    view:
+      fields: [title, date, image]
+      sort: date
+      sortDirection: desc
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: date
+        type: date
+        required: true
+      - name: image
+        type: image
+        media: work_images
+        required: true
+      - name: permalink
+        type: string
+        description: "Only set this if you want a custom URL. Leave blank to auto-generate from the filename."
+      - name: gallery_folder
+        type: string
+        description: "Path to a folder of extra photos for the image gallery on this project's page"
+      - name: photo_credits
+        type: string
+      - name: credits
+        type: string
+        list: true
+        description: "One line per credit, formatted as \"role, name\""
+      - name: body
+        label: Content
+        type: code
+        options:
+          format: html
+        description: "Raw HTML for the project page body (text, extra embeds, etc.)"
+
+  - name: other
+    label: "Other Projects"
+    type: collection
+    path: _other
+    format: yaml-frontmatter
+    filename: "{fields.title}.md"
+    view:
+      fields: [title, date, image]
+      sort: date
+      sortDirection: desc
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: date
+        type: date
+        required: true
+      - name: image
+        type: image
+        media: work_images
+        required: true
+      - name: permalink
+        type: string
+        description: "Only set this if you want a custom URL. Leave blank to auto-generate from the filename."
+      - name: youtube
+        type: string
+        description: "Full embed URL"
+      - name: gallery_folder
+        type: string
+      - name: photo_credits
+        type: string
+      - name: link
+        type: string
+        description: "External project link, e.g. an artist's own website"
+      - name: link_text
+        type: string
+        description: "Button text for the external link, defaults to \"Visit Website\""
+      - name: credits
+        type: string
+        list: true
+        description: "One line per credit, formatted as \"role, name\""
+      - name: body
+        label: Content
+        type: code
+        options:
+          format: html
+        description: "Raw HTML for the project page body (text, extra embeds, etc.)"
+
+  - name: collectives
+    label: "Ongoing Projects / Collectives"
+    type: collection
+    path: _collectives
+    format: yaml-frontmatter
+    filename: "{fields.title}.md"
+    view:
+      fields: [title, date, image]
+      sort: date
+      sortDirection: asc
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: date
+        type: date
+        required: true
+      - name: image
+        type: image
+        media: work_images
+        required: true
+        description: "Thumbnail shown in the portfolio gallery"
+      - name: youtube
+        type: string
+        description: "Full embed URL"
+      - name: link
+        type: string
+        description: "External link, e.g. Linktree"
+      - name: link_text
+        type: string
+      - name: credits
+        type: string
+        list: true
+        description: "One line per credit, formatted as \"name, role\""
+      - name: body
+        label: Content
+        type: code
+        options:
+          format: html
+        description: "Raw HTML for the project page body (text, embeds, etc.)"

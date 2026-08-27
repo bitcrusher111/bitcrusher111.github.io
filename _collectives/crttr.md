@@ -1,6 +1,7 @@
 ---
 title: "CRTTR"
 date: 2024-01-02
+image: /assets/images/works/galleryicons/ongoingprojects/crttr.jpg
 ---
 
 <div class="text-container">

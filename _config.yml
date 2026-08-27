@@ -5,9 +5,6 @@ collections:
   theater:
     output: true
     permalink: /theater/:name/
-  ongoing:
-    output: true
-    permalink: /ongoing/:name/
   other:
     output: true
     permalink: /other/:name/
@@ -28,11 +25,6 @@ defaults:
       layout: "theater"
   - scope:
       path: ""
-      type: "ongoing"
-    values:
-      layout: "work"
-  - scope:
-      path: ""
       type: "other"
     values:
       layout: "other"
@@ -48,3 +40,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
+  - bin
+  - README.md

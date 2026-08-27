@@ -1,0 +1,55 @@
+---
+layout: default
+title: Portfolio
+permalink: /
+---
+
+     <div class="title_gallery">WORKS</div>
+    <div class="gallery gallery_works">
+  {% assign sorted_solo = site.works | where: "category", "soloworks" | sort: "date" | reverse %}
+  {% for work in sorted_solo %}
+    <a href="{{ work.url }}" class="gallery-item">
+      <img src="{{ work.image }}" alt="{{ work.title }}" loading="lazy">
+      <div class="overlay">{{ work.title }}</div>
+    </a>
+{% endfor %}
+  </div>
+  <br><br>
+  <div class="title_gallery">MUSIC FOR THEATER, DANCE AND PERFORMANCE</div>
+
+  <div class="gallery gallery_works">
+{% assign sorted_theater = site.theater | sort: 'date' | reverse %}
+{% for work in sorted_theater %}
+    <a href="{{ work.url }}" class="gallery-item">
+      <img src="{{ work.image }}" alt="{{ work.title }}" loading="lazy">
+      <div class="overlay">{{ work.title }}</div>
+    </a>
+{% endfor %}
+  </div>
+  <br> <br>
+<div class="title_gallery">ONGOING PROJECTS</div>
+
+
+     <div class="gallery gallery_works">
+  {% assign sorted_collectives = site.collectives | sort: 'date' %}
+  {% for item in sorted_collectives %}
+    <a href="{{ item.url }}" class="gallery-item">
+      <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
+      <div class="overlay">{{ item.title }}</div>
+    </a>
+  {% endfor %}
+  </div>
+  
+  <br><br><br>
+
+<div class="title_gallery">  OTHER</div>
+  
+  <div class="gallery gallery_works">
+  {% assign sorted_other = site.other | sort: 'date' | reverse %}
+  {% for item in sorted_other %}
+    <a href="{{ item.url }}" class="gallery-item">
+      <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
+      <div class="overlay">{{ item.title }}</div>
+    </a>
+  {% endfor %}
+  </div>
