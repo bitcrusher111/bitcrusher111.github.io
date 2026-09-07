@@ -8,5 +8,5 @@ date: 2026-01-01
 ---
 
 <div class="text-container">
-  <p>New solo project. More documentation soon.</p>
+  <p>New project. More documentation is coming soon.</p>
 </div>
