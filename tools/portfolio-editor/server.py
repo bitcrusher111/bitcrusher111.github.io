@@ -5,7 +5,7 @@ Run from anywhere:  python3 tools/portfolio-editor/server.py
 Then open http://localhost:4001 (it opens automatically).
 
 It edits _data/selected_works.json. If `jekyll serve` is running,
-the page at http://localhost:4000/selected-works.html updates on save.
+the page at http://localhost:4000/selected-works/ updates on save.
 """
 
 import json
