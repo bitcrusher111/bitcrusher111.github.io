@@ -515,3 +515,102 @@ th { background-color: #f2f2f2; }
 .gallery-arrow-right {
   right: 10px;
 }
+
+/*
+  ==============================
+  Selected works (hidden portfolio page)
+  ==============================
+*/
+.selected-works {
+  width: 100%;
+  max-width: 1100px;
+  align-self: flex-start; /* sit on the left instead of the centered site column */
+  margin: 0;
+  padding: 0 40px 60px;
+  text-align: left;
+}
+
+/* no navbar on this page, and light colors instead of the site's black */
+body:has(.selected-works) {
+  --bg: #fff;
+  --fg: #000;
+  padding-top: 0;
+}
+
+.sw-title {
+  text-align: left;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  margin: 60px 0 12px;
+}
+
+.sw-subtitle { line-height: 1.4; margin-bottom: 48px; }
+.sw-subtitle a { color: var(--fg); }
+
+.sw-section { margin-bottom: 48px; }
+
+.sw-section-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.sw-item {
+  display: grid;
+  grid-template-columns: 480px 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.sw-media { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.sw-info { min-width: 0; }
+
+.sw-item-head { display: flex; align-items: baseline; justify-content: flex-start; gap: 12px; }
+.sw-item-title { font-size: 1.1em; }
+.sw-item-role { color: grey; font-size: 0.9em; margin-top: 2px; }
+.sw-item-text { line-height: 1.4; margin-top: 8px; }
+
+.sw-links { list-style: none; margin-top: 8px; }
+.sw-links li { margin-bottom: 2px; }
+.sw-links a { color: var(--fg); text-decoration: none; }
+.sw-links a:hover { text-decoration: underline; }
+
+.sw-embed {
+  width: 100%;
+  padding-top: 0;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+}
+.sw-image { display: block; width: 100%; height: auto; }
+.sw-bandcamp {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: 120px;
+}
+.sw-spotify {
+  display: block;
+  border: 0;
+  border-radius: 12px;
+  width: 100%;
+  height: 152px;
+}
+.sw-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  border: 1px dashed #aaa;
+  color: grey;
+  font-size: 0.9em;
+}
+
+/* stack media above text on small screens */
+@media (max-width: 800px) {
+  .selected-works { padding: 0 16px 60px; }
+  .sw-item { grid-template-columns: 1fr; gap: 12px; }
+}

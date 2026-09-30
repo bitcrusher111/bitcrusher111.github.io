@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: "Candid Rütter" }}</title>
+    {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap">
 </head>
 <body>
-  {% include header.html %}
+  {% unless page.hide_header %}{% include header.html %}{% endunless %}
 
   {{ content }}
 
-  {% include footer.html %}
+  {% unless page.hide_footer %}{% include footer.html %}{% endunless %}
 
   <script src="/assets/js/script.js"></script>
 </body>
