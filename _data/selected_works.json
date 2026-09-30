@@ -1,0 +1,148 @@
+{
+  "title": "PORTFOLIO CANDID RÜTTER",
+  "subtitle": "This is a selection of my work. For my full portfolio, visit <a href=\"https://candidruetter.net\">candidruetter.net</a>.",
+  "sections": [
+    {
+      "title": "music for theater/ dance/ performance",
+      "items": [
+        {
+          "title": "Engel der Vernichtung",
+          "year": "2026",
+          "role": "",
+          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "embed": "https://player.vimeo.com/video/1186496932",
+          "links": []
+        },
+        {
+          "title": "Heartbreak",
+          "year": "2025",
+          "role": "",
+          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "embed": "https://www.youtube.com/embed/GXsdZw4N-lE",
+          "links": []
+        },
+        {
+          "title": "GOTT",
+          "year": "2023",
+          "role": "",
+          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "page": "/theater/gott/",
+          "embed": "https://www.youtube.com/embed/w3Edb-5C0WQ",
+          "links": []
+        }
+      ]
+    },
+    {
+      "title": "freelancing",
+      "items": [
+        {
+          "title": "Sprachenland @Landesmuseum",
+          "year": "",
+          "role": "",
+          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "embed": "https://player.vimeo.com/video/907444721",
+          "links": []
+        },
+        {
+          "title": "Audiobreeze",
+          "year": "",
+          "role": "",
+          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "embed": "https://www.youtube.com/embed/_Wrfl_sd1R4",
+          "links": []
+        }
+      ]
+    },
+    {
+      "title": "collaboration / künstlerische mitarbeit",
+      "items": [
+        {
+          "title": "Asterism",
+          "year": "2022",
+          "role": "",
+          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "embed": "https://www.youtube.com/embed/2ueMUMxI_yk",
+          "links": []
+        },
+        {
+          "title": "Terminal Infinity",
+          "year": "2025",
+          "role": "",
+          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "embed": "https://www.youtube.com/embed/kyCXDu2mE4o",
+          "links": []
+        },
+        {
+          "title": "Knäuled",
+          "year": "2025",
+          "role": "",
+          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "embed": "https://www.youtube.com/embed/MKy2f5uV9F4",
+          "links": []
+        }
+      ]
+    },
+    {
+      "title": "music production",
+      "items": [
+        {
+          "title": "candid",
+          "year": "",
+          "role": "",
+          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "bandcamp": [
+            {
+              "src": "https://bandcamp.com/EmbeddedPlayer/album=3616600469/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=1346777750/transparent=true/",
+              "label": "CRTTR-CLB-003 by dataflex",
+              "url": "https://crttrcollective.bandcamp.com/album/crttr-clb-003"
+            },
+            {
+              "src": "https://bandcamp.com/EmbeddedPlayer/album=1043847182/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=3051537641/transparent=true/",
+              "label": "CRTTR-CLB-008 by candid",
+              "url": "https://crttrcollective.bandcamp.com/album/crttr-clb-008"
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "prix garanti",
+          "year": "",
+          "role": "",
+          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "spotify": [
+            {
+              "src": "https://open.spotify.com/embed/track/3xZ3ql2ZEoEZpSWhbrYpjR",
+              "label": "Züri"
+            },
+            {
+              "src": "https://open.spotify.com/embed/track/0l39G6Jjf5GZVvaKOxMupN",
+              "label": "Hardlife Bern"
+            }
+          ],
+          "links": []
+        }
+      ]
+    },
+    {
+      "title": "solo works",
+      "items": [
+        {
+          "title": "a kind machine",
+          "year": "2026",
+          "role": "",
+          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "embed": "",
+          "links": []
+        },
+        {
+          "title": "the meadow",
+          "year": "2026",
+          "role": "",
+          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "embed": "https://www.youtube.com/embed/PwmzqlevHaY",
+          "links": []
+        }
+      ]
+    }
+  ]
+}
