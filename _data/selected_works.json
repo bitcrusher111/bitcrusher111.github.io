@@ -8,76 +8,78 @@
         {
           "title": "Engel der Vernichtung",
           "year": "2026",
-          "role": "",
-          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "role": "composition, sounddesign, multimedia synchronisation",
+          "text": "The music for Engel der Vernichtung functions more like a film score than a traditional theatre soundtrack. Throughout the piece, sound is continuously present, whether through atmospheres, textures, or recurring musical motifs. <br><br>\n\nTo meet the demands of a live cinema piece, where rapid cuts between scenes require equally precise shifts in the music, I developed a technological environment that allows for highly controlled transitions, cuts, and musical changes in real time, with live synchronisation between sound, video, and light.\n",
           "embed": "https://player.vimeo.com/video/1186496932",
           "links": []
         },
         {
-          "title": "Heartbreak",
+          "title": "HARD_BREAK",
           "year": "2025",
-          "role": "",
-          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "role": "composition, sounddesign, multimedia synchronisation",
+          "text": "To place the pieces topic at the core of the soundtrack, I drew inspiration from heartbreak songs of the 2000s. I sampled hooks, reworked chord progressions, and distilled their moods and emotional textures. I then contrasted this material with the raw aesthetics of heavy bass and rave music, creating a soundtrack that leaves room for tears, anger, hope, and release.\n",
           "embed": "https://www.youtube.com/embed/GXsdZw4N-lE",
           "links": []
         },
         {
           "title": "GOTT",
           "year": "2023",
-          "role": "",
-          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "role": "composition, sounddesign",
+          "text": "GOTT is a rather text-heavy, dry, and formal piece. I tried to create music that makes the piece more accessible and engaging, while also bringing out an eerie dimension.\n",
           "page": "/theater/gott/",
           "embed": "https://www.youtube.com/embed/w3Edb-5C0WQ",
           "links": []
         }
-      ]
+      ],
+      "text": "Since 2022, I have composed the soundtracks for more than ten theatre productions. Visit my website to discover the full list and explore all my work.\n"
     },
     {
       "title": "freelancing",
       "items": [
         {
-          "title": "Sprachenland @Landesmuseum",
+          "title": "Sprachenland",
           "year": "",
-          "role": "",
-          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "role": "sound spatialization for tracked headphone system",
+          "text": "The exhibition Sprachenland at the Landesmuseum Zürich featured a head-tracking system developed by iart, which calculates a real-time binaural 3D mix for each visitor. As a freelancer, I spatialized all the music within a digital twin of the museum.",
           "embed": "https://player.vimeo.com/video/907444721",
           "links": []
         },
         {
           "title": "Audiobreeze",
           "year": "",
-          "role": "",
-          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "role": "software programming",
+          "text": "For the company Audiobreeze, I programmed a prototype of their immersive 3D audio system, which creates evolving spatial soundscapes from multichannel nature recordings. My work focused on developing and exploring the technical possibilities of the prototype.\n",
           "embed": "https://www.youtube.com/embed/_Wrfl_sd1R4",
           "links": []
         }
-      ]
+      ],
+      "text": "As a freelancer, I take on projects ranging from sound design and music production to programming and interactive media.\n"
     },
     {
-      "title": "collaboration / künstlerische mitarbeit",
+      "title": "ARTISTC COLLABORATION",
       "items": [
-        {
-          "title": "Asterism",
-          "year": "2022",
-          "role": "",
-          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
-          "embed": "https://www.youtube.com/embed/2ueMUMxI_yk",
-          "links": []
-        },
         {
           "title": "Terminal Infinity",
           "year": "2025",
-          "role": "",
-          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "role": "videodesign",
+          "text": "For Alexander Schubert’s multimedia production *Terminal Infinity*, I designed the video using the 3D software Blender.",
           "embed": "https://www.youtube.com/embed/kyCXDu2mE4o",
           "links": []
         },
         {
-          "title": "Knäuled",
+          "title": "KNÄULED",
           "year": "2025",
-          "role": "",
-          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "role": "audio-visual composition, multimedia synchronisation",
+          "text": "Together with the light collective Göral, we created the audiovisual installation *Knäuled* at Neubad in Lucerne. The installation, consisting of 1 km of LED strips, featured a one-hour soundtrack synchronized with the lighting design, with both sound and light influenced by live sensor data.\n",
           "embed": "https://www.youtube.com/embed/MKy2f5uV9F4",
+          "links": []
+        },
+        {
+          "title": "Asterism",
+          "year": "2022",
+          "role": "sound spatialization",
+          "text": "For the 72-hour performance *Asterism* at the Maillon Festival in Strasbourg, I spatialized the soundtrack composed by Alexander Schubert to a multichannel setup.",
+          "embed": "https://www.youtube.com/embed/2ueMUMxI_yk",
           "links": []
         }
       ]
@@ -89,7 +91,7 @@
           "title": "candid",
           "year": "",
           "role": "",
-          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "text": "Under my first name, I release tracks influenced by a variety of bass-heavy genres, as well as ambient music. This is where I experiment with new ways of shaping and processing sound, exploring different approaches to texture, rhythm, and sonic space.\n",
           "bandcamp": [
             {
               "src": "https://bandcamp.com/EmbeddedPlayer/album=3616600469/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=1346777750/transparent=true/",
@@ -108,7 +110,7 @@
           "title": "prix garanti",
           "year": "",
           "role": "",
-          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "text": "Since 2021, I have been the producer and bassist of the band Prix Garanti.",
           "spotify": [
             {
               "src": "https://open.spotify.com/embed/track/3xZ3ql2ZEoEZpSWhbrYpjR",
@@ -130,15 +132,14 @@
           "title": "a kind machine",
           "year": "2026",
           "role": "",
-          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
-          "embed": "",
+          "text": "A KIND MACHINE was the result of a two-month residency at Lichthoftheater Hamburg. I explored a theatrical language without a human body present on stage. Through robots, everyday devices, and conventional stage elements, I investigated the technological reality we live in.\n<br><br>\nMORE INFO AND DOKU UPCOMING\n",
           "links": []
         },
         {
           "title": "the meadow",
           "year": "2026",
           "role": "",
-          "text": "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough.",
+          "text": "The Meadow is a music theatre piece that engages with the eerie qualities of the self-help tools we integrate into our everyday lives. <br><br>\nA singer called Alice tries to escape the pressure of her work by turning to a mysterious application called 'the meadow'. She finds herself lying in the green grass, watching fluffy clouds drift by, when suddenly new doors open, and her journey turns into a feverish dream",
           "embed": "https://www.youtube.com/embed/PwmzqlevHaY",
           "links": []
         }

@@ -4,3 +4,4 @@ _site/
 vendor/bundle/
 .DS_Store
 *.backup
+_data/*.bak

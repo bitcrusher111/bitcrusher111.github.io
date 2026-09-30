@@ -557,6 +557,8 @@ body:has(.selected-works) {
   text-transform: uppercase;
   margin-bottom: 20px;
 }
+.sw-section-title:has(+ .sw-section-text) { margin-bottom: 8px; }
+.sw-section-text { line-height: 1.4; max-width: 720px; margin-bottom: 24px; }
 
 .sw-item {
   display: grid;
@@ -609,8 +611,14 @@ body:has(.selected-works) {
   font-size: 0.9em;
 }
 
+.sw-socials { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; border-top: 1px solid var(--fg); padding-top: 16px; }
+.sw-socials a { color: var(--fg); text-decoration: none; }
+.sw-socials a::before { content: "→ "; }
+.sw-socials a:hover { text-decoration: underline; }
+
 /* stack media above text on small screens */
 @media (max-width: 800px) {
   .selected-works { padding: 0 16px 60px; }
   .sw-item { grid-template-columns: 1fr; gap: 12px; }
+  .sw-info { order: -1; }
 }

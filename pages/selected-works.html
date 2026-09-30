@@ -8,124 +8,19 @@ hide_header: true
 hide_footer: true
 sitemap: false
 
-# Fill in the content below. Every field is optional:
-#   year     – e.g. "2026"
-#   role     – e.g. "composition, sound design"
-#   text     – short description, shown on the right next to the media
-#   page     – link to the page on this website, e.g. /works/the-meadow/
-#   image    – photo shown on the left, e.g. /assets/images/works/...jpg
-#   embed    – video player shown directly on the page (YouTube/Vimeo embed url)
-#   bandcamp – small bandcamp players, each with src (player url), label and url
-#   spotify  – spotify players, each with src (embed url) and label
-#   links    – external links, each with a label and a url
-sections:
-  - title: music for theater/ dance/ performance
-    items:
-      - title: Engel der Vernichtung
-        year: "2026"
-        role: ""
-        text: "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough."
-        embed: "https://player.vimeo.com/video/1186496932"
-        links: []
-      - title: Heartbreak
-        year: "2025"
-        role: ""
-        text: "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough."
-        embed: "https://www.youtube.com/embed/GXsdZw4N-lE"
-        links: []
-      - title: GOTT
-        year: "2023"
-        role: ""
-        text: "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough."
-        page: /theater/gott/
-        embed: "https://www.youtube.com/embed/w3Edb-5C0WQ"
-        links: []
-
-  - title: freelancing
-    items:
-      - title: Sprachenland @Landesmuseum
-        year: ""
-        role: ""
-        text: "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough."
-        embed: "https://player.vimeo.com/video/907444721"
-        links: []
-      - title: Audiobreeze
-        year: ""
-        role: ""
-        text: "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough."
-        embed: "https://www.youtube.com/embed/_Wrfl_sd1R4"
-        links: []
-
-  - title: collaboration / künstlerische mitarbeit
-    items:
-      - title: Asterism
-        year: "2022"
-        role: ""
-        text: "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough."
-        embed: "https://www.youtube.com/embed/2ueMUMxI_yk"
-        links: []
-      - title: Terminal Infinity
-        year: "2025"
-        role: ""
-        text: "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough."
-        embed: "https://www.youtube.com/embed/kyCXDu2mE4o"
-        links: []
-      - title: Knäuled
-        year: "2025"
-        role: ""
-        text: "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough."
-        embed: "https://www.youtube.com/embed/MKy2f5uV9F4"
-        links: []
-
-  - title: music production
-    items:
-      - title: candid
-        year: ""
-        role: ""
-        text: "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough."
-        bandcamp:
-          - src: "https://bandcamp.com/EmbeddedPlayer/album=3616600469/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=1346777750/transparent=true/"
-            label: "CRTTR-CLB-003 by dataflex"
-            url: "https://crttrcollective.bandcamp.com/album/crttr-clb-003"
-          - src: "https://bandcamp.com/EmbeddedPlayer/album=1043847182/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=3051537641/transparent=true/"
-            label: "CRTTR-CLB-008 by candid"
-            url: "https://crttrcollective.bandcamp.com/album/crttr-clb-008"
-        links: []
-      - title: prix garanti
-        year: ""
-        role: ""
-        text: "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough."
-        spotify:
-          - src: "https://open.spotify.com/embed/track/3xZ3ql2ZEoEZpSWhbrYpjR"
-            label: "Züri"
-          - src: "https://open.spotify.com/embed/track/0l39G6Jjf5GZVvaKOxMupN"
-            label: "Hardlife Bern"
-        links: []
-
-  - title: solo works
-    items:
-      - title: a kind machine
-        year: "2026"
-        role: ""
-        text: "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough."
-        embed: ""
-        links: []
-      - title: the meadow
-        year: "2026"
-        role: ""
-        text: "Example text: a short description of the project. What is it, what was your role, and where and when was it shown? Two to four sentences are usually enough."
-        embed: "https://www.youtube.com/embed/PwmzqlevHaY"
-        links: []
-# Entries without image, embed, bandcamp or spotify show a placeholder box.
+# The content lives in _data/selected_works.json.
+# Edit it with the portfolio editor: python3 tools/portfolio-editor/server.py
 ---
 
+{% assign sw = site.data.selected_works %}
 <main class="selected-works">
-  <h1 class="sw-title">PORTFOLIO CANDID RÜTTER</h1>
-  <p class="sw-subtitle">This is a selection of my work. For my full portfolio, visit <a href="https://candidruetter.net">candidruetter.net</a>.</p>
+  <h1 class="sw-title">{{ sw.title }}</h1>
+  {% if sw.subtitle and sw.subtitle != "" %}<p class="sw-subtitle">{{ sw.subtitle }}</p>{% endif %}
 
-  {% for section in page.sections %}
+  {% for section in sw.sections %}
     <section class="sw-section" id="{{ section.title | slugify }}">
       <h3 class="sw-section-title">// {{ section.title }}</h3>
+      {% if section.text and section.text != "" %}<p class="sw-section-text">{{ section.text }}</p>{% endif %}
 
       {% for item in section.items %}
         <article class="sw-item">
@@ -162,12 +57,14 @@ sections:
             <div class="sw-item-head">
               <h4 class="sw-item-title">{{ item.title }}{% if item.year and item.year != "" %} ({{ item.year }}){% endif %}</h4>
             </div>
-            {% if item.role != "" %}<p class="sw-item-role">{{ item.role }}</p>{% endif %}
-            {% if item.text != "" %}<p class="sw-item-text">{{ item.text }}</p>{% endif %}
+            {% if item.role and item.role != "" %}<p class="sw-item-role">{{ item.role }}</p>{% endif %}
+            {% if item.text and item.text != "" %}<p class="sw-item-text">{{ item.text }}</p>{% endif %}
 
-            {% if item.page or item.links.size > 0 %}
+            {% assign has_page = false %}
+            {% if item.page and item.page != "" %}{% assign has_page = true %}{% endif %}
+            {% if has_page or item.links.size > 0 %}
               <ul class="sw-links">
-                {% if item.page %}<li><a href="{{ item.page }}">→ more on this website</a></li>{% endif %}
+                {% if has_page %}<li><a href="{{ item.page }}">→ more on this website</a></li>{% endif %}
                 {% for link in item.links %}
                   <li><a href="{{ link.url }}" target="_blank" rel="noopener">→ {{ link.label }}</a></li>
                 {% endfor %}
@@ -178,4 +75,12 @@ sections:
       {% endfor %}
     </section>
   {% endfor %}
+
+  {% if sw.socials.size > 0 %}
+    <ul class="sw-socials">
+      {% for link in sw.socials %}
+        <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 </main>
