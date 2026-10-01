@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "key": "works",
+      "heading": "WORKS",
+      "label": "works"
+    },
+    {
+      "key": "theater",
+      "heading": "MUSIC FOR THEATER, DANCE AND PERFORMANCE",
+      "label": "music for theater"
+    },
+    {
+      "key": "collectives",
+      "heading": "ONGOING PROJECTS",
+      "label": "ongoing projects"
+    },
+    {
+      "key": "other",
+      "heading": "OTHER",
+      "label": "other"
+    }
+  ]
+}

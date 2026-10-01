@@ -1,0 +1,92 @@
+{%- comment -%}
+  A page of sections with pieces (media left, text right), used by the
+  selected-works portfolio and the freelancing page.
+  Usage: {% include showcase.html data=site.data.freelancing class="sw-page--site" %}
+{%- endcomment -%}
+{%- assign sw = include.data -%}
+<main class="selected-works {{ include.class }}">
+  {% if sw.title and sw.title != "" %}<h1 class="sw-title">{{ sw.title }}</h1>{% endif %}
+  <div class="sw-intro">
+    {% if sw.subtitle and sw.subtitle != "" %}<div class="sw-subtitle">{% include paragraphs.html text=sw.subtitle %}</div>{% endif %}
+    {% if sw.socials.size > 0 %}
+      <ul class="sw-socials">
+        {% for link in sw.socials %}
+          <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+  {% if sw.skills.size > 0 %}
+    <section class="sw-section sw-skills">
+      <h3 class="sw-section-title">// {{ sw.skills_title | default: "skills" }}</h3>
+      <div class="sw-skills-grid">
+        {% for group in sw.skills %}
+          <div class="sw-skill-group">
+            {% if group.title and group.title != "" %}<h4 class="sw-skill-title">{{ group.title }}</h4>{% endif %}
+            <ul>
+              {% for skill in group.items %}<li>{{ skill }}</li>{% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% for section in sw.sections %}
+    <section class="sw-section" id="{{ section.title | slugify }}">
+      {% if section.title and section.title != "" %}<h3 class="sw-section-title">// {{ section.title }}</h3>{% endif %}
+      {% if section.text and section.text != "" %}<div class="sw-section-text">{% include paragraphs.html text=section.text %}</div>{% endif %}
+
+      {% for item in section.items %}
+        <article class="sw-item">
+          <div class="sw-media">
+            {% assign has_media = false %}
+            {% if item.image and item.image != "" %}
+              {% assign has_media = true %}
+              <img class="sw-image" src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
+            {% endif %}
+
+            {% if item.embed and item.embed != "" %}
+              {% assign has_media = true %}
+              <div class="video-wrapper sw-embed">
+                <iframe src="{{ item.embed }}" title="{{ item.title }}" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            {% endif %}
+
+            {% for player in item.bandcamp %}
+              {% assign has_media = true %}
+              <iframe class="sw-bandcamp" src="{{ player.src }}" title="{{ player.label }}" seamless><a href="{{ player.url }}">{{ player.label }}</a></iframe>
+            {% endfor %}
+
+            {% for player in item.spotify %}
+              {% assign has_media = true %}
+              <iframe class="sw-spotify" src="{{ player.src }}" title="{{ player.label }}" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            {% endfor %}
+
+            {% unless has_media %}
+              <div class="sw-placeholder">video / photo / audio</div>
+            {% endunless %}
+          </div>
+
+          <div class="sw-info">
+            <h4 class="sw-item-title">{{ item.title }}{% if item.year and item.year != "" %} ({{ item.year }}){% endif %}</h4>
+            {% if item.role and item.role != "" %}<p class="sw-item-role">{{ item.role }}</p>{% endif %}
+            {% if item.text and item.text != "" %}<div class="sw-item-text">{% include paragraphs.html text=item.text %}</div>{% endif %}
+
+            {% assign has_page = false %}
+            {% if item.page and item.page != "" %}{% assign has_page = true %}{% endif %}
+            {% if has_page or item.links.size > 0 %}
+              <ul class="sw-links">
+                {% if has_page %}<li><a href="{{ item.page }}">→ full documentation</a></li>{% endif %}
+                {% for link in item.links %}
+                  <li><a href="{{ link.url }}" target="_blank" rel="noopener">→ {{ link.label }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </section>
+  {% endfor %}
+</main>

@@ -1,0 +1,91 @@
+---
+layout: default
+---
+{%- comment -%}
+  One layout for every project page. Previous / next follow the order of the portfolio page.
+{%- endcomment -%}
+{%- assign ordered = "" | split: "" -%}
+{%- for category in site.data.portfolio.categories -%}
+  {%- assign in_category = site.projects | where: "category", category.key | sort: "date" | reverse -%}
+  {%- assign ordered = ordered | concat: in_category -%}
+  {%- if category.key == page.category %}{% assign category_label = category.label %}{% endif -%}
+{%- endfor -%}
+{%- for item in ordered -%}
+  {%- if item.url == page.url %}{% assign current = forloop.index0 %}{% endif -%}
+{%- endfor -%}
+{%- assign previous_index = current | minus: 1 -%}
+{%- assign next_index = current | plus: 1 -%}
+{%- if current > 0 %}{% assign previous_project = ordered[previous_index] %}{% endif -%}
+{%- assign next_project = ordered[next_index] -%}
+
+<main class="project-page">
+  <nav class="project-nav">
+    <div>{% if previous_project %}<a href="{{ previous_project.url }}" class="work-nav-link">← {{ previous_project.title }}</a>{% endif %}</div>
+    <div class="project-nav-label">{{ category_label }}</div>
+    <div>{% if next_project %}<a href="{{ next_project.url }}" class="work-nav-link">{{ next_project.title }} →</a>{% endif %}</div>
+  </nav>
+
+  <h2 class="project-title">{{ page.title }}</h2>
+
+  {% if page.videos.size > 0 %}{% include video.html src=page.videos[0] title=page.title %}{% endif %}
+
+  {% assign text = content | strip %}
+  {% if text != "" %}
+  <div class="text-container">{% include paragraphs.html text=text %}</div>
+  {% endif %}
+
+  {% if page.credits.size > 0 %}
+  <div class="text-container">
+    <div class="list-container">
+      {% for credit in page.credits %}
+        {% assign parts = credit | split: ', ' %}
+        {% assign job = parts[0] %}
+        {% assign names = parts | shift %}
+        {% for name in names %}
+          <div class="list-item">
+            <span class="job">{% if forloop.first %}{{ job }}{% endif %}</span>
+            <span class="names">{{ name }}</span>
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if page.audio.size > 0 %}
+  <div class="text-container audio-players">
+    {% for player in page.audio %}
+      {% if player.height %}{% assign height = player.height %}
+      {% elsif player.src contains "spotify" %}{% assign height = 152 %}
+      {% elsif player.src contains "bandcamp" %}{% assign height = 120 %}
+      {% elsif player.src contains "soundcloud" and player.src contains "/tracks/" %}{% assign height = 166 %}
+      {% else %}{% assign height = 350 %}{% endif %}
+      <iframe src="{{ player.src }}" height="{{ height }}" title="{{ player.label | default: page.title }}" allow="autoplay; encrypted-media" loading="lazy"></iframe>
+      {% if player.label %}<p class="audio-label">{{ player.label }}</p>{% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% for video in page.videos offset: 1 %}{% include video.html src=video title=page.title %}{% endfor %}
+
+  {% if page.links.size > 0 %}
+  <ul class="text-container project-links">
+    {% for link in page.links %}
+      <li><a href="{{ link.url }}" target="_blank" rel="noopener">→ {{ link.label }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if page.gallery.size > 0 %}
+  <div class="theater-gallery" data-images='{{ page.gallery | jsonify | escape }}'>
+    <div class="main-image-container">
+      <img id="mainGalleryImg" src="{{ page.gallery[0] }}" alt="{{ page.title }}">
+      {% if page.gallery.size > 1 %}
+      <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
+      <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
+      {% endif %}
+    </div>
+    {% if page.photo_credits %}<p class="photo-credits">{{ page.photo_credits }}</p>{% endif %}
+  </div>
+  {% endif %}
+</main>

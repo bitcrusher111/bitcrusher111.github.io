@@ -1,0 +1,29 @@
+{
+  "title": "",
+  "subtitle": "As a freelancer I work in the field of sound design (for all media), producing/mixing of music and programming of (interactive) media installations. Please contact me for more information at <a href=\"mailto:me@candidruetter.net\">me@candidruetter.net</a>.",
+  "socials": [],
+  "skills": [],
+  "sections": [
+    {
+      "title": "selected projects",
+      "items": [
+        {
+          "title": "Sprachenland",
+          "year": "",
+          "role": "sound spatialization for tracked headphone system",
+          "text": "The exhibition Sprachenland at the Landesmuseum Zürich featured a head-tracking system developed by iart, which calculates a real-time binaural 3D mix for each visitor. As a freelancer, I spatialized all the music within a digital twin of the museum.",
+          "embed": "https://player.vimeo.com/video/907444721",
+          "links": []
+        },
+        {
+          "title": "Audiobreeze",
+          "year": "",
+          "role": "software programming",
+          "text": "For the company Audiobreeze, I programmed a prototype of their immersive 3D audio system, which creates evolving spatial soundscapes from multichannel nature recordings. My work focused on developing and exploring the technical possibilities of the prototype.",
+          "embed": "https://www.youtube.com/embed/_Wrfl_sd1R4",
+          "links": []
+        }
+      ]
+    }
+  ]
+}

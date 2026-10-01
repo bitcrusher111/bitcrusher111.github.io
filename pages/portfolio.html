@@ -2,54 +2,21 @@
 layout: default
 title: Portfolio
 permalink: /
+# categories: _data/portfolio.json, projects: _projects/ (edit both in the site editor)
 ---
-
-     <div class="title_gallery">WORKS</div>
+{% for category in site.data.portfolio.categories %}
+  {% assign projects = site.projects | where: "category", category.key | sort: "date" | reverse %}
+  {% if projects.size > 0 %}
+  <section class="portfolio-section">
+    <div class="title_gallery">{{ category.heading }}</div>
     <div class="gallery gallery_works">
-  {% assign sorted_solo = site.works | where: "category", "soloworks" | sort: "date" | reverse %}
-  {% for work in sorted_solo %}
-    <a href="{{ work.url }}" class="gallery-item">
-      <img src="{{ work.image }}" alt="{{ work.title }}" loading="lazy">
-      <div class="overlay">{{ work.title }}</div>
-    </a>
+      {% for project in projects %}
+        <a href="{{ project.url }}" class="gallery-item">
+          <img src="{{ project.image }}" alt="{{ project.title }}" loading="lazy">
+          <div class="overlay">{{ project.title }}</div>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 {% endfor %}
-  </div>
-  <br><br>
-  <div class="title_gallery">MUSIC FOR THEATER, DANCE AND PERFORMANCE</div>
-
-  <div class="gallery gallery_works">
-{% assign sorted_theater = site.theater | sort: 'date' | reverse %}
-{% for work in sorted_theater %}
-    <a href="{{ work.url }}" class="gallery-item">
-      <img src="{{ work.image }}" alt="{{ work.title }}" loading="lazy">
-      <div class="overlay">{{ work.title }}</div>
-    </a>
-{% endfor %}
-  </div>
-  <br> <br>
-<div class="title_gallery">ONGOING PROJECTS</div>
-
-
-     <div class="gallery gallery_works">
-  {% assign sorted_collectives = site.collectives | sort: 'date' %}
-  {% for item in sorted_collectives %}
-    <a href="{{ item.url }}" class="gallery-item">
-      <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
-      <div class="overlay">{{ item.title }}</div>
-    </a>
-  {% endfor %}
-  </div>
-  
-  <br><br><br>
-
-<div class="title_gallery">  OTHER</div>
-  
-  <div class="gallery gallery_works">
-  {% assign sorted_other = site.other | sort: 'date' | reverse %}
-  {% for item in sorted_other %}
-    <a href="{{ item.url }}" class="gallery-item">
-      <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
-      <div class="overlay">{{ item.title }}</div>
-    </a>
-  {% endfor %}
-  </div>

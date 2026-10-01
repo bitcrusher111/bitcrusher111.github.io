@@ -1,38 +1,18 @@
+# All works (solo works, theater, ongoing projects, other) live in _projects/.
+# Their category decides where they appear; categories are set in _data/portfolio.json.
 collections:
-  works:
+  projects:
     output: true
-    permalink: /works/:name/
-  theater:
-    output: true
-    permalink: /theater/:name/
-  other:
-    output: true
-    permalink: /other/:name/
-  collectives:
-    output: true
-    permalink: /collectives/:name/
 
 defaults:
   - scope:
       path: ""
-      type: "works"
+      type: "projects"
     values:
-      layout: "work"
-  - scope:
-      path: ""
-      type: "theater"
-    values:
-      layout: "theater"
-  - scope:
-      path: ""
-      type: "other"
-    values:
-      layout: "other"
-  - scope:
-      path: ""
-      type: "collectives"
-    values:
-      layout: "collective"
+      layout: "project"
+
+# build pages even if their date is in the future (otherwise they silently disappear)
+future: true
 
 exclude:
   - vendor
@@ -41,5 +21,5 @@ exclude:
   - Gemfile.lock
   - node_modules
   - bin
-  - README.md
   - tools
+  - README.md

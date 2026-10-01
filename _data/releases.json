@@ -1,0 +1,94 @@
+{
+  "releases": [
+    {
+      "title": "Muetter",
+      "url": "https://open.spotify.com/track/3GeKJO53BnOLxVsfnfmBtP",
+      "image": "https://i.scdn.co/image/ab67616d00001e0226c916b32d1c525ff65d1f2b"
+    },
+    {
+      "title": "Chuchitisch",
+      "url": "https://open.spotify.com/track/5bVYhHeV8tXeNUBpEvPU4F",
+      "image": "https://i.scdn.co/image/ab67616d00001e026d791a9b0f928a55598adf95"
+    },
+    {
+      "title": "dumm",
+      "url": "https://open.spotify.com/track/4GWev803f3r6eCr0NZIMgY",
+      "image": "https://i.scdn.co/image/ab67616d00001e02840379ad3c7063ab722b37f3"
+    },
+    {
+      "title": "Züri",
+      "url": "https://open.spotify.com/track/3xZ3ql2ZEoEZpSWhbrYpjR",
+      "image": "https://i.scdn.co/image/ab67616d00001e02eccd7f0904219c1626c6daa0"
+    },
+    {
+      "title": "CRTTR-CLB-008",
+      "url": "https://crttrcollective.bandcamp.com/track/plasticrust",
+      "image": "/assets/images/releases/galleryicons/crttrclb008.jpg"
+    },
+    {
+      "title": "rockband",
+      "url": "https://prixgaranti.bandcamp.com/track/fireflies",
+      "image": "/assets/images/releases/galleryicons/rockband.jpg"
+    },
+    {
+      "title": "fireflies",
+      "url": "https://prixgaranti.bandcamp.com/track/fireflies",
+      "image": "/assets/images/releases/galleryicons/fireflies.jpg"
+    },
+    {
+      "title": "CRTTR-CLB-003",
+      "url": "https://crttrcollective.bandcamp.com/track/object-a",
+      "image": "/assets/images/releases/galleryicons/crttrclb003.jpg"
+    },
+    {
+      "title": "hope you never go extinct",
+      "url": "https://kashevtapes.bandcamp.com/album/ksh14-hope-you-never-go-extinct",
+      "image": "/assets/images/releases/galleryicons/ihynge.jpg"
+    },
+    {
+      "title": "FLAMES2dust",
+      "url": "https://prixgaranti.bandcamp.com/album/flames2dust",
+      "image": "/assets/images/releases/galleryicons/flames2dust.jpg"
+    },
+    {
+      "title": "i wanna be a superstar vol. 2",
+      "url": "https://crttrcollective.bandcamp.com/album/i-wanna-be-a-superstar-vol-2",
+      "image": "/assets/images/releases/galleryicons/iwbas2.jpg"
+    },
+    {
+      "title": "nüt isch guet und aues isch plastik",
+      "url": "https://prixgaranti.bandcamp.com/album/n-t-isch-guet-und-aues-isch-plastik",
+      "image": "/assets/images/releases/galleryicons/niguaip.webp"
+    },
+    {
+      "title": "i wanna be superstar vol. 1",
+      "url": "https://crttrcollective.bandcamp.com/track/meshes",
+      "image": "/assets/images/releases/galleryicons/iwbas1.jpg"
+    },
+    {
+      "title": "auti chind",
+      "url": "https://prixgaranti.bandcamp.com/track/auti-chind",
+      "image": "/assets/images/releases/galleryicons/autichind.jpg"
+    },
+    {
+      "title": "hardlife bern",
+      "url": "https://prixgaranti.bandcamp.com/track/hardlife-bern",
+      "image": "/assets/images/releases/galleryicons/hardlife.webp"
+    },
+    {
+      "title": "nüt isch guet und aues isch scheisse",
+      "url": "https://prixgaranti.bandcamp.com/album/n-t-isch-guet-und-aues-isch-scheisse",
+      "image": "/assets/images/releases/galleryicons/niguais.webp"
+    },
+    {
+      "title": "perm",
+      "url": "https://soundcloud.com/dataflegs/perm-1",
+      "image": "/assets/images/releases/galleryicons/perm.webp"
+    },
+    {
+      "title": "hurl",
+      "url": "https://soundcloud.com/dataflegs/hurl-1",
+      "image": "/assets/images/releases/galleryicons/hurl.webp"
+    }
+  ]
+}

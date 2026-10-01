@@ -1,0 +1,1 @@
+<li data-date="{{ include.event.date }}">{% if include.event.label %}{{ include.event.label }}{% else %}{{ include.event.date | date: "%d.%m.%Y" }}{% endif %} {{ include.event.text }}</li>

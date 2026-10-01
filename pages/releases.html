@@ -2,80 +2,13 @@
 layout: default
 title: Releases
 permalink: /releases.html
+# content: _data/releases.json (edit it in the site editor)
 ---
-
 <div class="gallery gallery_releases">
-      <a href="https://open.spotify.com/track/3GeKJO53BnOLxVsfnfmBtP" class="gallery-item">
-        <img src="https://i.scdn.co/image/ab67616d00001e0226c916b32d1c525ff65d1f2b" alt="Muetter cover" loading="lazy">
-        <div class="overlay">Muetter</div>
-      </a>
-      <a href="https://open.spotify.com/track/5bVYhHeV8tXeNUBpEvPU4F" class="gallery-item">
-        <img src="https://i.scdn.co/image/ab67616d00001e026d791a9b0f928a55598adf95" alt="Chuchitisch cover" loading="lazy">
-        <div class="overlay">Chuchitisch</div>
-      </a>
-      <a href="https://open.spotify.com/track/4GWev803f3r6eCr0NZIMgY" class="gallery-item">
-        <img src="https://i.scdn.co/image/ab67616d00001e02840379ad3c7063ab722b37f3" alt="dumm cover" loading="lazy">
-        <div class="overlay">dumm</div>
-      </a>
-      <a href="https://open.spotify.com/track/3xZ3ql2ZEoEZpSWhbrYpjR" class="gallery-item">
-        <img src="https://i.scdn.co/image/ab67616d00001e02eccd7f0904219c1626c6daa0" alt="Züri cover" loading="lazy">
-        <div class="overlay">Züri</div>
-        </a>
-      <a href="https://crttrcollective.bandcamp.com/track/plasticrust" class="gallery-item">
-          <img src="/assets/images/releases/galleryicons/crttrclb008.jpg" alt="Image 2" loading="lazy">
-          <div class="overlay">CRTTR-CLB-008</div>
-          </a>
-      <a href="https://prixgaranti.bandcamp.com/track/fireflies" class="gallery-item">
-          <img src="/assets/images/releases/galleryicons/rockband.jpg" alt="Image 2" loading="lazy">
-          <div class="overlay">rockband</div>
-          </a>
-      <a href="https://prixgaranti.bandcamp.com/track/fireflies" class="gallery-item">
-          <img src="/assets/images/releases/galleryicons/fireflies.jpg" alt="Image 2" loading="lazy">
-          <div class="overlay">fireflies</div>
-          </a>
-      <a href="https://crttrcollective.bandcamp.com/track/object-a" class="gallery-item">
-           <img src="/assets/images/releases/galleryicons/crttrclb003.jpg" alt="Image 2" loading="lazy">
-           <div class="overlay">CRTTR-CLB-003</div>
-         </a>
-      <a href="https://kashevtapes.bandcamp.com/album/ksh14-hope-you-never-go-extinct" class="gallery-item">
-          <img src="/assets/images/releases/galleryicons/ihynge.jpg" alt="Image 2" loading="lazy">
-          <div class="overlay">hope you never go extinct</div>
-        </a>
-      <a href="https://prixgaranti.bandcamp.com/album/flames2dust" class="gallery-item">
-          <img src="/assets/images/releases/galleryicons/flames2dust.jpg" alt="Image 2" loading="lazy">
-        <div class="overlay">FLAMES2dust</div>
-        </a>
-      <a href="https://crttrcollective.bandcamp.com/album/i-wanna-be-a-superstar-vol-2" class="gallery-item">
-         <img src="/assets/images/releases/galleryicons/iwbas2.jpg" alt="Image 2" loading="lazy">
-         <div class="overlay">i wanna be a superstar vol. 2</div>
-       </a>
-       <a href="https://prixgaranti.bandcamp.com/album/n-t-isch-guet-und-aues-isch-plastik" class="gallery-item">
-        <img src="/assets/images/releases/galleryicons/niguaip.webp" alt="Image 2" loading="lazy">
-        <div class="overlay">nüt isch guet und aues isch plastik</div>
-      </a>
-      <a href="https://crttrcollective.bandcamp.com/track/meshes" class="gallery-item">
-        <img src="/assets/images/releases/galleryicons/iwbas1.jpg" alt="Image 2" loading="lazy">
-        <div class="overlay">i wanna be superstar vol. 1</div>
-      </a>
-      <a href="https://prixgaranti.bandcamp.com/track/auti-chind" class="gallery-item">
-        <img src="/assets/images/releases/galleryicons/autichind.jpg" alt="Image 2" loading="lazy">
-        <div class="overlay">auti chind</div>
-      </a>
-      <a href="https://prixgaranti.bandcamp.com/track/hardlife-bern" class="gallery-item">
-        <img src="/assets/images/releases/galleryicons/hardlife.webp" alt="Image 2" loading="lazy">
-        <div class="overlay">hardlife bern</div>
-      </a>
-      <a href="https://prixgaranti.bandcamp.com/album/n-t-isch-guet-und-aues-isch-scheisse" class="gallery-item">
-        <img src="/assets/images/releases/galleryicons/niguais.webp" alt="Image 2" loading="lazy">
-        <div class="overlay">nüt isch guet und aues isch scheisse</div>
-      </a>
-      <a href="https://soundcloud.com/dataflegs/perm-1" class="gallery-item">
-        <img src="/assets/images/releases/galleryicons/perm.webp" alt="Image 2" loading="lazy">
-        <div class="overlay">perm</div>
-      </a>
-      <a href="https://soundcloud.com/dataflegs/hurl-1" class="gallery-item">
-        <img src="/assets/images/releases/galleryicons/hurl.webp" alt="Image 2" loading="lazy">
-        <div class="overlay">hurl</div>
-      </a>
-      
-   </div>
+  {% for release in site.data.releases.releases %}
+    <a href="{{ release.url }}" class="gallery-item">
+      <img src="{{ release.image }}" alt="{{ release.title }}" loading="lazy">
+      <div class="overlay">{{ release.title }}</div>
+    </a>
+  {% endfor %}
+</div>

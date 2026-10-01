@@ -1,0 +1,15 @@
+{%- comment -%}
+  Turns plain text into paragraphs: an empty line starts a new paragraph,
+  a single line break stays a line break. Simple HTML (links etc.) passes through.
+  Usage: {% include paragraphs.html text=some_text %}
+{%- endcomment -%}
+{%- capture paragraph_break %}
+
+{% endcapture -%}
+{%- assign paragraphs = include.text | split: paragraph_break -%}
+{%- for paragraph in paragraphs -%}
+  {%- assign paragraph = paragraph | strip -%}
+  {%- if paragraph != "" %}
+<p>{{ paragraph | newline_to_br }}</p>
+  {%- endif -%}
+{%- endfor %}
