@@ -526,15 +526,8 @@ th { background-color: #f2f2f2; }
   max-width: 1100px;
   align-self: flex-start; /* sit on the left instead of the centered site column */
   margin: 0;
-  padding: 0 40px 60px;
+  padding: 40px 40px 60px;
   text-align: left;
-}
-
-/* no navbar on this page, and light colors instead of the site's black */
-body:has(.selected-works) {
-  --bg: #fff;
-  --fg: #000;
-  padding-top: 0;
 }
 
 .sw-title {
@@ -542,11 +535,21 @@ body:has(.selected-works) {
   font-size: 2em;
   font-weight: bold;
   letter-spacing: 0.08em;
-  margin: 60px 0 12px;
+  margin: 0 0 12px;
 }
 
-.sw-subtitle { line-height: 1.4; margin-bottom: 48px; }
+/* intro text, an empty line, then one social link per line */
+.sw-intro { margin-bottom: 48px; }
+.sw-socials { list-style: none; margin-top: 1.4em; line-height: 1.4; }
+.sw-socials a { color: var(--fg); text-decoration: none; }
+.sw-socials a:hover { text-decoration: underline; }
+
+.sw-subtitle { line-height: 1.4; }
 .sw-subtitle a { color: var(--fg); }
+
+.sw-skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px 32px; }
+.sw-skill-title { font-size: 1em; font-weight: bold; margin-bottom: 6px; }
+.sw-skill-group ul { list-style: none; line-height: 1.5; }
 
 .sw-section { margin-bottom: 48px; }
 
@@ -587,7 +590,7 @@ body:has(.selected-works) {
   aspect-ratio: 16 / 9;
   margin: 0;
 }
-.sw-image { display: block; width: 100%; height: auto; }
+.sw-image { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; } /* same shape as the videos */
 .sw-bandcamp {
   display: block;
   border: 0;
@@ -611,14 +614,10 @@ body:has(.selected-works) {
   font-size: 0.9em;
 }
 
-.sw-socials { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; border-top: 1px solid var(--fg); padding-top: 16px; }
-.sw-socials a { color: var(--fg); text-decoration: none; }
-.sw-socials a::before { content: "→ "; }
-.sw-socials a:hover { text-decoration: underline; }
 
 /* stack media above text on small screens */
 @media (max-width: 800px) {
-  .selected-works { padding: 0 16px 60px; }
+  .selected-works { padding: 16px 16px 60px; }
   .sw-item { grid-template-columns: 1fr; gap: 12px; }
   .sw-info { order: -1; }
 }

@@ -108,7 +108,7 @@
   .pv-media { display: flex; flex-direction: column; gap: 12px; margin-bottom: 14px; }
   .pv-media iframe.video, .pv-media .ph { width: 100%; aspect-ratio: 16/9; border: 0; display: block; }
   .pv-media .ph { display: flex; align-items: center; justify-content: center; border: 1px dashed #aaa; color: grey; font-size: .9em; }
-  .pv-media img { width: 100%; display: block; }
+  .pv-media img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
   .pv-media iframe.bandcamp { width: 100%; height: 120px; border: 0; }
   .pv-media iframe.spotify { width: 100%; height: 152px; border: 0; border-radius: 12px; }
   .pv-title { font-size: 1.1em; font-weight: bold; }
@@ -119,6 +119,22 @@
   .pv-links a { text-decoration: none; }
   .pv-section { font-weight: bold; font-style: italic; text-transform: uppercase; }
   .pv-page-title { font-size: 1.6em; font-weight: bold; letter-spacing: .08em; margin-bottom: 10px; }
+  .pv-skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 14px 20px; margin-top: 8px; }
+  .pv-skills b { display: block; margin-bottom: 4px; }
+  .pv-skills ul { list-style: none; line-height: 1.5; }
+  .pv-block { margin-top: 24px; }
+
+  /* skills form */
+  .skill-group { border: 1px dashed var(--line); border-radius: 8px; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+  .skill-group-head { display: flex; gap: 6px; align-items: center; }
+  .skill-group-head input { flex: 1; font-weight: 600; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); cursor: text; }
+  .chips:focus-within { outline: 2px solid var(--drop); outline-offset: -1px; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 3px 4px 3px 9px; border-radius: 999px; background: var(--panel); border: 1px solid var(--line); font-size: 13px; cursor: grab; }
+  .chip.dragging { opacity: .4; }
+  .chip button { border: none; padding: 0 5px; border-radius: 999px; line-height: 1.2; color: var(--muted); }
+  .chip button:hover { color: var(--danger); background: none; }
+  .chips input { flex: 1; min-width: 140px; border: none; background: none; padding: 4px; outline: none; }
 
   .toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--accent-fg); padding: 8px 14px; border-radius: 8px; font-size: 13px; opacity: 0; transition: opacity .2s; pointer-events: none; }
   .toast.show { opacity: 1; }
@@ -212,6 +228,8 @@ function newItem() { return { title: "New piece", year: "", role: "", text: "", 
 function cleanForSave(d) {
   const out = JSON.parse(JSON.stringify(d));
   out.socials = (out.socials || []).filter(l => l.url);
+  out.skills = (out.skills || []).map(g => ({ title: (g.title || "").trim(), items: (g.items || []).filter(Boolean) })).filter(g => g.title || g.items.length);
+  if (!out.skills_title) delete out.skills_title;
   for (const sec of out.sections) {
     sec.items = sec.items.map(it => {
       const o = { title: it.title || "", year: it.year || "", role: it.role || "", text: it.text || "" };
@@ -365,10 +383,16 @@ function renderPage(main) {
   const work = h(`<div class="work"><div class="form"></div><div class="preview"></div></div>`);
   const form = work.firstElementChild, pv = work.lastElementChild;
   const fs = h(`<fieldset><legend>Page</legend></fieldset>`);
-  const upd = () => { pv.innerHTML = `<div class="preview-label">Preview</div><div class="pv-page-title">${esc(data.title)}</div><p class="pv-text">${data.subtitle || ""}</p>`; };
+  data.skills ||= [];
+  const upd = () => {
+    const groups = data.skills.filter(g => g.title || g.items.length);
+    pv.innerHTML = `<div class="preview-label">Preview</div><div class="pv-page-title">${esc(data.title)}</div><p class="pv-text">${data.subtitle || ""}</p>`
+      + (groups.length ? `<div class="pv-block"><div class="pv-section">// ${esc(data.skills_title || "skills")}</div><div class="pv-skills">${groups.map(g => `<div>${g.title ? `<b>${esc(g.title)}</b>` : ""}<ul>${g.items.map(i => `<li>${esc(i)}</li>`).join("")}</ul></div>`).join("")}</div></div>` : "");
+  };
   fs.append(field("Title", data.title, v => { data.title = v; upd(); }));
   fs.append(field("Intro text", data.subtitle, v => { data.subtitle = v; upd(); }, { type: "textarea", hint: "You can use simple HTML, e.g. <code>&lt;a href=\"https://…\"&gt;link&lt;/a&gt;</code>" }));
   form.append(fs);
+  form.append(skillsEditor(upd));
   form.append(listEditor("Social links", data, "socials", [["label", "Text", null], ["url", "URL"]], "Shown as text links at the bottom of the page, e.g. instagram, youtube.", () => {}));
   main.append(work); upd();
 }
@@ -411,7 +435,7 @@ function renderItem(main, s, i) {
 
   const updInfo = () => {
     const links = [];
-    if (it.page) links.push(`<li><a href="http://localhost:4000${esc(it.page)}" target="_blank">→ more on this website</a></li>`);
+    if (it.page) links.push(`<li><a href="http://localhost:4000${esc(it.page)}" target="_blank">→ full documentation</a></li>`);
     (it.links || []).filter(l => l.url).forEach(l => links.push(`<li><a href="${esc(l.url)}" target="_blank" rel="noopener">→ ${esc(l.label || l.url)}</a></li>`));
     pvInfo.innerHTML = `<div class="pv-title">${esc(it.title)}${it.year ? ` (${esc(it.year)})` : ""}</div>`
       + (it.role ? `<p class="pv-role">${esc(it.role)}</p>` : "")
@@ -482,11 +506,73 @@ function renderItem(main, s, i) {
   form.append(listEditor("Links", it, "links", [["label", "Label"], ["url", "URL"]], "Shown as “→ label” below the text.", updInfo));
 
   const pageFs = h(`<fieldset><legend>Page on this website</legend></fieldset>`);
-  pageFs.append(field("Path", it.page, v => { it.page = v.trim(); updInfo(); }, { placeholder: "/theater/gott/", hint: "Adds a “→ more on this website” link." }));
+  pageFs.append(field("Path", it.page, v => { it.page = v.trim(); updInfo(); }, { placeholder: "/theater/gott/", hint: "Adds a “→ full documentation” link." }));
   form.append(pageFs);
 
   main.append(work);
   updInfo(); updMedia();
+}
+
+/* skills: groups with a name and a list of tags */
+function skillsEditor(onChange) {
+  const fs = h(`<fieldset><legend>Skills</legend><p class="hint">Shown after the intro text. Make groups (e.g. composition, sound design, technical) and type each skill, then press Enter. Paste a comma-separated list to add many at once. Drag tags to reorder them.</p></fieldset>`);
+  fs.append(field("Heading", data.skills_title || "", v => { data.skills_title = v; onChange(); }, { placeholder: "skills", hint: "Shown as “// heading”. Leave empty for “skills”." }));
+  const wrap = h(`<div class="list"></div>`);
+  fs.append(wrap);
+  const changed = () => { markDirty(); onChange(); };
+
+  const draw = (focusGroup = -1) => {
+    wrap.innerHTML = "";
+    data.skills.forEach((g, n) => {
+      g.items ||= [];
+      const box = h(`<div class="skill-group"><div class="skill-group-head"><input placeholder="Group name, e.g. composition"></div><div class="chips"></div></div>`);
+      const title = $("input", box);
+      title.value = g.title || "";
+      title.addEventListener("input", () => { g.title = title.value; changed(); });
+      const head = $(".skill-group-head", box);
+      const mk = (t, tip, fn, cls = "icon") => { const b = h(`<button class="${cls}" title="${tip}">${t}</button>`); if (fn) b.onclick = fn; else b.disabled = true; head.append(b); };
+      mk("↑", "Move group up", n > 0 ? () => { data.skills.splice(n - 1, 0, data.skills.splice(n, 1)[0]); changed(); draw(); } : null);
+      mk("↓", "Move group down", n < data.skills.length - 1 ? () => { data.skills.splice(n + 1, 0, data.skills.splice(n, 1)[0]); changed(); draw(); } : null);
+      mk("Remove", "Remove group", () => { if (g.items.length && !confirm(`Remove the group "${g.title || "untitled"}" and its ${g.items.length} skill(s)?`)) return; data.skills.splice(n, 1); changed(); draw(); }, "icon danger");
+
+      const chips = $(".chips", box);
+      const input = h(`<input placeholder="type a skill, press Enter">`);
+      let dragFrom = null;
+      const drawChips = () => {
+        chips.querySelectorAll(".chip").forEach(c => c.remove());
+        g.items.forEach((skill, k) => {
+          const chip = h(`<span class="chip" draggable="true">${esc(skill)}<button title="Remove">×</button></span>`);
+          $("button", chip).onclick = e => { e.stopPropagation(); g.items.splice(k, 1); changed(); drawChips(); input.focus(); };
+          chip.addEventListener("dragstart", e => { dragFrom = k; chip.classList.add("dragging"); e.dataTransfer.effectAllowed = "move"; e.dataTransfer.setData("text/plain", ""); });
+          chip.addEventListener("dragend", () => { dragFrom = null; drawChips(); });
+          chip.addEventListener("dragover", e => { if (dragFrom !== null) e.preventDefault(); });
+          chip.addEventListener("drop", e => { e.preventDefault(); if (dragFrom === null || dragFrom === k) return; g.items.splice(k, 0, g.items.splice(dragFrom, 1)[0]); changed(); drawChips(); });
+          chips.insertBefore(chip, input);
+        });
+      };
+      const add = text => {
+        const parts = text.split(/[,\n]/).map(t => t.trim()).filter(Boolean);
+        if (!parts.length) return;
+        g.items.push(...parts); input.value = ""; changed(); drawChips();
+      };
+      input.addEventListener("keydown", e => {
+        if (e.key === "Enter" || (e.key === "," && !e.isComposing)) { e.preventDefault(); add(input.value); }
+        else if (e.key === "Backspace" && !input.value && g.items.length) { input.value = g.items.pop(); changed(); drawChips(); e.preventDefault(); }
+      });
+      input.addEventListener("paste", e => { const t = e.clipboardData.getData("text"); if (/[,\n]/.test(t)) { e.preventDefault(); add(input.value + t); } });
+      input.addEventListener("blur", () => add(input.value));
+      chips.append(input);
+      chips.onclick = e => { if (e.target === chips) input.focus(); };
+      drawChips();
+      wrap.append(box);
+      if (n === focusGroup) title.focus();
+    });
+    const addBtn = h(`<button>+ add skill group</button>`);
+    addBtn.onclick = () => { data.skills.push({ title: "", items: [] }); changed(); draw(data.skills.length - 1); };
+    wrap.append(addBtn);
+  };
+  draw();
+  return fs;
 }
 
 /* generic editor for a list of small objects (players, links) */

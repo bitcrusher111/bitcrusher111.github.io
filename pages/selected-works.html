@@ -13,9 +13,38 @@ sitemap: false
 ---
 
 {% assign sw = site.data.selected_works %}
+<style>
+  /* only on this page: no navbar spacing, light colors instead of the site's black */
+  body { --bg: #fff; --fg: #000; padding-top: 0; }
+</style>
 <main class="selected-works">
   <h1 class="sw-title">{{ sw.title }}</h1>
-  {% if sw.subtitle and sw.subtitle != "" %}<p class="sw-subtitle">{{ sw.subtitle }}</p>{% endif %}
+  <div class="sw-intro">
+    {% if sw.subtitle and sw.subtitle != "" %}<p class="sw-subtitle">{{ sw.subtitle }}</p>{% endif %}
+    {% if sw.socials.size > 0 %}
+      <ul class="sw-socials">
+        {% for link in sw.socials %}
+          <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+  {% if sw.skills.size > 0 %}
+    <section class="sw-section sw-skills">
+      <h3 class="sw-section-title">// {{ sw.skills_title | default: "skills" }}</h3>
+      <div class="sw-skills-grid">
+        {% for group in sw.skills %}
+          <div class="sw-skill-group">
+            {% if group.title and group.title != "" %}<h4 class="sw-skill-title">{{ group.title }}</h4>{% endif %}
+            <ul>
+              {% for skill in group.items %}<li>{{ skill }}</li>{% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
 
   {% for section in sw.sections %}
     <section class="sw-section" id="{{ section.title | slugify }}">
@@ -64,7 +93,7 @@ sitemap: false
             {% if item.page and item.page != "" %}{% assign has_page = true %}{% endif %}
             {% if has_page or item.links.size > 0 %}
               <ul class="sw-links">
-                {% if has_page %}<li><a href="{{ item.page }}">→ more on this website</a></li>{% endif %}
+                {% if has_page %}<li><a href="{{ item.page }}">→ full documentation</a></li>{% endif %}
                 {% for link in item.links %}
                   <li><a href="{{ link.url }}" target="_blank" rel="noopener">→ {{ link.label }}</a></li>
                 {% endfor %}
@@ -75,12 +104,4 @@ sitemap: false
       {% endfor %}
     </section>
   {% endfor %}
-
-  {% if sw.socials.size > 0 %}
-    <ul class="sw-socials">
-      {% for link in sw.socials %}
-        <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
 </main>
