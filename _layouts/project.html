@@ -27,7 +27,7 @@ layout: default
 
   <h2 class="project-title">{{ page.title }}</h2>
 
-  {% if page.videos.size > 0 %}{% include video.html src=page.videos[0] title=page.title %}{% endif %}
+  {% if page.videos.size > 0 %}{% assign first_video = page.videos | first %}{% include video.html src=first_video title=page.title %}{% endif %}
 
   {% assign text = content | strip %}
   {% if text != "" %}
