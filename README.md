@@ -1,31 +1,42 @@
-Local Jekyll preview — copy/paste commands
+# candidruetter.net
 
-One-time setup (new machine)
-----------------------------
-# Install Ruby 3.2.9 and Bundler, then install deps
-rbenv install 3.2.9
-rbenv local 3.2.9
-gem install bundler -v 4.0.3
-bundle install
+## Editing the website
 
-Daily workflow
---------------
-# From the repo root, start the dev server with live reload
-eval "$(rbenv init - zsh)"
-rbenv shell 3.2.9
-bundle exec jekyll serve --livereload
+    ./bin/edit.sh
 
-# Open in browser
-# http://127.0.0.1:4000
+(or in VS Code: Terminal → Run Build Task). This starts
 
-Troubleshooting
----------------
-# If bundler/ruby seems wrong (using system Ruby), re-init rbenv
-eval "$(rbenv init - zsh)"
-rbenv shell 3.2.9
+- the **site editor** at http://localhost:4001 (opens automatically)
+- a **preview** of the website at http://localhost:4000
 
-# If you need a different port
-bundle exec jekyll serve --livereload --port 4001
+Change things in the editor, press **Save** (⌘S), check the preview, then
+**commit and push** — GitHub publishes the site a minute or two later.
+Push once when you're done, not in the middle of bigger changes.
 
-# If you suspect stale cache
-bundle exec jekyll clean && bundle exec jekyll serve --livereload
+## Where things are
+
+| What | File(s) | Editor section |
+|---|---|---|
+| Project pages (solo works, theater, ongoing projects, other) | `_projects/*.html` | Projects |
+| Categories on the portfolio (start) page | `_data/portfolio.json` | Projects → Portfolio categories |
+| Hidden portfolio `/selected-works/` | `_data/selected_works.json` | Selected works |
+| Freelancing page | `_data/freelancing.json` | Freelancing |
+| Releases page | `_data/releases.json` | Releases |
+| Dates page | `_data/dates.json` | Dates |
+| About page | `_data/about.json` | About |
+| Images | `assets/images/` (uploads are scaled down automatically) | — |
+| Look of the site | `assets/css/styles.css`, `_layouts/`, `_includes/`, `pages/` | — |
+| The editor itself | `tools/editor/` | — |
+
+Texts everywhere follow one rule: an empty line starts a new paragraph,
+a single line break stays a line break. Simple HTML (links) works.
+
+Deleted projects are moved to `../website-archive/`, never thrown away.
+
+## One-time setup (new computer)
+
+    rbenv install 3.2.9
+    gem install bundler -v 4.0.3
+    bundle install
+
+Troubleshooting: `./bin/refresh.sh` restarts the preview from scratch.

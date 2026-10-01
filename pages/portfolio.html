@@ -11,8 +11,8 @@ permalink: /
     <div class="title_gallery">{{ category.heading }}</div>
     <div class="gallery gallery_works">
       {% for project in projects %}
-        <a href="{{ project.url }}" class="gallery-item">
-          <img src="{{ project.image }}" alt="{{ project.title }}" loading="lazy">
+        <a href="{{ project.url }}" class="gallery-item{% unless project.image %} no-image{% endunless %}">
+          {% if project.image %}<img src="{{ project.image }}" alt="{{ project.title }}" loading="lazy">{% endif %}
           <div class="overlay">{{ project.title }}</div>
         </a>
       {% endfor %}

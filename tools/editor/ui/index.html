@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site Editor</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700&display=swap">
+<link rel="stylesheet" href="/ui/style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>Site Editor</h1>
+  <span class="status" id="status"></span>
+  <a id="view-page" href="http://localhost:4000/" target="_blank" rel="noopener">View page ↗</a>
+  <button id="revert" title="Discard unsaved changes">Revert</button>
+  <button id="save" class="primary" title="Save (⌘S)">Save</button>
+</header>
+<div class="app">
+  <nav class="rail" id="rail"></nav>
+  <div class="view" id="view"></div>
+</div>
+<div class="toast" id="toast"></div>
+<script type="module" src="/ui/app.js"></script>
+</body>
+</html>

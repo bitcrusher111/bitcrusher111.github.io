@@ -3,5 +3,4 @@ _site/
 .bundle/
 vendor/bundle/
 .DS_Store
-*.backup
-_data/*.bak
+*.tmp

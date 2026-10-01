@@ -160,6 +160,8 @@ p + p { margin-top: 1.4em; }
   transition: opacity 0.3s ease;
 }
 .gallery-item:hover .overlay { opacity: 1; }
+.gallery-item.no-image { border: 1px solid #333; }
+.gallery-item.no-image .overlay { opacity: 1; background: none; }
 
 /*
   ==============================

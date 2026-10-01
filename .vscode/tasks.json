@@ -2,28 +2,31 @@
   "version": "2.0.0",
   "tasks": [
     {
-        "label": "Start Jekyll Server",
-        "type": "shell",
-        "command": "./serve.sh",
-        "isBackground": true,
-        "problemMatcher": [],
-        "presentation": {
-            "reveal": "always",
-            "panel": "dedicated"
-        },
-        "group": "build"
+      "label": "Edit website (preview + editor)",
+      "type": "shell",
+      "command": "./bin/edit.sh",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "group": { "kind": "build", "isDefault": true }
     },
     {
-        "label": "Refresh Jekyll Server",
-        "type": "shell",
-        "command": "./refresh.sh",
-        "isBackground": true,
-        "problemMatcher": [],
-        "presentation": {
-            "reveal": "always",
-            "panel": "dedicated"
-        },
-        "group": "build"
+      "label": "Preview only (Jekyll)",
+      "type": "shell",
+      "command": "./bin/serve.sh",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "group": "build"
+    },
+    {
+      "label": "Restart preview (clean)",
+      "type": "shell",
+      "command": "./bin/refresh.sh",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "group": "build"
     }
-]
+  ]
 }
