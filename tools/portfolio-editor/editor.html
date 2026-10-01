@@ -166,6 +166,7 @@ const PLACEHOLDER = "Example text: a short description of the project.";
 let data = null;
 let selected = "page";   // "page" | section object | item object
 let dirty = false;
+let version = null;   // version of the data file the editor is based on
 let drag = null;
 
 const $ = (sel, el = document) => el.querySelector(sel);
@@ -252,18 +253,26 @@ function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.ad
 
 async function load() {
   const r = await fetch("/api/data");
-  data = await r.json();
+  const j = await r.json();
+  data = j.data; version = j.version;
   data.sections.forEach(s => s.items.forEach(it => { it.links ||= []; }));
   dirty = false;
   setStatus("All changes saved", "ok");
   if (selected !== "page" && !locate(selected)) selected = "page";
   renderSidebar(); renderMain();
 }
-async function save() {
+async function save(force = false) {
   setStatus("Saving…");
   try {
-    const r = await fetch("/api/data", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(cleanForSave(data)) });
+    const r = await fetch("/api/data", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ version, force, data: cleanForSave(data) }) });
+    if (r.status === 409) {
+      setStatus("Not saved: the file was changed elsewhere", "err");
+      if (confirm("The portfolio data was changed outside this editor since you opened it (e.g. by Claude).\n\nOK = load the newer version (your unsaved edits here are lost)\nCancel = keep editing; you can then choose to overwrite")) return load();
+      if (confirm("Overwrite the newer version with what you see here? Changes made elsewhere will be lost.")) return save(true);
+      return;
+    }
     if (!r.ok) throw new Error((await r.json()).error || r.statusText);
+    version = (await r.json()).version;
     dirty = false;
     setStatus("All changes saved", "ok");
     toast("Saved — the page updates in a few seconds");
@@ -613,6 +622,14 @@ $("#revert").onclick = () => { if (!dirty || confirm("Discard all unsaved change
 document.addEventListener("keydown", e => { if ((e.metaKey || e.ctrlKey) && e.key === "s") { e.preventDefault(); save(); } });
 window.addEventListener("beforeunload", e => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
 load().catch(e => setStatus("Could not load data: " + e.message, "err"));
+// when nothing is being edited, quietly reload if the file changed elsewhere
+setInterval(async () => {
+  if (dirty || document.hidden) return;
+  try {
+    const j = await (await fetch("/api/data")).json();
+    if (j.version !== version) { await load(); toast("Updated with changes made outside the editor"); }
+  } catch {}
+}, 4000);
 </script>
 </body>
 </html>

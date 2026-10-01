@@ -8,6 +8,7 @@ It edits _data/selected_works.json. If `jekyll serve` is running,
 the page at http://localhost:4000/selected-works/ updates on save.
 """
 
+import hashlib
 import json
 import os
 import re
@@ -26,6 +27,11 @@ UPLOAD_DIR = os.path.join(ROOT, "assets", "images", "selected-works")
 UPLOAD_URL = "/assets/images/selected-works/"
 IMAGE_TYPES = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif"}
 MAX_UPLOAD = 25 * 1024 * 1024
+
+
+def file_version():
+    with open(DATA_FILE, "rb") as f:
+        return hashlib.sha1(f.read()).hexdigest()
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -57,7 +63,8 @@ class Handler(BaseHTTPRequestHandler):
                 self.send(200, f.read(), "text/html")
         elif path == "/api/data":
             with open(DATA_FILE, "rb") as f:
-                self.send(200, f.read())
+                raw = f.read()
+            self.send(200, {"version": file_version(), "data": json.loads(raw)})
         elif path.startswith("/assets/"):
             # serve site images so the editor can preview them
             full = os.path.abspath(os.path.join(ROOT, path.lstrip("/")))
@@ -75,9 +82,14 @@ class Handler(BaseHTTPRequestHandler):
         url = urlparse(self.path)
         try:
             if url.path == "/api/data":
-                data = json.loads(self.read_body(5 * 1024 * 1024))
+                body = json.loads(self.read_body(5 * 1024 * 1024))
+                data = body.get("data") if isinstance(body, dict) else None
                 if not isinstance(data, dict) or not isinstance(data.get("sections"), list):
                     raise ValueError("invalid data")
+                # refuse to overwrite changes made to the file since the editor loaded it
+                if body.get("version") != file_version() and not body.get("force"):
+                    self.send(409, {"error": "conflict"})
+                    return
                 if os.path.exists(DATA_FILE):
                     shutil.copyfile(DATA_FILE, BACKUP_FILE)
                 tmp = DATA_FILE + ".tmp"
@@ -85,7 +97,7 @@ class Handler(BaseHTTPRequestHandler):
                     json.dump(data, f, ensure_ascii=False, indent=2)
                     f.write("\n")
                 os.replace(tmp, DATA_FILE)
-                self.send(200, {"ok": True})
+                self.send(200, {"ok": True, "version": file_version()})
             elif url.path == "/api/upload":
                 name = parse_qs(url.query).get("name", [""])[0]
                 base, ext = os.path.splitext(os.path.basename(name))
