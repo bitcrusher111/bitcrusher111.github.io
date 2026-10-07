@@ -2,15 +2,15 @@
 
 ## Editing the website
 
-    ./bin/edit.sh
+The editor is not part of this repository. It lives in the private studio on
+this computer (`~/Studio`, started with `~/Studio/studio.sh`, or in VS Code:
+Terminal → Run Build Task). It opens
 
-(or in VS Code: Terminal → Run Build Task). This starts
-
-- the **site editor** at http://localhost:4001 (opens automatically)
+- the **studio** at http://localhost:4001
 - a **preview** of the website at http://localhost:4000
 
-Change things in the editor, press **Save** (⌘S), check the preview, then
-**commit and push** — GitHub publishes the site a minute or two later.
+Change things there, press **Save** (⌘S), check the preview, then
+**commit and push** this repository — GitHub publishes the site a minute or two later.
 Push once when you're done, not in the middle of bigger changes.
 
 ## Where things are
@@ -26,12 +26,11 @@ Push once when you're done, not in the middle of bigger changes.
 | About page | `_data/about.json` | About |
 | Images | `assets/images/` (uploads are scaled down automatically) | — |
 | Look of the site | `assets/css/styles.css`, `_layouts/`, `_includes/`, `pages/` | — |
-| The editor itself | `tools/editor/` | — |
 
 Texts everywhere follow one rule: an empty line starts a new paragraph,
 a single line break stays a line break. Simple HTML (links) works.
 
-Deleted projects are moved to `../website-archive/`, never thrown away.
+Deleted projects are moved to `~/Studio/archive/website/`, never thrown away.
 
 ## One-time setup (new computer)
 

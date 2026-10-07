@@ -21,5 +21,4 @@ exclude:
   - Gemfile.lock
   - node_modules
   - bin
-  - tools
   - README.md
