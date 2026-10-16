@@ -11,7 +11,9 @@
 <body>
   {% unless page.hide_header %}{% include header.html %}{% endunless %}
 
+  <div class="page">
   {{ content }}
+  </div>
 
   {% unless page.hide_footer %}{% include footer.html %}{% endunless %}
 

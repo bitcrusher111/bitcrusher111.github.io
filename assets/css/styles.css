@@ -10,6 +10,7 @@
   --muted: #4D4D4D;
   --font-body: 'Arial', monospace;
   --container-width: 1000px;
+  --gutter: 40px; /* left edge shared by navbar, content and footer */
 }
 
 * {
@@ -23,26 +24,26 @@ body {
   color: var(--fg);
   font-family: var(--font-body);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 128px; /* room for the fixed navbar */
+  padding: 0 var(--gutter);
 }
 
 h2 {
   color: var(--accent);
   font-size: 1.5em;
-  text-align: center;
 }
 
 /* consecutive paragraphs are separated by one empty line */
 p + p { margin-top: 1.4em; }
 
+/* every page has the same width: content wraps in .page (see _layouts/default.html) */
+.page { width: 100%; max-width: var(--container-width); margin-bottom: 60px; }
+
 .text-container {
-  width: 100%;
-  max-width: var(--container-width);
-  margin: 20px auto;
-  padding: 10px;
+  margin: 20px 0;
+  padding: 10px 0;
   text-align: left;
 }
 .text-container p { line-height: 1.4; }
@@ -56,13 +57,15 @@ p + p { margin-top: 1.4em; }
 .navbar {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   background-color: #000;
-  position: fixed;
+  /* sticky instead of fixed: it keeps its own space, so a wrapped second line never covers the page */
+  position: sticky;
   top: 0;
-  width: 100%;
   z-index: 1000;
-  padding: 14px 24px 10px;
+  width: calc(100% + 2 * var(--gutter));
+  margin: 0 calc(-1 * var(--gutter)) 30px;
+  padding: 14px var(--gutter) 10px;
 }
 
 .logo {
@@ -78,11 +81,9 @@ p + p { margin-top: 1.4em; }
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px 18px;
+  gap: 6px 48px;
   width: 100%;
 }
-.nav-links li { margin: 0 15px; }
 .nav-links a {
   color: white;
   text-decoration: none;
@@ -96,19 +97,21 @@ p + p { margin-top: 1.4em; }
 
 .footer {
   width: 100%;
-  padding: 60px 0 80px;
-  margin-top: auto;
+  max-width: var(--container-width);
+  margin-top: auto; /* stays at the bottom on short pages */
+  padding: 20px 0 40px;
+  border-top: 1px solid #333;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 64px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: grey;
 }
-.footer-links { display: flex; gap: 40px; }
-.footer-link {
-  color: white;
-  display: flex;
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-.footer-link:hover { filter: blur(1px); transform: scale(1.1); }
-.footer-link svg { width: 48px; height: 48px; }
+.footer-col { display: flex; flex-direction: column; }
+.footer-col:last-child { margin-left: auto; } /* year on the right */
+.footer a { color: inherit; text-decoration: none; }
+.footer a:hover { color: var(--fg); }
 
 /*
   ==============================
@@ -120,31 +123,29 @@ p + p { margin-top: 1.4em; }
 .title_gallery {
   font-size: 2em;
   margin: 20px 0;
-  text-align: center;
   width: 100%;
 }
 
+/* the columns fill the page width, so galleries line up with the text */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 10px;
-  justify-content: center;
-  align-items: center;
 }
+.gallery_works { grid-template-columns: repeat(2, 1fr); }
+.gallery_releases { grid-template-columns: repeat(3, 1fr); }
 .gallery a { text-decoration: none; color: inherit; }
 
 .gallery-item {
   position: relative;
   overflow: hidden;
-  flex: 0 0 auto;
 }
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.gallery_works .gallery-item { width: 450px; height: 300px; }
-.gallery_releases .gallery-item { width: 300px; height: 300px; }
+.gallery_works .gallery-item { aspect-ratio: 3 / 2; }
+.gallery_releases .gallery-item { aspect-ratio: 1; }
 
 .overlay {
   position: absolute;
@@ -168,11 +169,7 @@ p + p { margin-top: 1.4em; }
   Project pages
   ==============================
 */
-.project-page {
-  width: 100%;
-  max-width: var(--container-width);
-  margin: 20px auto;
-}
+.project-page { margin: 20px 0; }
 
 .project-nav {
   display: flex;
@@ -191,8 +188,7 @@ p + p { margin-top: 1.4em; }
 .video-wrapper {
   position: relative;
   width: 100%;
-  max-width: var(--container-width);
-  margin: 10px auto;
+  margin: 10px 0;
   padding-top: 56.25%; /* 16:9 */
 }
 .video-wrapper iframe {
@@ -204,7 +200,6 @@ p + p { margin-top: 1.4em; }
 }
 
 /* credits: role in bold, names next to it */
-.list-container { max-width: var(--container-width); margin: 0 auto; }
 .list-item { margin-bottom: 4px; }
 .job { font-weight: bold; display: inline-block; width: 200px; }
 .names { display: inline-block; }
@@ -219,8 +214,7 @@ p + p { margin-top: 1.4em; }
 
 /* photo gallery with arrows */
 .theater-gallery {
-  max-width: var(--container-width);
-  margin: 40px auto;
+  margin: 40px 0;
   padding: 20px 0;
 }
 .main-image-container {
@@ -262,12 +256,6 @@ p + p { margin-top: 1.4em; }
   Dates
   ==============================
 */
-.dates {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-  flex-grow: 1;
-}
 .dates-list { list-style: none; }
 .dates-heading { font-size: 1em; font-weight: normal; margin: 2.3em 0 1.15em; }
 #dates-upcoming:empty + .dates-heading { margin-top: 0; }
@@ -278,18 +266,14 @@ p + p { margin-top: 1.4em; }
   ==============================
 */
 .selected-works {
-  width: 100%;
-  max-width: 1100px;
-  align-self: flex-start; /* sits on the left on the selected-works page */
-  padding: 40px 40px 60px;
+  padding: 40px 0 60px;
   text-align: left;
 }
-/* on regular site pages (with navbar) the showcase is centered like the rest */
-.sw-page--site {
-  align-self: center;
-  max-width: calc(var(--container-width) + 80px);
-  padding-top: 20px;
+/* the hidden selected-works page has no navbar above it */
+.selected-works:first-child { margin-top: 88px;
 }
+/* on regular site pages (with navbar) */
+.sw-page--site { padding-top: 20px; }
 
 .sw-title {
   font-size: 2em;
@@ -363,38 +347,31 @@ p + p { margin-top: 1.4em; }
   ==============================
 */
 @media (max-width: 900px) {
-  body { padding-top: 120px; }
   .logo { font-size: 24px; }
-  .nav-links li { margin: 0 8px; }
+  .nav-links { column-gap: 34px; }
   .nav-links a { font-size: 15px; }
 }
 
 /* showcase: text first, then media */
 @media (max-width: 800px) {
-  .selected-works { padding: 16px 16px 60px; }
+  .selected-works { padding: 16px 0 60px; }
   .sw-item { grid-template-columns: 1fr; gap: 12px; }
   .sw-info { order: -1; }
 }
 
 @media (max-width: 768px) {
-  body { padding-top: 110px; }
+  :root { --gutter: 15px; }
   .logo { font-size: 18px; }
-  .nav-links li { margin: 0 3px; }
+  .nav-links { column-gap: 16px; }
   .nav-links a { font-size: 12px; padding: 3px 1px; }
 
-  .gallery { padding: 0 15px; }
-  .gallery_works .gallery-item { width: calc(100vw - 30px); height: calc((100vw - 30px) * 2 / 3); }
-  .gallery_releases .gallery-item { width: calc(100vw - 30px); height: calc(100vw - 30px); }
-  .gallery img { height: auto; }
-
-  .video-wrapper { margin: 10px 15px; width: calc(100% - 30px); }
-  .project-page { padding: 0 15px; }
+  .gallery_works, .gallery_releases { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-  body { padding-top: 104px; }
-  .navbar { padding: 12px 8px 8px; }
+  .navbar { padding-top: 12px; padding-bottom: 8px; }
   .logo { font-size: 17px; }
-  .nav-links li { margin: 0 2px; }
+  .nav-links { column-gap: 12px; }
   .nav-links a { font-size: 11px; padding: 2px 1px; }
+  .footer { gap: 16px 32px; }
 }
