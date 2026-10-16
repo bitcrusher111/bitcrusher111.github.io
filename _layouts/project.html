@@ -77,13 +77,11 @@ layout: default
   {% endif %}
 
   {% if page.gallery.size > 0 %}
-  <div class="theater-gallery" data-images='{{ page.gallery | jsonify | escape }}'>
-    <div class="main-image-container">
-      <img id="mainGalleryImg" src="{{ page.gallery[0] }}" alt="{{ page.title }}">
-      {% if page.gallery.size > 1 %}
-      <button class="gallery-arrow gallery-arrow-left" aria-label="Previous image">‹</button>
-      <button class="gallery-arrow gallery-arrow-right" aria-label="Next image">›</button>
-      {% endif %}
+  <div class="photo-gallery">
+    <div class="photo-grid">
+      {% for photo in page.gallery %}
+      <a href="{{ photo }}" target="_blank" rel="noopener"><img src="{{ photo }}" alt="{{ page.title }}" loading="lazy"></a>
+      {% endfor %}
     </div>
     {% if page.photo_credits %}<p class="photo-credits">{{ page.photo_credits }}</p>{% endif %}
   </div>

@@ -10,7 +10,7 @@
   --muted: #4D4D4D;
   --font-body: 'Arial', monospace;
   --container-width: 1200px;
-  --gutter: 80px; /* left edge shared by navbar, content and footer */
+  --gutter: 160px; /* left edge shared by navbar, content and footer */
 }
 
 * {
@@ -40,6 +40,9 @@ p + p { margin-top: 1.4em; }
 
 /* every page has the same width: content wraps in .page (see _layouts/default.html) */
 .page { width: 100%; max-width: var(--container-width); margin-bottom: 60px; }
+/* the space under the navbar alone sets where a page starts, so it is the same on every page */
+.page > :first-child,
+.page > :first-child > :first-child { margin-top: 0; padding-top: 0; }
 
 .text-container {
   margin: 20px 0;
@@ -212,44 +215,12 @@ p + p { margin-top: 1.4em; }
 .project-links a { color: var(--fg); text-decoration: none; }
 .project-links a:hover { color: var(--accent); }
 
-/* photo gallery with arrows */
-.theater-gallery {
-  margin: 40px 0;
-  padding: 20px 0;
-}
-.main-image-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 400px;
-  margin-bottom: 20px;
-}
-.main-image-container img {
-  display: block;
-  max-width: 100%;
-  max-height: 600px;
-  object-fit: contain;
-}
-.gallery-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  padding: 0;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 60px;
-  font-weight: 200;
-  line-height: 1;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  transition: color 0.3s ease, opacity 0.3s ease;
-}
-.gallery-arrow:hover { color: #fff; }
-.gallery-arrow-left { left: 10px; }
-.gallery-arrow-right { right: 10px; }
-.photo-credits { text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: #333; }
+/* photo gallery: all photos, two per row, same shape; a click opens the full photo */
+.photo-gallery { margin: 40px 0; }
+.photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.photo-grid img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.photo-grid a:hover img { opacity: 0.75; }
+.photo-credits { margin-top: 0.5rem; font-size: 0.85rem; color: grey; }
 
 /*
   ==============================
@@ -368,7 +339,7 @@ p + p { margin-top: 1.4em; }
   .nav-links { column-gap: 16px; }
   .nav-links a { font-size: 12px; padding: 3px 1px; }
 
-  .gallery_works, .gallery_releases { grid-template-columns: 1fr; }
+  .gallery_works, .gallery_releases, .photo-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
