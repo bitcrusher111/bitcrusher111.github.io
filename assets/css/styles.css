@@ -346,6 +346,7 @@ p + p { margin-top: 1.4em; }
 .sw-image { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; } /* same shape as the videos */
 .sw-bandcamp { display: block; border: 0; width: 100%; height: 120px; }
 .sw-spotify { display: block; border: 0; border-radius: 12px; width: 100%; height: 152px; }
+.sw-soundcloud { display: block; border: 0; width: 100%; height: 166px; }
 .sw-placeholder {
   display: flex;
   align-items: center;

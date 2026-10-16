@@ -112,8 +112,28 @@
               "url": "https://ideeundklang.com/audio/en/work/media-design/La-Salle.html"
             }
           ]
+        },
+        {
+          "id": "second-layer-soundwalk",
+          "title": "Second Layer SoundWalk",
+          "year": "2021",
+          "role": "promo audio",
+          "client": "idee und klang",
+          "text": "Second Layer SoundWalk is a concept by idee und klang and scenographer Claudia Glass: sound scenography for headphones that adds an interactive, immersive layer to existing exhibitions. My part was the promotional audio piece that presents the idea.",
+          "image": "/assets/images/freelancing/second-layer-soundwalk.jpg",
+          "links": [
+            {
+              "label": "project page at idee und klang",
+              "url": "https://ideeundklang.com/audio/en/ideas/research/Second-Layer-Sound-Walk.html"
+            }
+          ]
         }
-      ]
+      ],
+      "sources": [
+        "projects:other"
+      ],
+      "new_on": true,
+      "pick": {}
     }
   ]
 }
