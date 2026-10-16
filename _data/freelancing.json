@@ -8,20 +8,86 @@
       "title": "selected projects",
       "items": [
         {
+          "title": "Claude Lanzmann. The Recordings",
+          "year": "2025",
+          "role": "3D sound diffusion for tracked headphone system",
+          "text": "The exhibition at the Jüdisches Museum Berlin presents the sound archive of filmmaker Claude Lanzmann, including previously unpublished recordings from his research on the Holocaust. As in Sprachenland, visitors wear headphones tracked in the room, and a binaural engine mixes the sound in real time for each of them. Working for idee und klang, I placed and moved the recordings in 3D space within a digital twin of the exhibition.",
+          "image": "/assets/images/freelancing/lanzmann-jmb.jpg",
+          "links": [
+            {
+              "label": "project page at idee und klang",
+              "url": "https://ideeundklang.com/audio/en/work/exhibitions/Juedisches-Museum-Berlin.html"
+            }
+          ]
+        },
+        {
+          "title": "Zayed National Museum",
+          "year": "2025",
+          "role": "sound design",
+          "text": "The national museum of the United Arab Emirates in Abu Dhabi tells the country's history across six galleries. idee und klang created the sound for the whole museum, more than 100 exhibits including spatial sound installations, media stations and interactive pieces, as well as 27 sounding totems along the paths outside the building. As a freelancer in the team, I worked on the sound design.",
+          "hidden": true,
+          "image": "/assets/images/freelancing/zayed-national-museum.jpg",
+          "links": [
+            {
+              "label": "project page at idee und klang",
+              "url": "https://ideeundklang.com/audio/en/work/exhibitions/Zayed-National-Museum.html"
+            }
+          ]
+        },
+        {
+          "title": "Audiobreeze",
+          "year": "2024",
+          "role": "software programming",
+          "text": "For the company Audiobreeze, I programmed a prototype of their immersive 3D audio system, which creates evolving spatial soundscapes from multichannel nature recordings. My work focused on developing and exploring the technical possibilities of the prototype.",
+          "embed": "https://www.youtube.com/embed/_Wrfl_sd1R4",
+          "links": []
+        },
+        {
           "title": "Sprachenland",
-          "year": "",
-          "role": "sound spatialization for tracked headphone system",
+          "year": "2023",
+          "role": "3D sound diffusion for tracked headphone system",
           "text": "The exhibition Sprachenland at the Landesmuseum Zürich featured a head-tracking system developed by iart, which calculates a real-time binaural 3D mix for each visitor. As a freelancer, I spatialized all the music within a digital twin of the museum.",
           "embed": "https://player.vimeo.com/video/907444721",
           "links": []
         },
         {
-          "title": "Audiobreeze",
-          "year": "",
+          "title": "Schwarm / Fluid",
+          "year": "2021",
+          "role": "sound design, interactive media design",
+          "text": "A generative video and sound installation in two versions for the entrance of KPMG in Zurich. In Schwarm, numbers move through the room like a swarm; their density, spread, speed and position drive the sound synthesis in real time. In Fluid, coloured liquids flow across the screen with a different sound in colour, material and space. Developed at idee und klang with Tweaklab, scenography by LOOSLI & ZEHNDER.",
+          "embed": "https://player.vimeo.com/video/696910950?h=701b1122c0",
+          "links": [
+            {
+              "label": "project page at idee und klang",
+              "url": "https://ideeundklang.com/audio/en/work/media-design/Schwarm.html"
+            }
+          ]
+        },
+        {
+          "title": "Jeu Continu",
+          "year": "2021",
+          "role": "sounddesign",
+          "text": "A special exhibition about Belle Époque music boxes at the Museum für Musikautomaten in Seewen. Quadraphonic soundscapes in two pavilions contrast the rural Jura villages where the instruments were built with the world exhibitions where they were shown. At headphone stations next to the display cases, visitors hear binaural recordings of restored music boxes from the collection. Realised at idee und klang.",
+          "image": "/assets/images/freelancing/jeu-continu-seewen.jpg",
+          "links": [
+            {
+              "label": "project page at idee und klang",
+              "url": "https://ideeundklang.com/audio/en/work/exhibitions/museumfuermusikautomaten.html"
+            }
+          ]
+        },
+        {
+          "title": "Ascend",
+          "year": "2021",
           "role": "software programming",
-          "text": "For the company Audiobreeze, I programmed a prototype of their immersive 3D audio system, which creates evolving spatial soundscapes from multichannel nature recordings. My work focused on developing and exploring the technical possibilities of the prototype.",
-          "embed": "https://www.youtube.com/embed/_Wrfl_sd1R4",
-          "links": []
+          "text": "A walk-in sound sculpture by Norman Kelley in the lobby of an office building on LaSalle Street, Chicago: a small amphitheatre of steel, brass and marble that works as an instrument. Live data shapes the generative composition: the time of day sets tempo and texture, the day of the week the scale, the weather the timbre. 81 light sensors and 3 motion sensors follow the visitors, and the music plays from the eight nearest of 95 speakers. Sound by idee und klang with iart.",
+          "embed": "https://player.vimeo.com/video/778278488?h=992d79d4cd",
+          "links": [
+            {
+              "label": "project page at idee und klang",
+              "url": "https://ideeundklang.com/audio/en/work/media-design/La-Salle.html"
+            }
+          ]
         }
       ]
     }

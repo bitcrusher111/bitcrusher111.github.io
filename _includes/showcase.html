@@ -1,6 +1,7 @@
 {%- comment -%}
   A page of sections with pieces (media left, text right), used by the
-  selected-works portfolio and the freelancing page.
+  selected-works portfolio and the freelancing page. Pieces with "hidden": true
+  are left out (a section whose pieces are all hidden is left out too).
   Usage: {% include showcase.html data=site.data.freelancing class="sw-page--site" %}
 {%- endcomment -%}
 {%- assign sw = include.data -%}
@@ -34,11 +35,13 @@
   {% endif %}
 
   {% for section in sw.sections %}
+    {%- assign items = section.items | where_exp: "item", "item.hidden != true" -%}
+    {%- if section.items.size > 0 and items.size == 0 -%}{%- continue -%}{%- endif -%}
     <section class="sw-section" id="{{ section.title | slugify }}">
       {% if section.title and section.title != "" %}<h3 class="sw-section-title">// {{ section.title }}</h3>{% endif %}
       {% if section.text and section.text != "" %}<div class="sw-section-text">{% include paragraphs.html text=section.text %}</div>{% endif %}
 
-      {% for item in section.items %}
+      {% for item in items %}
         <article class="sw-item">
           <div class="sw-media">
             {% assign has_media = false %}
