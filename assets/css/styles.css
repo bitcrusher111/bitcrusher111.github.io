@@ -18,6 +18,9 @@
   box-sizing: border-box;
 }
 
+/* no double-tap zoom on phones (pinch zoom is switched off in the viewport tag) */
+html { touch-action: manipulation; }
+
 body {
   background-color: var(--bg);
   color: var(--fg);
@@ -103,10 +106,26 @@ p + p { margin-top: 1.4em; }
   background: none;
   border: 0;
   color: var(--fg);
-  font: inherit;
-  font-size: 16px;
   cursor: pointer;
 }
+/* three lines; they turn into an × while the menu is open */
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.menu-icon { position: relative; }
+.menu-icon::before,
+.menu-icon::after { content: ""; position: absolute; left: 0; }
+.menu-icon::before { top: -7px; }
+.menu-icon::after { top: 7px; }
+.navbar.open .menu-icon { background: transparent; }
+.navbar.open .menu-icon::before { transform: translateY(7px) rotate(45deg); }
+.navbar.open .menu-icon::after { transform: translateY(-7px) rotate(-45deg); }
 
 .footer {
   width: 100%;
@@ -254,9 +273,8 @@ p + p { margin-top: 1.4em; }
   padding: 40px 0 60px;
   text-align: left;
 }
-/* the hidden selected-works page has no navbar above it */
-.selected-works:first-child { margin-top: 88px;
-}
+/* the hidden selected-works page has no navbar above it (.page is then the first thing on the page) */
+.page:first-child > .selected-works { margin-top: 88px; }
 /* on regular site pages (with navbar) */
 .sw-page--site { padding-top: 20px; }
 
@@ -351,9 +369,9 @@ p + p { margin-top: 1.4em; }
   :root { --gutter: 15px; }
 
   /* navbar: name and menu button; the links open as a list underneath */
-  .navbar { flex-direction: row; flex-wrap: wrap; align-items: baseline; padding-top: 12px; padding-bottom: 12px; }
+  .navbar { flex-direction: row; flex-wrap: wrap; align-items: center; padding-top: 12px; padding-bottom: 12px; }
   .logo { font-size: 18px; margin-bottom: 0; }
-  .menu-button { display: block; margin-left: auto; padding: 4px 0; }
+  .menu-button { display: block; margin-left: auto; padding: 12px 0 12px 12px; } /* big enough to tap */
   #nav { display: none; width: 100%; }
   .navbar.open #nav { display: block; }
   .nav-links { flex-direction: column; gap: 4px; padding: 16px 0 8px; }

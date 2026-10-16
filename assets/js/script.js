@@ -1,3 +1,6 @@
+// phones: no pinch zoom (Safari on the iPhone ignores user-scalable=no in the viewport tag)
+document.addEventListener('gesturestart', function (e) { e.preventDefault(); });
+
 document.addEventListener('DOMContentLoaded', function () {
   // highlight the current page in the navbar
   document.querySelectorAll('.navbar a').forEach(function (link) {
@@ -11,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const setOpen = function (open) {
       navbar.classList.toggle('open', open);
       menuButton.setAttribute('aria-expanded', open);
-      menuButton.textContent = open ? 'close' : 'menu';
+      menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     };
     menuButton.addEventListener('click', function () { setOpen(!navbar.classList.contains('open')); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
