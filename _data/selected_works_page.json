@@ -1,0 +1,185 @@
+{
+  "title": "PORTFOLIO CANDID RÜTTER",
+  "subtitle": "I am a Hamburg/ Bern based Artist working in the field between music composition, theater and media art. This is just a selection of my work. For my full portfolio visit <a href=\"https://candidruetter.net\">candidruetter.net</a> or download my <a href=\"/assets/cv/candid-ruetter-cv.pdf\" target=\"_blank\" rel=\"noopener\">CV (PDF)</a>.",
+  "sections": [
+    {
+      "title": "music for theater/ dance/ performance",
+      "items": [
+        {
+          "title": "Engel der Vernichtung",
+          "year": "2026",
+          "role": "composition, sounddesign, multimedia synchronisation",
+          "text": "The music for Engel der Vernichtung functions more like a film score than a traditional theatre soundtrack. Throughout the piece, sound is continuously present, whether through atmospheres, textures, or recurring musical motifs. To meet the demands of a live cinema piece, I developed a technological environment that allows for highly controlled transitions, cuts, and musical changes in real time, with live synchronisation between sound, video, and light.",
+          "page": "/theater/engeldervernichtung/",
+          "embed": "https://player.vimeo.com/video/1186496932",
+          "links": []
+        },
+        {
+          "title": "hard_break <3",
+          "year": "2025",
+          "role": "composition, sounddesign, multimedia synchronisation",
+          "text": "To place the pieces topic at the core of the soundtrack, I drew inspiration from heartbreak songs of the 2000s. I sampled hooks, reworked chord progressions, and distilled their moods and emotional textures. I then contrasted this material with the raw aesthetics of heavy bass and rave music, creating a soundtrack that leaves room for tears, anger, hope, and release.",
+          "page": "/theater/hardbreak/",
+          "embed": "https://www.youtube.com/embed/GXsdZw4N-lE",
+          "links": []
+        },
+        {
+          "title": "GOTT",
+          "year": "2023",
+          "role": "composition, sounddesign",
+          "text": "GOTT is a rather text-heavy, dry, and formal piece. I tried to create music that makes the piece more accessible and engaging, while also adda eerie dimension to it.",
+          "page": "/theater/gott/",
+          "embed": "https://www.youtube.com/embed/w3Edb-5C0WQ",
+          "links": []
+        }
+      ],
+      "text": "Since 2022, I have composed the soundtracks for more than ten theatre productions. Visit my website to discover the full list and explore all my work."
+    },
+    {
+      "title": "solo works",
+      "items": [
+        {
+          "title": "a kind machine",
+          "year": "2026",
+          "role": "artistic direction, multimedia composition",
+          "text": "A KIND MACHINE was the result of a two-month residency at Lichthoftheater Hamburg. I explored a theatrical language without a human body present on stage. Through robots, everyday devices, and conventional stage elements, I investigated the technological reality we live in.\n\nMORE INFO AND DOKU COMING SOON",
+          "page": "/works/a-kind-machine/",
+          "image": "/assets/images/projects/akindmachine/2026-09-wepresent-festival-52234-20mp-a-kind-machine.jpg",
+          "links": []
+        },
+        {
+          "title": "the meadow",
+          "year": "2026",
+          "role": "artistic direction, multimedia composition",
+          "text": "The Meadow is a music theatre piece that engages with the eerie qualities of the self-help tools we integrate into our everyday lives.\n\nA singer called Alice tries to escape the pressure of her work by turning to a mysterious application called 'the meadow'. She finds herself lying in the green grass, watching fluffy clouds drift by, when suddenly new doors open, and her journey turns into a feverish dream",
+          "page": "/works/the-meadow/",
+          "embed": "https://www.youtube.com/embed/Fa_VviCqDYg",
+          "links": []
+        },
+        {
+          "title": "holy water",
+          "year": "2024",
+          "role": "artistic direction, multimedia composition",
+          "text": "HOLY WATER is a speculative multimedia ritual that approaches water as a hyperobject: a force that sustains and destroys life, of which we can only ever perceive fragments. Contact microphones set a water-filled vessel into vibration, while a hydrophone inside captures and amplifies the sounds within the water, creating a feedback loop between performer and vessel. In a world that often treats nature as a resource, the piece explores other ways of relating to it.",
+          "page": "/works/holywater/",
+          "embed": "https://www.youtube.com/embed/rcfLqninbxQ",
+          "links": []
+        }
+      ]
+    },
+    {
+      "title": "ARTISTC COLLABORATION",
+      "items": [
+        {
+          "title": "terminal infinity",
+          "year": "2025",
+          "role": "videodesign",
+          "text": "For Alexander Schubert’s multimedia production Terminal Infinity, I designed the video using the 3D software Blender.",
+          "page": "/other/terminalinfinity/",
+          "embed": "https://www.youtube.com/embed/kyCXDu2mE4o",
+          "links": []
+        },
+        {
+          "title": "knäuled",
+          "year": "2025",
+          "role": "audio-visual composition, multimedia synchronisation",
+          "text": "Together with the light collective Göral, we created the audiovisual installation KNÄULED at Neubad in Lucerne. The installation, consisting of 1 km of LED strips, featured a one-hour soundtrack synchronized with the lighting design, with both sound and light influenced by live sensor data.",
+          "page": "/other/knauled/",
+          "embed": "https://www.youtube.com/embed/MKy2f5uV9F4",
+          "links": []
+        },
+        {
+          "title": "asterism",
+          "year": "2022",
+          "role": "sound spatialization",
+          "text": "For the 72-hour performance Asterism at the Maillon Festival in Strasbourg, I spatialized the soundtrack composed by Alexander Schubert to a multichannel setup.",
+          "page": "/other/asterism/",
+          "embed": "https://www.youtube.com/embed/2ueMUMxI_yk",
+          "links": []
+        }
+      ]
+    },
+    {
+      "title": "freelancing",
+      "items": [
+        {
+          "title": "Audiobreeze",
+          "year": "2024",
+          "role": "software programming",
+          "client": "Audiobreeze",
+          "text": "For the company Audiobreeze, I programmed a prototype of their immersive 3D audio system, which creates evolving spatial soundscapes from multichannel nature recordings. My work focused on developing and exploring the technical possibilities of the prototype.",
+          "embed": "https://www.youtube.com/embed/_Wrfl_sd1R4",
+          "links": []
+        },
+        {
+          "title": "Sprachenland",
+          "year": "2023",
+          "role": "3D sound diffusion for tracked headphone system",
+          "client": "idee und klang",
+          "text": "The exhibition Sprachenland at the Landesmuseum Zürich featured a head-tracking system developed by iart, which calculates a real-time binaural 3D mix for each visitor. As a freelancer, I spatialized all the music within a digital twin of the museum.",
+          "embed": "https://player.vimeo.com/video/907444721",
+          "links": []
+        }
+      ],
+      "text": "As a freelancer, I take on projects ranging from sound design and music production to programming and interactive media."
+    },
+    {
+      "title": "music production",
+      "items": [
+        {
+          "title": "candid",
+          "year": "",
+          "role": "",
+          "text": "Under my first name, I release tracks influenced by a variety of bass-heavy genres, as well as ambient music. This is where I experiment with new ways of shaping and processing sound, exploring different approaches to texture, rhythm, and sonic space.",
+          "bandcamp": [
+            {
+              "src": "https://bandcamp.com/EmbeddedPlayer/album=3616600469/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=1346777750/transparent=true/",
+              "label": "CRTTR-CLB-003 by dataflex",
+              "url": "https://crttrcollective.bandcamp.com/album/crttr-clb-003"
+            },
+            {
+              "src": "https://bandcamp.com/EmbeddedPlayer/album=1043847182/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=3051537641/transparent=true/",
+              "label": "CRTTR-CLB-008 by candid",
+              "url": "https://crttrcollective.bandcamp.com/album/crttr-clb-008"
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "PRIX GARANTI",
+          "year": "2021 - today",
+          "role": "",
+          "text": "Since 2021, I have been the producer and bassist of the band Prix Garanti.",
+          "page": "/collectives/prixgaranti/",
+          "embed": "https://www.youtube.com/embed/uV3P9G8OLOM",
+          "spotify": [
+            {
+              "src": "https://open.spotify.com/embed/track/3xZ3ql2ZEoEZpSWhbrYpjR",
+              "label": "Züri"
+            },
+            {
+              "src": "https://open.spotify.com/embed/track/0l39G6Jjf5GZVvaKOxMupN",
+              "label": "Hardlife Bern"
+            }
+          ],
+          "links": []
+        }
+      ]
+    }
+  ],
+  "socials": [
+    {
+      "label": "linktree",
+      "url": "https://linktr.ee/candidruetter"
+    },
+    {
+      "label": "instagram",
+      "url": "https://www.instagram.com/candidrutter"
+    },
+    {
+      "label": "youtube",
+      "url": "https://www.youtube.com/@candidr%C3%BCtter"
+    }
+  ],
+  "skills": []
+}

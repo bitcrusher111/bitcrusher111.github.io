@@ -7,10 +7,10 @@ noindex: true
 hide_header: true
 hide_footer: true
 sitemap: false
-# content: _data/selected_works.json (edit it in the site editor)
+# content: _data/selected_works_page.json — made by the studio from selected_works.json + projects + freelancing
 ---
 <style>
   /* only on this page: no navbar spacing, light colors instead of the site's black */
   body { --bg: #fff; --fg: #000; padding-top: 0; }
 </style>
-{% include showcase.html data=site.data.selected_works %}
+{% include showcase.html data=site.data.selected_works_page %}

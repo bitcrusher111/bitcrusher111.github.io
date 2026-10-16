@@ -74,7 +74,9 @@
 
           <div class="sw-info">
             <h4 class="sw-item-title">{{ item.title }}{% if item.year and item.year != "" %} ({{ item.year }}){% endif %}</h4>
-            {% if item.role and item.role != "" %}<p class="sw-item-role">{{ item.role }}</p>{% endif %}
+            {%- assign has_role = false -%}{%- if item.role and item.role != "" -%}{%- assign has_role = true -%}{%- endif -%}
+            {%- assign has_client = false -%}{%- if item.client and item.client != "" -%}{%- assign has_client = true -%}{%- endif -%}
+            {% if has_role or has_client %}<p class="sw-item-role">{% if has_role %}{{ item.role }}{% endif %}{% if has_role and has_client %} · {% endif %}{% if has_client %}<em class="sw-item-client">{{ item.client }}</em>{% endif %}</p>{% endif %}
             {% if item.text and item.text != "" %}<div class="sw-item-text">{% include paragraphs.html text=item.text %}</div>{% endif %}
 
             {% assign has_page = false %}
