@@ -248,11 +248,10 @@ p + p { margin-top: 1.4em; }
 .project-links a { color: var(--fg); text-decoration: none; }
 .project-links a:hover { color: var(--accent); }
 
-/* photo gallery: all photos, two per row, same shape; a click opens the full photo */
+/* photo gallery: all photos, two per row, same shape */
 .photo-gallery { margin: 40px 0; }
 .photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .photo-grid img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
-.photo-grid a:hover img { opacity: 0.75; }
 .photo-credits { margin-top: 0.5rem; font-size: 0.85rem; color: grey; }
 
 /*

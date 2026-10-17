@@ -80,7 +80,7 @@ layout: default
   <div class="photo-gallery">
     <div class="photo-grid">
       {% for photo in page.gallery %}
-      <a href="{{ photo }}" target="_blank" rel="noopener"><img src="{{ photo }}" alt="{{ page.title }}" loading="lazy"></a>
+      <img src="{{ photo }}" alt="{{ page.title }}" loading="lazy">
       {% endfor %}
     </div>
     {% if page.photo_credits %}<p class="photo-credits">{{ page.photo_credits }}</p>{% endif %}
