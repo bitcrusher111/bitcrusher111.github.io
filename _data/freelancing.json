@@ -133,7 +133,9 @@
         "projects:other"
       ],
       "new_on": true,
-      "pick": {}
+      "pick": {
+        "projects/hismastersvoice": false
+      }
     }
   ]
 }
