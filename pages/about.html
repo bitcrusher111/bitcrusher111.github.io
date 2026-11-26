@@ -5,5 +5,16 @@ permalink: /about.html
 # content: _data/about.json (edit it in the site editor)
 ---
 <div class="text-container page-text">
-  {% include paragraphs.html text=site.data.about.text %}
+  {% include paragraphs.html text=site.data.about.text markdown="yes" %}
 </div>
+{%- comment -%} the press links: _data/press.json, written by the Studio from Applications → Press — newest first {%- endcomment -%}
+{%- if site.data.press.items.size > 0 %}
+<div class="text-container page-text press">
+  <h2>Press</h2>
+  <ul>
+    {%- for i in site.data.press.items %}
+    <li>{% if i.outlet != "" %}{{ i.outlet | escape }}{% if i.year != "" %}, {{ i.year }}{% endif %}: {% endif %}<a href="{{ i.link }}" target="_blank" rel="noopener">{{ i.title | escape }}</a>{% if i.pdf %} (PDF){% endif %}</li>
+    {%- endfor %}
+  </ul>
+</div>
+{%- endif %}

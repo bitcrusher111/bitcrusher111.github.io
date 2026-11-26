@@ -53,6 +53,10 @@ p + p { margin-top: 1.4em; }
 }
 .text-container p { line-height: 1.4; }
 .text-container a { color: var(--fg); }
+/* About: the press links under the bio */
+.press h2 { margin-bottom: 0.6em; }
+.press ul { list-style: none; }
+.press li { line-height: 1.4; margin: 0.25em 0; }
 
 /*
   ==============================

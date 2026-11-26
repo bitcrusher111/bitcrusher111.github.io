@@ -2,13 +2,16 @@
   Turns plain text into paragraphs: an empty line starts a new paragraph,
   a single line break stays a line break. Simple HTML (links etc.) passes through.
   Usage: {% include paragraphs.html text=some_text %}
+  markdown="yes": Markdown in it works too — [a link](https://…), *italics*, \[brackets\] (e.g. a biography from the Studio)
 {%- endcomment -%}
 {%- capture paragraph_break %}
 
 {% endcapture -%}
 {%- assign paragraphs = include.text | split: paragraph_break -%}
-{%- for paragraph in paragraphs -%}
-  {%- assign paragraph = paragraph | strip -%}
+{%- for raw_paragraph in paragraphs -%}
+  {%- comment -%} a new name: Liquid doesn't let a loop change its own variable {%- endcomment -%}
+  {%- assign paragraph = raw_paragraph | strip -%}
+  {%- if include.markdown and paragraph != "" -%}{%- assign paragraph = paragraph | markdownify | remove: "<p>" | remove: "</p>" | strip -%}{%- endif -%}
   {%- if paragraph != "" %}
 <p>{{ paragraph | newline_to_br }}</p>
   {%- endif -%}
