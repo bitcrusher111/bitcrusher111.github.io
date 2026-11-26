@@ -54,9 +54,12 @@ p + p { margin-top: 1.4em; }
 .text-container p { line-height: 1.4; }
 .text-container a { color: var(--fg); }
 /* About: the press links under the bio */
-.press h2 { margin-bottom: 0.6em; }
+/* quieter than the bio: small, all grey, the title without the accent colour */
+.press { margin-top: 0; font-size: 0.85rem; color: grey; }
+.press h2 { color: grey; font-size: 1em; font-weight: normal; margin-bottom: 0.5em; }
 .press ul { list-style: none; }
-.press li { line-height: 1.4; margin: 0.25em 0; }
+.press li { line-height: 1.4; margin: 0.15em 0; }
+.text-container.press a { color: grey; }
 
 /*
   ==============================
